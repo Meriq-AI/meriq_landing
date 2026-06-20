@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 import { cn } from "@/lib/utils"
@@ -37,8 +36,12 @@ export function LanguageSwitcher({
     >
       {locales.map((locale) => {
         const active = locale === current
+        // Plain <a> (full reload) on locale change: switching locale re-renders
+        // the root layout, and a client-side re-render would make React 19 warn
+        // about the pre-paint theme <script>. A full navigation renders the
+        // layout server-side only, avoiding that.
         return (
-          <Link
+          <a
             key={locale}
             href={swapLocale(pathname, locale)}
             aria-current={active ? "true" : undefined}
@@ -50,7 +53,7 @@ export function LanguageSwitcher({
             )}
           >
             {localeLabels[locale]}
-          </Link>
+          </a>
         )
       })}
     </div>

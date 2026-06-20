@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import { Geist_Mono, Inter, Noto_Sans_TC } from "next/font/google"
 import { notFound } from "next/navigation"
-import Script from "next/script"
 
 import "../globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -60,10 +59,11 @@ export default async function RootLayout({
       )}
     >
       <body>
-        {/* Pre-paint: set the theme class before first paint to avoid a flash.
-            External src via next/script (not inline) so React 19 doesn't warn
-            and the no-sync-scripts lint rule is satisfied. */}
-        <Script src="/theme-init.js" strategy="beforeInteractive" />
+        {/* Pre-paint theme: a tiny external script (not inline) so React 19
+            doesn't warn about scripts in components. Loaded synchronously on
+            purpose so the theme class is set before first paint (no flash). */}
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script src="/theme-init.js" />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
