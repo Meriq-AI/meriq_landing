@@ -122,7 +122,7 @@ export function DataFlow({ flow }: { flow: Dictionary["flow"] }) {
   }, [beamsOn, inputRefs, outcomeRefs])
 
   return (
-    <Section id="how" className="bg-surface">
+    <Section id="how">
       <div className="mx-auto max-w-2xl text-center">
         <BlurFade delay={0.05} className="flex justify-center">
           <Eyebrow>{flow.eyebrow}</Eyebrow>

@@ -14,7 +14,7 @@
   },
   "hero": {
     "eyebrow": "AI agents for customs brokers and forwarders",
-    "titleLead": "Your shipment documents don’t chase themselves.",
+    "titleLead": "Your shipment documents don’t chase themselves. ",
     "titleEmph": "Meriq does.",
     "rotatingPrefix": "Built on the documents you already handle:",
     "rotating": ["commercial invoices", "packing lists", "bills of lading", "supplier emails"],
@@ -118,5 +118,17 @@
     "title": "Vision & writing",
     "subtitle": "How we think about the work that happens before filing.",
     "backToBlog": "All posts"
+  },
+  "cta": {
+    "eyebrow": "Book a call",
+    "title": "Stop chasing shipment documents manually",
+    "subtitle": "See how Meriq turns invoices, packing lists, and supplier emails into broker-ready cases.",
+    "note": "A 15-minute call, for customs brokers, freight forwarders, and trade teams handling document-heavy shipments."
+  },
+  "footer": {
+    "tagline": "The AI-native pre-clearance workspace for customs brokers and forwarders.",
+    "productLabel": "Product",
+    "resourcesLabel": "Resources",
+    "rights": "All rights reserved."
   }
 }

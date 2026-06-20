@@ -60,10 +60,10 @@ export default async function RootLayout({
       )}
     >
       <body>
-        {/* Pre-paint: set the theme class before first paint to avoid a flash. */}
-        <Script id="theme-init" strategy="beforeInteractive">
-          {`(function(){try{var s=localStorage.getItem('theme');var d=s==='dark'||((!s||s==='system')&&window.matchMedia('(prefers-color-scheme: dark)').matches);var e=document.documentElement;e.classList.toggle('dark',d);e.style.colorScheme=d?'dark':'light';}catch(e){}})();`}
-        </Script>
+        {/* Pre-paint: set the theme class before first paint to avoid a flash.
+            External src via next/script (not inline) so React 19 doesn't warn
+            and the no-sync-scripts lint rule is satisfied. */}
+        <Script src="/theme-init.js" strategy="beforeInteractive" />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

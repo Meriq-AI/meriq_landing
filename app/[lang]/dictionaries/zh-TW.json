@@ -14,12 +14,12 @@
   },
   "hero": {
     "eyebrow": "為報關行與承攬業打造的 AI 代理",
-    "titleLead": "出貨文件不會自己追。",
-    "titleEmph": "Meriq 幫你追。",
+    "titleLead": "讓每票貨，",
+    "titleEmph": "在報關前就準備好",
     "rotatingPrefix": "建立在你每天經手的文件上：",
     "rotating": ["商業發票", "裝箱單", "提單", "供應商郵件"],
-    "pitch": "Meriq 幫你顧好送單前的待辦：出貨郵件、發票與裝箱單差異、缺件、商品釐清、報關交接。",
-    "outcome": "你的團隊只審查可直接送單的案件，不再四處追進度。",
+    "pitch": "Meriq AI 協助報關行與貨代整理出貨文件、檢查缺件、比對 Invoice / Packing List / B/L，並自動產生補件追問。",
+    "outcome": "讓團隊不再追著 email 和附件跑，而是直接審查整理好的報關前案件。",
     "ctaPrimary": "預約諮詢",
     "ctaSecondary": "看運作方式",
     "card": {
@@ -113,5 +113,17 @@
     "title": "願景與文章",
     "subtitle": "關於送單前那段工作，我們是怎麼想的。",
     "backToBlog": "所有文章"
+  },
+  "cta": {
+    "eyebrow": "預約諮詢",
+    "title": "別再手動追出貨文件",
+    "subtitle": "看看 Meriq 如何把發票、裝箱單與供應商郵件，整理成可直接送單的案件。",
+    "note": "15 分鐘線上通話，專為處理大量文件的報關行、承攬業與貿易團隊。"
+  },
+  "footer": {
+    "tagline": "給報關行與承攬業的 AI 原生報關前作業平台。",
+    "productLabel": "產品",
+    "resourcesLabel": "資源",
+    "rights": "版權所有。"
   }
 }

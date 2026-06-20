@@ -43,7 +43,7 @@ export function Hero({
 
           <BlurFade delay={0.12}>
             <h1 className="mt-5 text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-[3.5rem]">
-              {hero.titleLead}{" "}
+              {hero.titleLead}
               <span className="text-primary">{hero.titleEmph}</span>
             </h1>
           </BlurFade>

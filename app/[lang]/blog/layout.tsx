@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation"
 
 import { SiteHeader } from "@/components/layout/site-header"
+import { SiteFooter } from "@/components/layout/site-footer"
 import { isLocale } from "@/lib/i18n/config"
 import { getDictionary } from "../dictionaries"
 
@@ -19,6 +20,7 @@ export default async function BlogLayout({
     <>
       <SiteHeader lang={lang} nav={dict.nav} />
       <main className="px-6 pt-[72px]">{children}</main>
+      <SiteFooter lang={lang} footer={dict.footer} nav={dict.nav} />
     </>
   )
 }
