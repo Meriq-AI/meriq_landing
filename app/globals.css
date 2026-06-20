@@ -6,7 +6,8 @@
 
 @theme inline {
     --font-heading: var(--font-sans);
-    --font-sans: var(--font-sans);
+    --font-sans: var(--font-sans), var(--font-zh);
+    --font-mono: var(--font-mono);
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -36,8 +37,11 @@
     --color-popover: var(--popover);
     --color-card-foreground: var(--card-foreground);
     --color-card: var(--card);
+    --color-surface: var(--surface);
     --color-foreground: var(--foreground);
     --color-background: var(--background);
+    --color-warning: oklch(0.705 0.165 60);   /* amber — defined inline for alpha modifier support */
+    --color-success: oklch(0.620 0.155 155);  /* green — defined inline for alpha modifier support */
     --radius-sm: calc(var(--radius) * 0.6);
     --radius-md: calc(var(--radius) * 0.8);
     --radius-lg: var(--radius);
@@ -48,48 +52,67 @@
 }
 
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
+    /* Linear-style light mode — cool off-white base, blue accent, minimal chrome.
+       Ported from meriq_app to keep the landing visually consistent with the product. */
+
+    /* Surfaces — 3-layer elevation: L1 base (canvas) · L2 surface (panels) · L3 block (cards) */
+    --background: oklch(0.963 0.0015 260);       /* L1 base */
+    --foreground: oklch(0.145 0.008 260);        /* near-black, cool undertone */
+    --surface: #fcfcfd;                          /* L2 surface */
+    --card: oklch(1 0 0);                        /* L3 block — pure white */
+    --card-foreground: oklch(0.155 0.010 260);
     --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
+    --popover-foreground: oklch(0.155 0.010 260);
+
+    /* Primary — Meriq blue */
+    --primary: oklch(0.55 0.12 222);
+    --primary-foreground: oklch(1 0 0);
+
+    --secondary: oklch(0.962 0.002 258);
+    --secondary-foreground: oklch(0.230 0.010 260);
+
+    --muted: oklch(0.962 0.002 258);
+    --muted-foreground: oklch(0.500 0.006 260);
+
+    --accent: oklch(0.945 0.003 260);
+    --accent-foreground: oklch(0.230 0.010 260);
+
+    /* Status — used only where it carries meaning (must_fix / warning / info) */
+    --destructive: oklch(0.577 0.220 25);
+    --warning: oklch(0.705 0.165 60);    /* amber */
+    --success: oklch(0.620 0.155 155);   /* green */
+
+    --border: oklch(0.918 0.003 258);
+    --input: oklch(0.918 0.003 258);
+    --ring: oklch(0.55 0.12 222);
+
+    --chart-1: oklch(0.55 0.12 222);
+    --chart-2: oklch(0.640 0.145 200);
+    --chart-3: oklch(0.680 0.145 145);
+    --chart-4: oklch(0.700 0.175 35);
+    --chart-5: oklch(0.610 0.210 340);
+
+    --radius: 0.5rem;
+
+    --sidebar: oklch(0.963 0.0015 260);
+    --sidebar-foreground: oklch(0.145 0.008 260);
+    --sidebar-primary: oklch(0.55 0.12 222);
+    --sidebar-primary-foreground: oklch(1 0 0);
+    --sidebar-accent: oklch(0.940 0.003 260);
+    --sidebar-accent-foreground: oklch(0.230 0.010 260);
+    --sidebar-border: oklch(0.918 0.003 258);
+    --sidebar-ring: oklch(0.55 0.12 222);
 }
 
 .dark {
-    --background: oklch(0.145 0 0);
+    --background: oklch(0.165 0 0);
     --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
+    --surface: oklch(0.205 0 0);
+    --card: oklch(0.225 0 0);
     --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
+    --popover: oklch(0.225 0 0);
     --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
+    --primary: oklch(0.72 0.13 215);
     --primary-foreground: oklch(0.205 0 0);
     --secondary: oklch(0.269 0 0);
     --secondary-foreground: oklch(0.985 0 0);
@@ -98,35 +121,44 @@
     --accent: oklch(0.269 0 0);
     --accent-foreground: oklch(0.985 0 0);
     --destructive: oklch(0.704 0.191 22.216);
+    --warning: oklch(0.760 0.150 70);
+    --success: oklch(0.700 0.150 158);
     --border: oklch(1 0 0 / 10%);
     --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --sidebar: oklch(0.205 0 0);
+    --ring: oklch(0.72 0.13 215);
+    --chart-1: oklch(0.72 0.13 215);
+    --chart-2: oklch(0.640 0.145 200);
+    --chart-3: oklch(0.680 0.145 145);
+    --chart-4: oklch(0.700 0.175 35);
+    --chart-5: oklch(0.610 0.210 340);
+    --sidebar: oklch(0.165 0 0);
     --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary: oklch(0.72 0.13 215);
     --sidebar-primary-foreground: oklch(0.985 0 0);
     --sidebar-accent: oklch(0.269 0 0);
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
+    --sidebar-ring: oklch(0.72 0.13 215);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    }
+  }
   body {
-    @apply bg-background text-foreground;
-    }
-  button:not(:disabled), [role="button"]:not(:disabled) {
-    cursor: pointer;
-    }
+    @apply text-foreground antialiased;
+    background: var(--background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
   html {
     @apply font-sans;
-    }
+  }
+  button:not(:disabled), [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  ::selection {
+    background: oklch(0.55 0.12 222 / 18%);
+    color: oklch(0.155 0.010 260);
+  }
 }

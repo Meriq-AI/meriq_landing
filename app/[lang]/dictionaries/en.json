@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "title": "Meriq — Broker-ready cases before you file",
+    "description": "Meriq turns messy shipment emails, invoices, packing lists, and bills of lading into broker-ready cases. Your team reviews exceptions, not scattered follow-ups."
+  },
+  "nav": {
+    "product": "Product",
+    "how": "How it works",
+    "roles": "For your team",
+    "vision": "Vision",
+    "bookCall": "Book a call",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "eyebrow": "AI agents for customs brokers and forwarders",
+    "titleLead": "Your shipment documents don’t chase themselves.",
+    "titleEmph": "Meriq does.",
+    "rotatingPrefix": "Built on the documents you already handle:",
+    "rotating": ["commercial invoices", "packing lists", "bills of lading", "supplier emails"],
+    "pitch": "Meriq works your pre-filing queue — shipment emails, invoice and packing-list mismatches, missing documents, product clarifications, and broker handoffs.",
+    "outcome": "Your team reviews broker-ready cases, not scattered follow-ups.",
+    "ctaPrimary": "Book a call",
+    "ctaSecondary": "See how it works",
+    "card": {
+      "caseRef": "Case M-1042",
+      "caseTitle": "Acme Electronics · 2 × 40HQ",
+      "statusChecking": "Checking consistency",
+      "docs": "CI · PL · B/L",
+      "fieldsLabel": "Extracted fields",
+      "rows": [
+        { "label": "Total value", "value": "USD 48,200.00", "state": "match" },
+        { "label": "Net weight", "value": "12,480 kg", "state": "match" },
+        { "label": "Cartons", "value": "1,040 ctn", "state": "match" },
+        { "label": "Origin", "value": "TW → US LGB", "state": "match" },
+        { "label": "PL gross weight", "value": "13,120 kg ≠ 13,210 kg", "state": "warn" },
+        { "label": "Country of origin", "value": "Missing on 3 lines", "state": "fail" }
+      ],
+      "footnote": "4 fields consistent · 2 need review"
+    }
+  },
+  "trustBar": {
+    "lead": "Built for customs brokers, freight forwarders, and trade operations teams handling document-heavy shipments.",
+    "pills": [
+      "Pre-filing review",
+      "Document consistency",
+      "Missing document tracking",
+      "Broker-ready handoff"
+    ]
+  },
+  "flow": {
+    "eyebrow": "The readiness layer",
+    "title": "Turn scattered documents into broker-ready cases",
+    "subtitle": "Meriq extracts, normalizes, and links your shipment documents and emails — so your team reviews clean cases, not scattered threads.",
+    "inputsLabel": "Fragmented inputs",
+    "inputs": [
+      "Invoices",
+      "Packing Lists",
+      "B/Ls or AWBs",
+      "COO",
+      "MSDS",
+      "Product Photos",
+      "Supplier Emails",
+      "Customer Replies"
+    ],
+    "platformTagline": "AI agents for customs brokers and forwarders",
+    "layers": [
+      {
+        "title": "Unified Shipment Context",
+        "desc": "Extract, normalize, and link shipment data from documents and emails."
+      },
+      {
+        "title": "Readiness Automation",
+        "desc": "Detect missing documents, mismatches, vague product descriptions, and next actions."
+      },
+      {
+        "title": "Broker Review",
+        "desc": "Turn messy threads into clean, broker-ready cases with traceable evidence."
+      }
+    ],
+    "outcomesLabel": "Outcomes",
+    "outcomes": [
+      "Faster broker handoffs",
+      "Fewer missing documents",
+      "Cleaner customer follow-ups",
+      "Ready-to-file cases"
+    ]
+  },
+  "roles": {
+    "eyebrow": "Built for collaboration",
+    "title": "One shared workspace for forwarders and brokers",
+    "subtitle": "Forwarders and customs brokers work the same shipment, but the work is scattered across email. Meriq gives both sides a shared pre-clearance workspace.",
+    "sharedLabel": "One shared case",
+    "forwarder": {
+      "label": "For freight forwarders",
+      "lead": "Know what’s missing before the case reaches the broker.",
+      "points": [
+        "Organize customer documents",
+        "Ask the right product clarification questions",
+        "Track supplier replies",
+        "Prepare cleaner handoff packages",
+        "Reduce back-and-forth with brokers"
+      ]
+    },
+    "broker": {
+      "label": "For customs brokers",
+      "lead": "Review structured cases instead of hunting through email threads.",
+      "points": [
+        "See extracted shipment summaries",
+        "Review document mismatches",
+        "Confirm missing information",
+        "Request more details from forwarders",
+        "Move cases toward filing faster"
+      ]
+    }
+  },
+  "blog": {
+    "title": "Vision & writing",
+    "subtitle": "How we think about the work that happens before filing.",
+    "backToBlog": "All posts"
+  }
+}
