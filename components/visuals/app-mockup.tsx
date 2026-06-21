@@ -130,12 +130,14 @@ const STRINGS: Record<Locale, Strings> = {
       {
         dot: "bg-warning",
         title: "Missing packing-list number",
-        explanation: "The packing list has no document number; request it from the supplier.",
+        explanation:
+          "The packing list has no document number; request it from the supplier.",
       },
       {
         dot: "bg-warning",
         title: "Country of origin missing",
-        explanation: "3 line items have no origin, which affects tariff classification.",
+        explanation:
+          "3 line items have no origin, which affects tariff classification.",
         locate: true,
       },
     ],
@@ -144,7 +146,11 @@ const STRINGS: Record<Locale, Strings> = {
     dismiss: "Dismiss",
     locate: "View in document",
     genReport: "Generate full review report →",
-    presets: ["Who are the buyer and seller?", "Total value and currency?", "List the line items"],
+    presets: [
+      "Who are the buyer and seller?",
+      "Total value and currency?",
+      "List the line items",
+    ],
     composer: "Ask Meriq about this shipment…",
   },
   "zh-TW": {
@@ -276,7 +282,10 @@ function FindingRow({ finding, t }: { finding: Finding; t: Strings }) {
     <div className="-mx-2 rounded-lg px-2 py-2">
       <div className="flex items-start gap-2">
         <span
-          className={cn("mt-[6px] size-1.5 flex-shrink-0 rounded-full", finding.dot)}
+          className={cn(
+            "mt-[6px] size-1.5 flex-shrink-0 rounded-full",
+            finding.dot
+          )}
         />
         <div className="min-w-0 flex-1">
           <p className="text-[12.5px] leading-relaxed">
@@ -284,7 +293,10 @@ function FindingRow({ finding, t }: { finding: Finding; t: Strings }) {
               {finding.title}
               {t.period}
             </span>
-            <span className="text-muted-foreground"> {finding.explanation}</span>
+            <span className="text-muted-foreground">
+              {" "}
+              {finding.explanation}
+            </span>
           </p>
           {finding.evidence && (
             <div className="mt-1.5 space-y-0.5 border-l border-border pl-2.5">
@@ -346,7 +358,9 @@ export function AppMockup({
           <div className="flex items-center gap-2.5 rounded bg-sidebar-accent px-2 py-1.5 text-[13px] font-medium text-sidebar-foreground">
             <Inbox className="h-[15px] w-[15px]" />
             <span className="flex-1">{t.nav.cases}</span>
-            <span className="text-[11px] text-muted-foreground tabular-nums">8</span>
+            <span className="text-[11px] text-muted-foreground tabular-nums">
+              8
+            </span>
           </div>
           <div className="my-2 px-2">
             <div className="h-px bg-sidebar-border" />
@@ -370,7 +384,9 @@ export function AppMockup({
               <p className="truncate text-[12px] font-medium text-sidebar-foreground">
                 Justin
               </p>
-              <p className="truncate text-[11px] text-muted-foreground">{t.org}</p>
+              <p className="truncate text-[11px] text-muted-foreground">
+                {t.org}
+              </p>
             </div>
           </div>
         </div>
@@ -379,7 +395,9 @@ export function AppMockup({
       {/* ── Center: case detail ── */}
       <div className="flex min-w-0 flex-1 flex-col bg-background">
         <div className="flex h-12 flex-shrink-0 items-center gap-1.5 px-4">
-          <span className="text-[13px] text-muted-foreground">{t.nav.cases}</span>
+          <span className="text-[13px] text-muted-foreground">
+            {t.nav.cases}
+          </span>
           <ChevronRight className="size-3.5 text-muted-foreground/50" />
           <span className="font-mono text-[13px] text-foreground">M-1042</span>
           <span className="mx-1 text-muted-foreground/40">·</span>
@@ -523,7 +541,9 @@ export function AppMockup({
                 ))}
               </div>
               <div className="rounded-xl border border-border/60 bg-background px-3 py-2.5">
-                <p className="text-[12.5px] text-muted-foreground/50">{t.composer}</p>
+                <p className="text-[12.5px] text-muted-foreground/50">
+                  {t.composer}
+                </p>
                 <div className="mt-1.5 flex items-center justify-between">
                   <span className="flex items-center gap-1.5 text-[11px] text-muted-foreground/60">
                     <MeriqMark size={14} />

@@ -4,8 +4,14 @@ import { notFound } from "next/navigation"
 import { ArrowLeft } from "lucide-react"
 
 import { isLocale } from "@/lib/i18n/config"
-import { formatPostDate, getPostEntry, getPosts, loadPostBody } from "@/lib/blog"
+import {
+  formatPostDate,
+  getPostEntry,
+  getPosts,
+  loadPostBody,
+} from "@/lib/blog"
 import { getDictionary } from "../../dictionaries"
+import { BlogPostTracker } from "@/components/blog-post-tracker"
 
 export function generateStaticParams() {
   return getPosts().map((post) => ({ slug: post.slug }))
@@ -41,6 +47,7 @@ export default async function PostPage({
 
   return (
     <article className="mx-auto w-full max-w-2xl py-16 sm:py-24">
+      <BlogPostTracker slug={slug} lang={lang} title={meta.title} />
       <Link
         href={`/${lang}/blog`}
         className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -53,7 +60,7 @@ export default async function PostPage({
         <p className="font-mono text-xs text-muted-foreground">
           {formatPostDate(entry.date, lang)} · {meta.readingTime}
         </p>
-        <h1 className="mt-3 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
           {meta.title}
         </h1>
       </header>

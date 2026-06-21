@@ -6,7 +6,6 @@ import { SiteFooter } from "@/components/layout/site-footer"
 import { Hero } from "@/components/sections/hero"
 import { DataFlow } from "@/components/sections/data-flow"
 import { Roles } from "@/components/sections/roles"
-import { CTA } from "@/components/sections/cta"
 import { isLocale } from "@/lib/i18n/config"
 import { getDictionary } from "./dictionaries"
 
@@ -23,14 +22,13 @@ export default async function Page({
   return (
     <>
       <ScrollProgress className="z-[60] h-0.5 bg-primary" />
-      <SiteHeader lang={lang} nav={dict.nav} />
+      <SiteHeader lang={lang} nav={dict.nav} pilot={dict.pilot} />
       <main>
-        <Hero hero={dict.hero} lang={lang} />
+        <Hero hero={dict.hero} lang={lang} pilot={dict.pilot} />
         <DataFlow flow={dict.flow} />
         <Roles roles={dict.roles} />
-        <CTA cta={dict.cta} />
       </main>
-      <SiteFooter lang={lang} footer={dict.footer} nav={dict.nav} />
+      <SiteFooter lang={lang} footer={dict.footer} />
     </>
   )
 }

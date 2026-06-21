@@ -8,7 +8,6 @@
     "how": "How it works",
     "roles": "For your team",
     "vision": "Vision",
-    "bookCall": "Book a call",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
@@ -20,8 +19,6 @@
     "rotating": ["commercial invoices", "packing lists", "bills of lading", "supplier emails"],
     "pitch": "Meriq works your pre-filing queue — shipment emails, invoice and packing-list mismatches, missing documents, product clarifications, and broker handoffs.",
     "outcome": "Your team reviews broker-ready cases, not scattered follow-ups.",
-    "ctaPrimary": "Book a call",
-    "ctaSecondary": "See how it works",
     "card": {
       "caseRef": "Case M-1042",
       "caseTitle": "Acme Electronics · 2 × 40HQ",
@@ -119,16 +116,54 @@
     "subtitle": "How we think about the work that happens before filing.",
     "backToBlog": "All posts"
   },
-  "cta": {
-    "eyebrow": "Book a call",
-    "title": "Stop chasing shipment documents manually",
-    "subtitle": "See how Meriq turns invoices, packing lists, and supplier emails into broker-ready cases.",
-    "note": "A 15-minute call, for customs brokers, freight forwarders, and trade teams handling document-heavy shipments."
-  },
   "footer": {
     "tagline": "The AI-native pre-clearance workspace for customs brokers and forwarders.",
-    "productLabel": "Product",
-    "resourcesLabel": "Resources",
+    "contact": "Contact",
     "rights": "All rights reserved."
+  },
+  "pilot": {
+    "cta": "Apply for Pilot",
+    "title": "Apply for the pilot",
+    "subtitle": "A few quick questions to see if Meriq's a fit — under a minute.",
+    "company": "Company name",
+    "companyPlaceholder": "Acme Customs Brokerage",
+    "role": "Your role",
+    "volume": "Shipments / month",
+    "pain": "Biggest pain right now",
+    "sampleDocs": "Can you share sample shipment docs?",
+    "email": "Email",
+    "emailPlaceholder": "you@company.com",
+    "selectPlaceholder": "Select…",
+    "painOtherPlaceholder": "Tell us briefly",
+    "roleOptions": [
+      { "value": "operator", "label": "Operator / OP" },
+      { "value": "manager", "label": "Manager / team lead" },
+      { "value": "owner", "label": "Owner / founder" },
+      { "value": "other", "label": "Other" }
+    ],
+    "volumeOptions": [
+      { "value": "lt50", "label": "Under 50" },
+      { "value": "50-200", "label": "50–200" },
+      { "value": "200-1000", "label": "200–1,000" },
+      { "value": "gt1000", "label": "Over 1,000" }
+    ],
+    "painOptions": [
+      { "value": "missing_docs", "label": "Missing documents" },
+      { "value": "mismatch", "label": "Invoice / packing-list mismatches" },
+      { "value": "regulatory", "label": "FDA / APHIS / regulatory" },
+      { "value": "chasing", "label": "Chasing suppliers & customers" },
+      { "value": "other", "label": "Something else" }
+    ],
+    "sampleDocsOptions": [
+      { "value": "yes", "label": "Yes" },
+      { "value": "maybe", "label": "Maybe later" },
+      { "value": "no", "label": "No" }
+    ],
+    "submit": "Apply for pilot",
+    "submitting": "Sending…",
+    "successTitle": "Application received",
+    "successBody": "Thanks! We'll review and reach out to set up a short call.",
+    "errorBody": "Something went wrong — please try again.",
+    "close": "Done"
   }
 }

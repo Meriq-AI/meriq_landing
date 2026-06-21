@@ -131,7 +131,7 @@ export function DataFlow({ flow }: { flow: Dictionary["flow"] }) {
           <SectionHeading className="mt-4">{flow.title}</SectionHeading>
         </BlurFade>
         <BlurFade delay={0.16}>
-          <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground">
+          <p className="mt-4 text-base leading-relaxed text-pretty text-muted-foreground">
             {flow.subtitle}
           </p>
         </BlurFade>
@@ -188,7 +188,9 @@ export function DataFlow({ flow }: { flow: Dictionary["flow"] }) {
                 quality={100}
                 unoptimized
               />
-              <span className="text-2xl font-semibold tracking-tight">Meriq</span>
+              <span className="text-2xl font-semibold tracking-tight">
+                Meriq
+              </span>
             </div>
 
             {/* layers */}

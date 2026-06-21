@@ -10,14 +10,16 @@ import { AppMockup } from "@/components/visuals/app-mockup"
 import { cn } from "@/lib/utils"
 import type { Locale } from "@/lib/i18n/config"
 import type { Dictionary } from "@/app/[lang]/dictionaries"
-import { BOOK_CALL_HREF } from "@/components/layout/site-header"
+import { ApplyPilotDialog } from "@/components/apply-pilot-dialog"
 
 export function Hero({
   hero,
   lang,
+  pilot,
 }: {
   hero: Dictionary["hero"]
   lang: Locale
+  pilot: Dictionary["pilot"]
 }) {
   return (
     <section className="relative overflow-hidden px-6 pt-32 sm:pt-40">
@@ -26,7 +28,7 @@ export function Hero({
         height={48}
         className={cn(
           "absolute inset-0 -z-10 h-full w-full",
-          "stroke-border/60 [mask-image:radial-gradient(80%_60%_at_50%_0%,black,transparent)]"
+          "[mask-image:radial-gradient(80%_60%_at_50%_0%,black,transparent)] stroke-border/60"
         )}
       />
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[460px] bg-gradient-to-b from-primary/[0.05] to-transparent" />
@@ -42,7 +44,7 @@ export function Hero({
           </BlurFade>
 
           <BlurFade delay={0.12}>
-            <h1 className="mt-5 text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-[3.5rem]">
+            <h1 className="mt-5 text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl lg:text-[3.5rem]">
               {hero.titleLead}
               <span className="text-primary">{hero.titleEmph}</span>
             </h1>
@@ -50,10 +52,10 @@ export function Hero({
 
           <BlurFade delay={0.2}>
             <div className="mt-6 max-w-2xl space-y-2.5">
-              <p className="text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+              <p className="text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">
                 {hero.pitch}
               </p>
-              <p className="text-pretty text-base font-medium leading-relaxed text-foreground sm:text-lg">
+              <p className="text-base leading-relaxed font-medium text-pretty text-foreground sm:text-lg">
                 {hero.outcome}
               </p>
             </div>
@@ -61,15 +63,12 @@ export function Hero({
 
           <BlurFade delay={0.28}>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Button asChild size="lg">
-                <a href={BOOK_CALL_HREF}>
-                  {hero.ctaPrimary}
+              <ApplyPilotDialog pilot={pilot} lang={lang} location="hero">
+                <Button size="lg">
+                  {pilot.cta}
                   <ArrowRight className="size-4" />
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <a href="#how">{hero.ctaSecondary}</a>
-              </Button>
+                </Button>
+              </ApplyPilotDialog>
             </div>
           </BlurFade>
         </div>

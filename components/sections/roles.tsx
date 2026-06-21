@@ -22,7 +22,10 @@ function RoleCard({ icon: Icon, role }: { icon: LucideIcon; role: Role }) {
       <ul className="mt-5 space-y-2.5">
         {role.points.map((point) => (
           <li key={point} className="flex items-start gap-2.5 text-sm">
-            <Check className="mt-0.5 size-4 shrink-0 text-success" strokeWidth={2.5} />
+            <Check
+              className="mt-0.5 size-4 shrink-0 text-success"
+              strokeWidth={2.5}
+            />
             <span className="text-foreground/90">{point}</span>
           </li>
         ))}
@@ -42,7 +45,7 @@ export function Roles({ roles }: { roles: Dictionary["roles"] }) {
           <SectionHeading className="mt-4">{roles.title}</SectionHeading>
         </BlurFade>
         <BlurFade delay={0.16}>
-          <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground">
+          <p className="mt-4 text-base leading-relaxed text-pretty text-muted-foreground">
             {roles.subtitle}
           </p>
         </BlurFade>
@@ -67,7 +70,7 @@ export function Roles({ roles }: { roles: Dictionary["roles"] }) {
                   unoptimized
                 />
               </div>
-              <span className="font-mono text-[10px] tracking-wide text-muted-foreground whitespace-nowrap uppercase">
+              <span className="font-mono text-[10px] tracking-wide whitespace-nowrap text-muted-foreground uppercase">
                 {roles.sharedLabel}
               </span>
             </div>

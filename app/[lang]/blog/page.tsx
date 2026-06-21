@@ -1,11 +1,11 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowRight } from "lucide-react"
 
 import { isLocale, type Locale } from "@/lib/i18n/config"
 import { formatPostDate, getPosts } from "@/lib/blog"
 import { getDictionary } from "../dictionaries"
+import { BlogPostLink } from "@/components/blog-post-link"
 
 export async function generateMetadata({
   params,
@@ -44,8 +44,10 @@ export default async function BlogIndex({
           const meta = post.i18n[lang]
           return (
             <li key={post.slug} className="border-b border-border">
-              <Link
+              <BlogPostLink
                 href={`/${lang}/blog/${post.slug}`}
+                slug={post.slug}
+                lang={lang}
                 className="group block py-7"
               >
                 <p className="font-mono text-xs text-muted-foreground">
@@ -54,13 +56,13 @@ export default async function BlogIndex({
                 <h2 className="mt-2 text-xl font-semibold tracking-tight transition-colors group-hover:text-primary">
                   {meta.title}
                 </h2>
-                <p className="mt-2 text-pretty text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-2 text-sm leading-relaxed text-pretty text-muted-foreground">
                   {meta.excerpt}
                 </p>
                 <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary">
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
                 </span>
-              </Link>
+              </BlogPostLink>
             </li>
           )
         })}

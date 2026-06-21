@@ -1,6 +1,7 @@
 "use client"
 
 import { usePathname } from "next/navigation"
+import posthog from "posthog-js"
 
 import { cn } from "@/lib/utils"
 import { locales, localeLabels, isLocale, type Locale } from "@/lib/i18n/config"
@@ -45,6 +46,14 @@ export function LanguageSwitcher({
             key={locale}
             href={swapLocale(pathname, locale)}
             aria-current={active ? "true" : undefined}
+            onClick={() => {
+              if (!active) {
+                posthog.capture("language_switched", {
+                  from: current,
+                  to: locale,
+                })
+              }
+            }}
             className={cn(
               "rounded-full px-2.5 py-1 font-mono text-xs font-medium transition-colors",
               active

@@ -4,22 +4,24 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
+import posthog from "posthog-js"
 
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import type { Locale } from "@/lib/i18n/config"
 import type { Dictionary } from "@/app/[lang]/dictionaries"
+import { ApplyPilotDialog } from "@/components/apply-pilot-dialog"
 import { LanguageSwitcher } from "./language-switcher"
 import { ThemeToggle } from "./theme-toggle"
-
-export const BOOK_CALL_HREF = "#book"
 
 export function SiteHeader({
   lang,
   nav,
+  pilot,
 }: {
   lang: Locale
   nav: Dictionary["nav"]
+  pilot: Dictionary["pilot"]
 }) {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
@@ -72,6 +74,13 @@ export function SiteHeader({
             <a
               key={link.href}
               href={link.href}
+              onClick={() =>
+                posthog.capture("nav_link_clicked", {
+                  label: link.label,
+                  href: link.href,
+                  lang,
+                })
+              }
               className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
@@ -82,16 +91,22 @@ export function SiteHeader({
         <div className="flex items-center gap-2">
           <LanguageSwitcher current={lang} className="hidden sm:inline-flex" />
           <ThemeToggle />
-          <Button asChild size="sm" className="hidden sm:inline-flex">
-            <a href={`/${lang}${BOOK_CALL_HREF}`}>{nav.bookCall}</a>
-          </Button>
+          <ApplyPilotDialog pilot={pilot} lang={lang} location="header">
+            <Button size="sm" className="hidden sm:inline-flex">
+              {pilot.cta}
+            </Button>
+          </ApplyPilotDialog>
           <Button
             variant="ghost"
             size="icon-sm"
             className="md:hidden"
             aria-label={open ? nav.closeMenu : nav.openMenu}
             aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
+            onClick={() => {
+              const next = !open
+              setOpen(next)
+              if (next) posthog.capture("mobile_menu_opened", { lang })
+            }}
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </Button>
@@ -105,19 +120,28 @@ export function SiteHeader({
               <a
                 key={link.href}
                 href={link.href}
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  setOpen(false)
+                  posthog.capture("nav_link_clicked", {
+                    label: link.label,
+                    href: link.href,
+                    lang,
+                    mobile: true,
+                  })
+                }}
                 className="rounded-md px-3 py-2.5 text-sm text-foreground/90 hover:bg-accent"
               >
                 {link.label}
               </a>
             ))}
-            <div className="mt-2 flex items-center justify-between gap-3">
+            <div className="mt-2 flex flex-col gap-3">
+              {/* Opens over the menu (doesn't close it, so the dialog stays mounted). */}
+              <ApplyPilotDialog pilot={pilot} lang={lang} location="header_mobile">
+                <Button size="sm" className="w-full">
+                  {pilot.cta}
+                </Button>
+              </ApplyPilotDialog>
               <LanguageSwitcher current={lang} />
-              <Button asChild size="sm" className="flex-1">
-                <a href={`/${lang}${BOOK_CALL_HREF}`} onClick={() => setOpen(false)}>
-                  {nav.bookCall}
-                </a>
-              </Button>
             </div>
           </nav>
         </div>

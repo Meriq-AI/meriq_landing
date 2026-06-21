@@ -31,6 +31,8 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Skip Next internals, the API, and anything with a file extension (static assets).
-  matcher: ["/((?!_next|api|.*\\..*).*)"],
+  // Skip Next internals, the API, the PostHog reverse proxy (/ingest), and
+  // anything with a file extension (static assets). Without excluding /ingest,
+  // PostHog capture/flags endpoints would be redirected to /<locale>/ingest.
+  matcher: ["/((?!_next|api|ingest|.*\\..*).*)"],
 }

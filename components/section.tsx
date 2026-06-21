@@ -7,7 +7,10 @@ export function Section({
   ...props
 }: React.ComponentProps<"section"> & { containerClassName?: string }) {
   return (
-    <section className={cn("relative px-6 py-20 sm:py-28", className)} {...props}>
+    <section
+      className={cn("relative px-6 py-20 sm:py-28", className)}
+      {...props}
+    >
       <div className={cn("mx-auto w-full max-w-6xl", containerClassName)}>
         {children}
       </div>
@@ -36,7 +39,7 @@ export function SectionHeading({
   return (
     <h2
       className={cn(
-        "text-balance text-3xl font-semibold tracking-tight sm:text-4xl",
+        "text-3xl font-semibold tracking-tight text-balance sm:text-4xl",
         className
       )}
     >

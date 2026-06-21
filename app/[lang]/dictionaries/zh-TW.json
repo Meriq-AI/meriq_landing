@@ -8,7 +8,6 @@
     "how": "運作方式",
     "roles": "給你的團隊",
     "vision": "願景",
-    "bookCall": "預約諮詢",
     "openMenu": "開啟選單",
     "closeMenu": "關閉選單"
   },
@@ -20,8 +19,6 @@
     "rotating": ["商業發票", "裝箱單", "提單", "供應商郵件"],
     "pitch": "Meriq AI 協助報關行與貨代整理出貨文件、檢查缺件、比對 Invoice / Packing List / B/L，並自動產生補件追問。",
     "outcome": "讓團隊不再追著 email 和附件跑，而是直接審查整理好的報關前案件。",
-    "ctaPrimary": "預約諮詢",
-    "ctaSecondary": "看運作方式",
     "card": {
       "caseRef": "案件 M-1042",
       "caseTitle": "Acme Electronics · 2 × 40HQ",
@@ -114,16 +111,54 @@
     "subtitle": "關於送單前那段工作，我們是怎麼想的。",
     "backToBlog": "所有文章"
   },
-  "cta": {
-    "eyebrow": "預約諮詢",
-    "title": "別再手動追出貨文件",
-    "subtitle": "看看 Meriq 如何把發票、裝箱單與供應商郵件，整理成可直接送單的案件。",
-    "note": "15 分鐘線上通話，專為處理大量文件的報關行、承攬業與貿易團隊。"
-  },
   "footer": {
     "tagline": "給報關行與承攬業的 AI 原生報關前作業平台。",
-    "productLabel": "產品",
-    "resourcesLabel": "資源",
+    "contact": "聯絡",
     "rights": "版權所有。"
+  },
+  "pilot": {
+    "cta": "申請 Pilot",
+    "title": "申請試行計畫",
+    "subtitle": "幾個快速問題，讓我們判斷是否適合 — 不到一分鐘。",
+    "company": "公司名稱",
+    "companyPlaceholder": "範例報關行",
+    "role": "你的角色",
+    "volume": "每月出貨量",
+    "pain": "目前最大的痛點",
+    "sampleDocs": "能提供範例出貨文件嗎？",
+    "email": "Email",
+    "emailPlaceholder": "you@company.com",
+    "selectPlaceholder": "請選擇…",
+    "painOtherPlaceholder": "簡單描述一下",
+    "roleOptions": [
+      { "value": "operator", "label": "OP / 操作人員" },
+      { "value": "manager", "label": "主管 / 組長" },
+      { "value": "owner", "label": "老闆 / 創辦人" },
+      { "value": "other", "label": "其他" }
+    ],
+    "volumeOptions": [
+      { "value": "lt50", "label": "50 票以下" },
+      { "value": "50-200", "label": "50–200 票" },
+      { "value": "200-1000", "label": "200–1,000 票" },
+      { "value": "gt1000", "label": "1,000 票以上" }
+    ],
+    "painOptions": [
+      { "value": "missing_docs", "label": "缺件" },
+      { "value": "mismatch", "label": "發票 / 裝箱單比對" },
+      { "value": "regulatory", "label": "FDA / APHIS / 簽審法規" },
+      { "value": "chasing", "label": "追供應商與客戶" },
+      { "value": "other", "label": "其他" }
+    ],
+    "sampleDocsOptions": [
+      { "value": "yes", "label": "可以" },
+      { "value": "maybe", "label": "之後可以" },
+      { "value": "no", "label": "不行" }
+    ],
+    "submit": "送出申請",
+    "submitting": "傳送中…",
+    "successTitle": "已收到你的申請",
+    "successBody": "謝謝！我們會檢視後與你聯繫安排簡短通話。",
+    "errorBody": "送出失敗，請再試一次。",
+    "close": "完成"
   }
 }
