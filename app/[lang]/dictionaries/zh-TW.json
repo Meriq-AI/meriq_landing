@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Meriq — 報關行與貨運承攬業的 AI 營運層",
+    "title": "Meriq — AI Agent for Customs Brokers & Freight Forwarders",
     "description": "Meriq 把出貨郵件、發票、裝箱單與提單，整理成附證據、可送單的案件審查 — 找出缺漏文件、HS / CCC 分類疑義、許可風險，並產出可直接回覆客戶的狀態更新，專為報關行、貨代與貿易團隊打造。"
   },
   "nav": {
