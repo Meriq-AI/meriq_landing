@@ -1,0 +1,31 @@
+# Meriq
+
+> Meriq is an AI operations layer for customs brokers and freight forwarders. It turns shipment emails, invoices, packing lists, and bills of lading into source-backed, ready-to-file case reviews — surfacing missing documents, HS / CCC classification questions, permit and agency-review risks, and customer-ready status updates. Meriq prepares the pre-filing work; licensed brokers and operators make the final classification and filing decisions.
+
+## What Meriq does
+- Reads shipment documents and emails and organizes them into one structured case.
+- Cross-checks invoice, packing list, and bill of lading fields and flags mismatches (e.g. address or weight discrepancies between documents).
+- Surfaces likely HS / CCC classification candidates and flags what product details are missing to confirm the code.
+- Flags possible import/export permit requirements, restricted-item risks, and agency review — without making the final legal determination.
+- Drafts supplier follow-ups and authority questions for human approval.
+- Produces a plain-language, customer-ready status update for each shipment so teams field fewer status calls.
+- Keeps every extracted field and finding traceable back to its source document.
+
+## Who it is for
+Customs brokers, freight forwarders, and in-house import/export and trade operations teams that handle document-heavy shipments.
+
+## How it works
+1. Send Meriq a shipment case (forward the email or upload the documents).
+2. Meriq reviews the case, cross-checks documents, surfaces HS / CCC and permit questions, and drafts follow-ups.
+3. Your team reviews the outcome, approves the next step, and files.
+
+## Pricing
+Free pilot for early design partners. Send 5 real shipment cases to see what Meriq catches. No tool switching required; Meriq reviews your real cases under a direct agreement.
+
+## Key pages
+- Home: https://meriqai.com/en
+- Vision and writing: https://meriqai.com/en/blog
+- Apply for a free pilot: https://meriqai.com/en (application form on the homepage)
+
+## Contact
+justinli@meriqai.com
