@@ -37,7 +37,6 @@ export function SiteHeader({
   // just the landing page. "Vision" is the blog.
   const links = [
     { href: `/${lang}#how`, label: nav.how },
-    { href: `/${lang}#roles`, label: nav.roles },
     { href: `/${lang}/blog`, label: nav.vision },
   ]
 
@@ -136,7 +135,11 @@ export function SiteHeader({
             ))}
             <div className="mt-2 flex flex-col gap-3">
               {/* Opens over the menu (doesn't close it, so the dialog stays mounted). */}
-              <ApplyPilotDialog pilot={pilot} lang={lang} location="header_mobile">
+              <ApplyPilotDialog
+                pilot={pilot}
+                lang={lang}
+                location="header_mobile"
+              >
                 <Button size="sm" className="w-full">
                   {pilot.cta}
                 </Button>
