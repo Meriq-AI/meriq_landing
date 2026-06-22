@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import dynamic from "next/dynamic"
 import posthog from "posthog-js"
 import { ChevronDown } from "lucide-react"
 
@@ -25,6 +26,14 @@ import { Label } from "@/components/ui/label"
 import { cn } from "@/lib/utils"
 import type { Locale } from "@/lib/i18n/config"
 import type { Dictionary } from "@/app/[lang]/dictionaries"
+
+// Calendly 30-min intro booking, shown after submit when the user opts in.
+const InlineWidget = dynamic(
+  () => import("react-calendly").then((m) => m.InlineWidget),
+  { ssr: false }
+)
+const CALENDLY_URL =
+  "https://calendly.com/justinli-meriqai/30min?primary_color=06b6d4"
 
 type Option = { value: string; label: string }
 
@@ -51,11 +60,13 @@ function DropdownField({
         <DropdownMenuTrigger
           aria-invalid={invalid}
           className={cn(
-            "flex h-9 w-full items-center justify-between gap-2 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs outline-none transition-colors",
-            "data-[state=open]:border-ring aria-invalid:border-destructive"
+            "flex h-9 w-full items-center justify-between gap-2 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs transition-colors outline-none",
+            "aria-invalid:border-destructive data-[state=open]:border-ring"
           )}
         >
-          <span className={cn("truncate", !selected && "text-muted-foreground")}>
+          <span
+            className={cn("truncate", !selected && "text-muted-foreground")}
+          >
             {selected ? selected.label : placeholder}
           </span>
           <ChevronDown className="size-4 shrink-0 opacity-50" />
@@ -82,9 +93,16 @@ type Fields = {
   volume: string
   pain: string
   sampleDocs: string
+  wantsCall: string
 }
 
-const EMPTY: Fields = { role: "", volume: "", pain: "", sampleDocs: "" }
+const EMPTY: Fields = {
+  role: "",
+  volume: "",
+  pain: "",
+  sampleDocs: "",
+  wantsCall: "",
+}
 
 export function ApplyPilotDialog({
   pilot,
@@ -104,6 +122,8 @@ export function ApplyPilotDialog({
   const [fields, setFields] = useState<Fields>(EMPTY)
   const [attempted, setAttempted] = useState(false)
   const [error, setError] = useState(false)
+
+  const showCal = done && fields.wantsCall === "yes"
 
   function handleOpenChange(next: boolean) {
     setOpen(next)
@@ -126,18 +146,21 @@ export function ApplyPilotDialog({
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
+    const name = String(data.get("name") ?? "").trim()
     const company = String(data.get("company") ?? "").trim()
     const email = String(data.get("email") ?? "").trim()
     const painOther = String(data.get("painOther") ?? "").trim()
-    const { role, volume, pain, sampleDocs } = fields
+    const { role, volume, pain, sampleDocs, wantsCall } = fields
 
     if (
+      !name ||
       !company ||
       !email ||
       !role ||
       !volume ||
       !pain ||
       !sampleDocs ||
+      !wantsCall ||
       (pain === "other" && !painOther)
     ) {
       setAttempted(true)
@@ -145,12 +168,14 @@ export function ApplyPilotDialog({
     }
 
     const payload = {
+      name,
       company,
       role,
       monthly_volume: volume,
       main_pain: pain,
       main_pain_other: pain === "other" ? painOther : "",
       can_share_docs: sampleDocs,
+      wants_call: wantsCall,
       email,
       lang,
       location,
@@ -159,7 +184,7 @@ export function ApplyPilotDialog({
     setSubmitting(true)
     setError(false)
     try {
-      posthog.identify(email, { email, company, role })
+      posthog.identify(email, { email, name, company, role })
       posthog.capture("pilot_application_submitted", payload)
     } catch {
       // analytics is best-effort; don't block on it
@@ -182,13 +207,28 @@ export function ApplyPilotDialog({
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="max-h-[88vh] overflow-y-auto rounded-3xl p-6 shadow-2xl shadow-foreground/10 sm:max-w-md sm:p-7">
+      <DialogContent
+        className={cn(
+          "max-h-[88vh] overflow-y-auto rounded-3xl p-6 shadow-2xl shadow-foreground/10 sm:p-7",
+          showCal ? "sm:max-w-lg" : "sm:max-w-md"
+        )}
+      >
         {done ? (
           <div className="py-2 text-center">
             <DialogHeader>
               <DialogTitle>{pilot.successTitle}</DialogTitle>
-              <DialogDescription>{pilot.successBody}</DialogDescription>
+              <DialogDescription>
+                {showCal ? pilot.bookCallBody : pilot.successBody}
+              </DialogDescription>
             </DialogHeader>
+            {showCal && (
+              <div className="mt-4 overflow-hidden rounded-xl border border-border">
+                <InlineWidget
+                  url={CALENDLY_URL}
+                  styles={{ height: "640px", minWidth: "320px" }}
+                />
+              </div>
+            )}
             <Button
               className="mt-6 w-full"
               onClick={() => handleOpenChange(false)}
@@ -203,6 +243,18 @@ export function ApplyPilotDialog({
               <DialogDescription>{pilot.subtitle}</DialogDescription>
             </DialogHeader>
             <form onSubmit={handleSubmit} className="mt-2 space-y-4">
+              <div className="space-y-1.5">
+                <Label htmlFor="pilot-name">{pilot.name}</Label>
+                <Input
+                  id="pilot-name"
+                  name="name"
+                  required
+                  autoComplete="name"
+                  placeholder={pilot.namePlaceholder}
+                  className="focus-visible:ring-0"
+                />
+              </div>
+
               <div className="space-y-1.5">
                 <Label htmlFor="pilot-company">{pilot.company}</Label>
                 <Input
@@ -276,6 +328,15 @@ export function ApplyPilotDialog({
                   className="focus-visible:ring-0"
                 />
               </div>
+
+              <DropdownField
+                label={pilot.wantsCall}
+                placeholder={pilot.selectPlaceholder}
+                options={pilot.wantsCallOptions}
+                value={fields.wantsCall}
+                onChange={setField("wantsCall")}
+                invalid={attempted && !fields.wantsCall}
+              />
 
               {error && (
                 <p className="text-sm text-destructive">{pilot.errorBody}</p>
