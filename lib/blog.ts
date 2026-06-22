@@ -24,16 +24,16 @@ const POSTS: PostEntry[] = [
     date: "2026-06-19",
     i18n: {
       en: {
-        title: "Building the AI-native pre-clearance workspace",
+        title: "Turn messy shipment communication into reviewable pre-filing cases",
         excerpt:
-          "Global trade breaks before filing — in scattered emails, incomplete documents, and endless follow-ups. How we're building the context layer for customs brokerage.",
-        readingTime: "8 min read",
+          "Meriq helps customs brokers, forwarders, and trade teams turn scattered emails, documents, product details, and regulatory questions into clear, traceable, reviewable shipment cases — before filing.",
+        readingTime: "3 min read",
       },
       "zh-TW": {
-        title: "打造 AI 原生的報關前作業平台",
+        title: "把混亂的出貨溝通，整理成可審查的報關前案件",
         excerpt:
-          "全球貿易的混亂往往發生在報關前——分散的 email、不完整的文件、無止境的追問。這是我們打造報關產業 context layer 的方式。",
-        readingTime: "8 分鐘閱讀",
+          "Meriq 幫助報關行、貨代與貿易團隊，在正式報關前，把分散的 email、出貨文件、產品資訊與法規疑義，整理成清楚、可追蹤、可審查的 shipment case。",
+        readingTime: "3 分鐘閱讀",
       },
     },
   },
