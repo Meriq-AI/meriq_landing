@@ -3,7 +3,8 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowLeft } from "lucide-react"
 
-import { isLocale } from "@/lib/i18n/config"
+import { isLocale, type Locale } from "@/lib/i18n/config"
+import { alternates, ogLocale, SITE_NAME, SITE_URL } from "@/lib/seo"
 import {
   formatPostDate,
   getPostEntry,
@@ -25,8 +26,25 @@ export async function generateMetadata({
   const { lang, slug } = await params
   const entry = getPostEntry(slug)
   if (!isLocale(lang) || !entry) return {}
-  const meta = entry.i18n[lang]
-  return { title: meta.title, description: meta.excerpt }
+  const locale = lang as Locale
+  const meta = entry.i18n[locale]
+  return {
+    title: meta.title,
+    description: meta.excerpt,
+    alternates: alternates(`/blog/${slug}`, locale),
+    openGraph: {
+      type: "article",
+      url: `${SITE_URL}/${locale}/blog/${slug}`,
+      siteName: SITE_NAME,
+      locale: ogLocale[locale],
+      title: meta.title,
+      description: meta.excerpt,
+      publishedTime: entry.date,
+      // Re-attach the OG image; an explicit openGraph here would otherwise drop
+      // the inherited one (Next replaces, doesn't deep-merge).
+      images: [{ url: "/og.png", width: 1200, height: 630, alt: SITE_NAME }],
+    },
+  }
 }
 
 export default async function PostPage({

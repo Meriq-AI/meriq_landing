@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import { ArrowRight } from "lucide-react"
 
 import { isLocale, type Locale } from "@/lib/i18n/config"
+import { alternates } from "@/lib/seo"
 import { formatPostDate, getPosts } from "@/lib/blog"
 import { getDictionary } from "../dictionaries"
 import { BlogPostLink } from "@/components/blog-post-link"
@@ -15,7 +16,11 @@ export async function generateMetadata({
   const { lang } = await params
   const locale: Locale = isLocale(lang) ? lang : "en"
   const dict = await getDictionary(locale)
-  return { title: dict.blog.title, description: dict.blog.subtitle }
+  return {
+    title: dict.blog.title,
+    description: dict.blog.subtitle,
+    alternates: alternates("/blog", locale),
+  }
 }
 
 export default async function BlogIndex({
@@ -34,9 +39,6 @@ export default async function BlogIndex({
         <h1 className="text-4xl font-semibold tracking-tight">
           {dict.blog.title}
         </h1>
-        <p className="mt-3 text-pretty text-muted-foreground">
-          {dict.blog.subtitle}
-        </p>
       </header>
 
       <ul className="border-t border-border">
