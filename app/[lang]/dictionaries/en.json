@@ -1,40 +1,24 @@
 {
   "meta": {
-    "title": "Meriq — Broker-ready cases before you file",
-    "description": "Meriq turns messy shipment emails, invoices, packing lists, and bills of lading into broker-ready cases. Your team reviews exceptions, not scattered follow-ups."
+    "title": "Meriq — AI operations layer for customs brokers & freight forwarders",
+    "description": "Meriq turns shipment emails, invoices, packing lists, and bills of lading into source-backed, ready-to-file case reviews — surfacing missing documents, HS / CCC classification questions, permit risks, and customer-ready status updates for customs brokers, freight forwarders, and trade teams."
   },
   "nav": {
     "product": "Product",
     "how": "How it works",
     "roles": "For your team",
-    "vision": "Vision",
+    "vision": "Blog",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
   "hero": {
-    "eyebrow": "AI agents for customs brokers and forwarders",
-    "titleLead": "Your shipment documents don’t chase themselves. ",
-    "titleEmph": "Meriq does.",
-    "rotatingPrefix": "Built on the documents you already handle:",
-    "rotating": ["commercial invoices", "packing lists", "bills of lading", "supplier emails"],
-    "pitch": "Meriq works your pre-filing queue — shipment emails, invoice and packing-list mismatches, missing documents, product clarifications, and broker handoffs.",
-    "outcome": "Your team reviews broker-ready cases, not scattered follow-ups.",
-    "card": {
-      "caseRef": "Case M-1042",
-      "caseTitle": "Acme Electronics · 2 × 40HQ",
-      "statusChecking": "Checking consistency",
-      "docs": "CI · PL · B/L",
-      "fieldsLabel": "Extracted fields",
-      "rows": [
-        { "label": "Total value", "value": "USD 48,200.00", "state": "match" },
-        { "label": "Net weight", "value": "12,480 kg", "state": "match" },
-        { "label": "Cartons", "value": "1,040 ctn", "state": "match" },
-        { "label": "Origin", "value": "TW → US LGB", "state": "match" },
-        { "label": "PL gross weight", "value": "13,120 kg ≠ 13,210 kg", "state": "warn" },
-        { "label": "Country of origin", "value": "Missing on 3 lines", "state": "fail" }
-      ],
-      "footnote": "4 fields consistent · 2 need review"
-    }
+    "eyebrow": "AI operations layer for customs brokers and freight forwarders",
+    "titleLead": "Never start a pre-filing review ",
+    "titleEmph": "from scratch again.",
+    "pitch": "Meriq turns shipment emails and documents into source-backed case reviews.",
+    "outcome": "It surfaces missing details, HS / CCC questions, permit risks, and follow-up drafts — for your team to approve.",
+    "secondaryCta": "See Sample Review",
+    "ctaNote": "Early design partner program"
   },
   "trustBar": {
     "lead": "Built for customs brokers, freight forwarders, and trade operations teams handling document-heavy shipments.",
@@ -45,71 +29,177 @@
       "Broker-ready handoff"
     ]
   },
-  "flow": {
-    "eyebrow": "The readiness layer",
-    "title": "Turn scattered documents into broker-ready cases",
-    "subtitle": "Meriq extracts, normalizes, and links your shipment documents and emails — so your team reviews clean cases, not scattered threads.",
-    "inputsLabel": "Fragmented inputs",
-    "inputs": [
-      "Invoices",
-      "Packing Lists",
-      "B/Ls or AWBs",
-      "COO",
-      "MSDS",
-      "Product Photos",
-      "Supplier Emails",
-      "Customer Replies"
-    ],
-    "platformTagline": "AI agents for customs brokers and forwarders",
-    "layers": [
+  "hiddenCost": {
+    "eyebrow": "The hidden cost",
+    "title": "Pre-filing work is where shipments get stuck",
+    "subtitle": "Before a single entry is filed, your team is already buried in back-and-forth. That's where the time leaks and delays begin.",
+    "items": [
       {
-        "title": "Unified Shipment Context",
-        "desc": "Extract, normalize, and link shipment data from documents and emails."
+        "title": "Scattered across inboxes",
+        "desc": "Supplier emails, attachments, and replies spread across threads no one fully owns."
       },
       {
-        "title": "Readiness Automation",
-        "desc": "Detect missing documents, mismatches, vague product descriptions, and next actions."
+        "title": "Missing documents found too late",
+        "desc": "A missing COO or permit surfaces the day before filing — not the day it arrived."
       },
       {
-        "title": "Broker Review",
-        "desc": "Turn messy threads into clean, broker-ready cases with traceable evidence."
+        "title": "Invoice / packing-list mismatches",
+        "desc": "Quantities, weights, and values quietly disagree across documents."
+      },
+      {
+        "title": "FDA / APHIS readiness uncertainty",
+        "desc": "No one's sure whether a prior notice or permit is needed until it's urgent."
+      },
+      {
+        "title": "The same information, chased again",
+        "desc": "Operators re-ask suppliers for details already buried in an earlier email."
       }
-    ],
-    "outcomesLabel": "Outcomes",
-    "outcomes": [
-      "Faster broker handoffs",
-      "Fewer missing documents",
-      "Cleaner customer follow-ups",
-      "Ready-to-file cases"
     ]
   },
-  "roles": {
-    "eyebrow": "Built for collaboration",
-    "title": "One shared workspace for forwarders and brokers",
-    "subtitle": "Forwarders and customs brokers work the same shipment, but the work is scattered across email. Meriq gives both sides a shared pre-clearance workspace.",
-    "sharedLabel": "One shared case",
-    "forwarder": {
-      "label": "For freight forwarders",
-      "lead": "Know what’s missing before the case reaches the broker.",
-      "points": [
-        "Organize customer documents",
-        "Ask the right product clarification questions",
-        "Track supplier replies",
-        "Prepare cleaner handoff packages",
-        "Reduce back-and-forth with brokers"
-      ]
-    },
-    "broker": {
-      "label": "For customs brokers",
-      "lead": "Review structured cases instead of hunting through email threads.",
-      "points": [
-        "See extracted shipment summaries",
-        "Review document mismatches",
-        "Confirm missing information",
-        "Request more details from forwarders",
-        "Move cases toward filing faster"
-      ]
-    }
+  "howItWorks": {
+    "eyebrow": "How it works",
+    "title": "Forward the shipment. Meriq does the review. You approve the next step.",
+    "subtitle": "Three steps from messy intake to a broker-ready case.",
+    "forwardLabel": "Forward to",
+    "forwardAddress": "review@meriqai.com",
+    "forwardHint": "or upload a case",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Send us a shipment case",
+        "desc": "Upload or share recent supplier emails, invoices, packing lists, bills of lading, and related compliance documents."
+      },
+      {
+        "step": "02",
+        "title": "Meriq reviews the case",
+        "desc": "Meriq organizes the documents, detects missing information, checks invoice and packing-list mismatches, flags pre-filing blockers, and drafts supplier follow-ups."
+      },
+      {
+        "step": "03",
+        "title": "Your team approves the next step",
+        "desc": "Review the outcome, approve follow-ups, and move the case toward ready-to-file with every issue traceable back to source evidence."
+      }
+    ]
+  },
+  "watch": {
+    "eyebrow": "Pre-filing classification check",
+    "title": "Before your team calls the authority, Meriq prepares the case.",
+    "subtitle": "Meriq surfaces likely HS / CCC candidates, missing product details, and source-backed questions for broker review — before your team files.",
+    "caseTitle": "Acme Foods Co. · 2 × 40HQ",
+    "caseSub": "Pre-filing classification review",
+    "statusWorking": "Classification pending",
+    "statusReady": "Ready for broker review",
+    "railLabel": "Where this case is",
+    "rail": [
+      { "title": "Documents read", "sub": "CI · PL · description · photos · catalog" },
+      { "title": "Product details extracted", "sub": "Description · origin · material · use" },
+      { "title": "Documents cross-checked", "sub": "Invoice / PL — 1 address mismatch flagged" },
+      { "title": "HS / CCC candidates found", "sub": "2 possible · not yet confirmed" },
+      { "title": "Questions prepared", "sub": "Supplier + authority questions drafted" },
+      { "title": "Customer status ready", "sub": "Plain-language update to send the customer" },
+      { "title": "Ready for broker review", "sub": "Human decision before filing" }
+    ],
+    "blockersLabel": "Classification · not yet confirmed",
+    "blockers": [
+      {
+        "state": "review",
+        "title": "Candidate · HS 0801.32",
+        "desc": "Cashew nuts, fresh or dried",
+        "tag": "Likely"
+      },
+      {
+        "state": "review",
+        "title": "Candidate · HS 2008.19",
+        "desc": "Prepared / preserved — if processed",
+        "tag": "If processed"
+      },
+      {
+        "state": "missing",
+        "title": "Can't confirm yet",
+        "desc": "Missing material, intended use, manufacturer spec",
+        "tag": "Supplier"
+      }
+    ],
+    "chips": [
+      "What is this shipment waiting on?",
+      "What HS / CCC code candidates fit this product?",
+      "What details are missing to confirm the code?",
+      "Draft a customer status update.",
+      "Draft the supplier and authority questions."
+    ],
+    "composer": "Ask Meriq about this shipment…",
+    "statusLabel": "Customer update",
+    "note": "Meriq surfaces likely HS / CCC candidates, missing details, source-backed questions, and a customer-ready status update — your team makes the final call.",
+    "chat": [
+      {
+        "from": "agent",
+        "text": "I reviewed the commercial invoice, packing list, product description, photos, and catalog, then cross-checked every field."
+      },
+      {
+        "from": "agent",
+        "text": "1 discrepancy found: the consignee address on the commercial invoice doesn't match the packing list. I've flagged it for correction before filing."
+      },
+      { "from": "user", "text": "Good catch. Can we classify the product yet?" },
+      {
+        "from": "agent",
+        "text": "Not yet — the classification needs confirmation. I found 2 HS / CCC candidates but can't confirm them; the documents are missing material composition, intended use, and manufacturer specs."
+      },
+      { "from": "card", "text": "" },
+      {
+        "from": "user",
+        "text": "Does either code trigger permit or agency review?"
+      },
+      {
+        "from": "agent",
+        "text": "One candidate may trigger import/export restrictions or agency review, depending on the final CCC code. I've prepared supplier questions to confirm the specs, and an authority question with the product facts and source documents attached."
+      },
+      { "from": "user", "text": "Draft both." },
+      {
+        "from": "agent",
+        "text": "Done. The supplier and authority questions are drafted — source-backed and ready for your review."
+      },
+      { "from": "user", "text": "What should we tell the customer?" },
+      {
+        "from": "status",
+        "text": "Your shipment is under pre-filing review. The HS / CCC classification isn't confirmed yet — we've flagged missing product details and an invoice / packing-list address mismatch, and drafted supplier and authority questions. Once the details come back, the case can move to filing review."
+      }
+    ]
+  },
+  "pilotCta": {
+    "eyebrow": "Looking for design partners",
+    "title": "Test Meriq with 5 real shipment cases.",
+    "subtitle": "We'll map each shipment's document gaps, HS / CCC questions, and likely permit or authority issues — and produce supplier follow-up drafts.",
+    "note": "Free pilot · no tool switching · validated on real cases"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Questions brokers ask",
+    "items": [
+      {
+        "q": "What is Meriq?",
+        "a": "Meriq is an AI operations layer for customs brokers and freight forwarders. It reviews shipment emails, invoices, packing lists, and bills of lading before filing — surfacing missing documents, HS / CCC classification questions, permit risks, and customer-ready status updates."
+      },
+      {
+        "q": "Who is Meriq for?",
+        "a": "Customs brokers, freight forwarders, and in-house import/export and trade operations teams that handle document-heavy shipments."
+      },
+      {
+        "q": "Does Meriq file customs entries for me?",
+        "a": "No. Meriq handles the pre-filing work — organizing documents, cross-checking fields, surfacing likely HS / CCC and permit questions, and drafting supplier and authority follow-ups. Your team makes the final classification and filing decisions."
+      },
+      {
+        "q": "How does Meriq handle HS / CCC classification?",
+        "a": "Meriq surfaces likely HS / CCC candidates from the product details it can read, flags what's missing to confirm the code, and drafts the questions to ask suppliers or the relevant authority. It does not make the final legal determination."
+      },
+      {
+        "q": "Is my shipment data kept traceable?",
+        "a": "Yes. Every extracted field and finding links back to its source document, so your team can verify everything. During the pilot we review your real cases under a direct agreement with your team."
+      },
+      {
+        "q": "How do I get started?",
+        "a": "Apply for a free pilot. Send us 5 real shipment cases and Meriq shows what it catches — missing documents, HS / CCC questions, permit risks, and a customer-ready status update."
+      }
+    ]
   },
   "blog": {
     "title": "Vision & writing",
@@ -117,20 +207,23 @@
     "backToBlog": "All posts"
   },
   "footer": {
-    "tagline": "The AI-native pre-clearance workspace for customs brokers and forwarders.",
+    "tagline": "The AI operational layer for customs brokers and freight forwarders.",
     "contact": "Contact",
     "rights": "All rights reserved."
   },
   "pilot": {
-    "cta": "Apply for Pilot",
-    "title": "Apply for the pilot",
+    "cta": "Start a free pilot",
+    "title": "Early design partner program",
     "subtitle": "A few quick questions to see if Meriq's a fit — under a minute.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
     "company": "Company name",
     "companyPlaceholder": "Acme Customs Brokerage",
     "role": "Your role",
     "volume": "Shipments / month",
     "pain": "Biggest pain right now",
     "sampleDocs": "Can you share sample shipment docs?",
+    "wantsCall": "Want a 30-min intro call?",
     "email": "Email",
     "emailPlaceholder": "you@company.com",
     "selectPlaceholder": "Select…",
@@ -159,10 +252,15 @@
       { "value": "maybe", "label": "Maybe later" },
       { "value": "no", "label": "No" }
     ],
+    "wantsCallOptions": [
+      { "value": "yes", "label": "Yes" },
+      { "value": "no", "label": "No" }
+    ],
     "submit": "Apply for pilot",
     "submitting": "Sending…",
     "successTitle": "Application received",
     "successBody": "Thanks! We'll review and reach out to set up a short call.",
+    "bookCallBody": "You're in. Pick a 30-minute slot that works for you.",
     "errorBody": "Something went wrong — please try again.",
     "close": "Done"
   }

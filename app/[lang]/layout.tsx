@@ -6,6 +6,7 @@ import "../globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import { htmlLang, isLocale, locales, type Locale } from "@/lib/i18n/config"
+import { KEYWORDS, ogLocale, SITE_NAME, SITE_URL } from "@/lib/seo"
 import { getDictionary } from "./dictionaries"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
@@ -31,8 +32,47 @@ export async function generateMetadata({
   const locale: Locale = isLocale(lang) ? lang : "en"
   const dict = await getDictionary(locale)
   return {
-    title: dict.meta.title,
+    metadataBase: new URL(SITE_URL),
+    title: {
+      default: dict.meta.title,
+      template: `%s · ${SITE_NAME}`,
+    },
     description: dict.meta.description,
+    applicationName: SITE_NAME,
+    keywords: KEYWORDS,
+    authors: [{ name: SITE_NAME }],
+    creator: SITE_NAME,
+    publisher: SITE_NAME,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
+    openGraph: {
+      type: "website",
+      siteName: SITE_NAME,
+      locale: ogLocale[locale],
+      alternateLocale: locales
+        .filter((l) => l !== locale)
+        .map((l) => ogLocale[l]),
+      url: `${SITE_URL}/${locale}`,
+      title: dict.meta.title,
+      description: dict.meta.description,
+      images: [{ url: "/og.png", width: 1200, height: 630, alt: SITE_NAME }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.meta.title,
+      description: dict.meta.description,
+      images: ["/og.png"],
+    },
+    // Favicon + Apple touch icon come from app/icon.png and app/apple-icon.png.
   }
 }
 

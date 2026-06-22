@@ -3,12 +3,14 @@ import { createClient } from "@supabase/supabase-js"
 import { Resend } from "resend"
 
 type Payload = {
+  name?: string
   company?: string
   role?: string
   monthly_volume?: string
   main_pain?: string
   main_pain_other?: string
   can_share_docs?: string
+  wants_call?: string
   email?: string
   lang?: string
   location?: string
@@ -22,17 +24,20 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 })
   }
 
+  const name = body.name?.trim()
   const company = body.company?.trim()
   const email = body.email?.trim()
-  const { role, monthly_volume, main_pain, can_share_docs } = body
+  const { role, monthly_volume, main_pain, can_share_docs, wants_call } = body
 
   if (
+    !name ||
     !company ||
     !email ||
     !role ||
     !monthly_volume ||
     !main_pain ||
-    !can_share_docs
+    !can_share_docs ||
+    !wants_call
   ) {
     return NextResponse.json(
       { error: "Missing required fields" },
@@ -43,17 +48,22 @@ export async function POST(request: Request) {
   const supabaseUrl = process.env.SUPABASE_URL
   const supabaseKey = process.env.SUPABASE_PUBLISHABLE_KEY
   if (!supabaseUrl || !supabaseKey) {
-    return NextResponse.json({ error: "Server not configured" }, { status: 500 })
+    return NextResponse.json(
+      { error: "Server not configured" },
+      { status: 500 }
+    )
   }
 
   const supabase = createClient(supabaseUrl, supabaseKey)
   const record = {
+    name,
     company,
     role,
     monthly_volume,
     main_pain,
     main_pain_other: body.main_pain_other?.trim() || null,
     can_share_docs,
+    wants_call,
     email,
     lang: body.lang ?? null,
     location: body.location ?? null,
@@ -78,6 +88,7 @@ export async function POST(request: Request) {
         replyTo: email,
         subject: `New pilot application — ${company}`,
         text: [
+          `Name: ${name}`,
           `Company: ${company}`,
           `Email: ${email}`,
           `Role: ${role}`,
@@ -86,6 +97,7 @@ export async function POST(request: Request) {
             record.main_pain_other ? ` — ${record.main_pain_other}` : ""
           }`,
           `Can share docs: ${can_share_docs}`,
+          `Wants intro call: ${wants_call}`,
           `Language: ${record.lang ?? "-"}`,
           `From: ${record.location ?? "-"}`,
         ].join("\n"),
