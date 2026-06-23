@@ -30,17 +30,10 @@ export default async function BlogIndex({
 }) {
   const { lang } = await params
   if (!isLocale(lang)) notFound()
-  const dict = await getDictionary(lang)
   const posts = getPosts()
 
   return (
     <div className="mx-auto w-full max-w-3xl py-16 sm:py-24">
-      <header className="mb-12">
-        <h1 className="text-4xl font-semibold tracking-tight">
-          {dict.blog.title}
-        </h1>
-      </header>
-
       <ul className="border-t border-border">
         {posts.map((post) => {
           const meta = post.i18n[lang]
