@@ -47,6 +47,7 @@ export function Hero({
           <BlurFade delay={0.12}>
             <h1 className="mt-5 text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl lg:text-[3.5rem]">
               {hero.titleLead}
+              {lang === "zh-TW" && <br aria-hidden />}
               <span className="text-primary">{hero.titleEmph}</span>
             </h1>
           </BlurFade>

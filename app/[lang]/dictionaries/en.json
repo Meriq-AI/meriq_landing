@@ -12,11 +12,11 @@
     "closeMenu": "Close menu"
   },
   "hero": {
-    "eyebrow": "AI operations layer for customs brokers and freight forwarders",
-    "titleLead": "Never start a pre-filing review ",
-    "titleEmph": "from scratch again.",
-    "pitch": "Meriq turns shipment emails and documents into source-backed case reviews.",
-    "outcome": "It surfaces missing details, HS / CCC questions, permit risks, and follow-up drafts — for your team to approve.",
+    "eyebrow": "For customs brokers, forwarders & in-house trade teams",
+    "titleLead": "Your shipments don't get ready by themselves. ",
+    "titleEmph": "Meriq does.",
+    "pitch": "Meriq works your pre-filing queue: supplier emails, missing documents, HS / CCC questions, permit risks, and follow-ups.",
+    "outcome": "Your team reviews outcomes, not scattered threads.",
     "secondaryCta": "See Sample Review",
     "ctaNote": "Early design partner program"
   },
@@ -47,8 +47,8 @@
         "desc": "Quantities, weights, and values quietly disagree across documents."
       },
       {
-        "title": "FDA / APHIS readiness uncertainty",
-        "desc": "No one's sure whether a prior notice or permit is needed until it's urgent."
+        "title": "Agency / inspection readiness uncertainty",
+        "desc": "Whether an agency permit, inspection, or prior notice is needed often isn't clear until it's urgent."
       },
       {
         "title": "The same information, chased again",
@@ -58,7 +58,7 @@
   },
   "howItWorks": {
     "eyebrow": "How it works",
-    "title": "Forward the shipment. Meriq does the review. You approve the next step.",
+    "title": "Send Meriq a shipment. It does the review. You approve the next step.",
     "subtitle": "Three steps from messy intake to a broker-ready case.",
     "forwardLabel": "Forward to",
     "forwardAddress": "review@meriqai.com",
@@ -66,8 +66,8 @@
     "steps": [
       {
         "step": "01",
-        "title": "Send us a shipment case",
-        "desc": "Upload or share recent supplier emails, invoices, packing lists, bills of lading, and related compliance documents."
+        "title": "Upload or share a shipment case",
+        "desc": "Upload recent supplier emails, invoices, packing lists, B/Ls, product details, and related compliance documents. Meriq organizes the case, flags gaps and questions, and produces a reviewable result."
       },
       {
         "step": "02",
@@ -85,90 +85,96 @@
     "eyebrow": "Pre-filing classification check",
     "title": "Before your team calls the authority, Meriq prepares the case.",
     "subtitle": "Meriq surfaces likely HS / CCC candidates, missing product details, and source-backed questions for broker review — before your team files.",
-    "caseTitle": "Acme Foods Co. · 2 × 40HQ",
-    "caseSub": "Pre-filing classification review",
-    "statusWorking": "Classification pending",
+    "caseTitle": "Acme Electronics Co. · 1 pallet",
+    "caseSub": "Wireless IoT Gateway · pre-filing review",
+    "statusWorking": "Agency check pending",
     "statusReady": "Ready for broker review",
     "railLabel": "Where this case is",
     "rail": [
-      { "title": "Documents read", "sub": "CI · PL · description · photos · catalog" },
-      { "title": "Product details extracted", "sub": "Description · origin · material · use" },
-      { "title": "Documents cross-checked", "sub": "Invoice / PL — 1 address mismatch flagged" },
-      { "title": "HS / CCC candidates found", "sub": "2 possible · not yet confirmed" },
-      { "title": "Questions prepared", "sub": "Supplier + authority questions drafted" },
-      { "title": "Customer status ready", "sub": "Plain-language update to send the customer" },
+      { "title": "Documents read", "sub": "CI · PL · B/L · photos · catalog" },
+      { "title": "Fields compared", "sub": "Invoice / PL product-name mismatch" },
+      { "title": "Classification flagged", "sub": "Possible RF · HS / CCC unconfirmed" },
+      { "title": "Agency check pending", "sub": "NCC / type approval to clarify" },
+      { "title": "Questions prepared", "sub": "Supplier + authority" },
+      { "title": "Customer update ready", "sub": "Plain-language status to send" },
       { "title": "Ready for broker review", "sub": "Human decision before filing" }
     ],
-    "blockersLabel": "Classification · not yet confirmed",
+    "blockersLabel": "Agency check pending · before filing",
     "blockers": [
       {
         "state": "review",
-        "title": "Candidate · HS 0801.32",
-        "desc": "Cashew nuts, fresh or dried",
-        "tag": "Likely"
+        "title": "RF / wireless device?",
+        "desc": "Catalog mentions Wi-Fi / Bluetooth; docs don't confirm",
+        "tag": "Confirm"
       },
       {
         "state": "review",
-        "title": "Candidate · HS 2008.19",
-        "desc": "Prepared / preserved — if processed",
-        "tag": "If processed"
+        "title": "HS / CCC under RF telecom control?",
+        "desc": "Classification changes the import rules",
+        "tag": "Classify"
+      },
+      {
+        "state": "review",
+        "title": "NCC / type-approval docs needed?",
+        "desc": "Depends on the final classification",
+        "tag": "Authority"
       },
       {
         "state": "missing",
-        "title": "Can't confirm yet",
-        "desc": "Missing material, intended use, manufacturer spec",
+        "title": "Product specs incomplete",
+        "desc": "Missing datasheet, frequency, output power, full model, brand, NCC cert",
         "tag": "Supplier"
       }
     ],
     "chips": [
-      "What is this shipment waiting on?",
-      "What HS / CCC code candidates fit this product?",
-      "What details are missing to confirm the code?",
-      "Draft a customer status update.",
-      "Draft the supplier and authority questions."
+      "Can this case be filed now?",
+      "What does the product-name mismatch affect?",
+      "Is this an RF / wireless device?",
+      "Which authority documents are needed?",
+      "Draft the next questions to ask."
     ],
     "composer": "Ask Meriq about this shipment…",
-    "statusLabel": "Customer update",
-    "note": "Meriq surfaces likely HS / CCC candidates, missing details, source-backed questions, and a customer-ready status update — your team makes the final call.",
+    "statusLabel": "Customer status draft",
+    "note": "Meriq surfaces likely requirements and missing evidence. Your team makes the final filing decision.",
     "chat": [
       {
         "from": "agent",
-        "text": "I reviewed the commercial invoice, packing list, product description, photos, and catalog, then cross-checked every field."
+        "text": "I've read the commercial invoice, packing list, B/L, product photos, and catalog, and compared the main fields."
       },
       {
         "from": "agent",
-        "text": "1 discrepancy found: the consignee address on the commercial invoice doesn't match the packing list. I've flagged it for correction before filing."
+        "text": "I found 2 things to confirm first: the invoice says “Wireless IoT Gateway” while the packing list says “RF Communication Module” — the product names don't fully match. And the catalog mentions Wi-Fi / Bluetooth, but the documents don't include the frequency, output power, or full model spec."
       },
-      { "from": "user", "text": "Good catch. Can we classify the product yet?" },
+      { "from": "user", "text": "Can we file this now?" },
       {
         "from": "agent",
-        "text": "Not yet — the classification needs confirmation. I found 2 HS / CCC candidates but can't confirm them; the documents are missing material composition, intended use, and manufacturer specs."
+        "text": "I'd add the missing details first. Two things are blocking it:\nFirst, the invoice and packing-list product names disagree, which affects classification.\nSecond, the product may include RF functions, but the documents aren't enough to confirm the HS / CCC classification or whether an agency or customs-assisted inspection applies."
       },
       { "from": "card", "text": "" },
       {
         "from": "user",
-        "text": "Does either code trigger permit or agency review?"
+        "text": "If we file now, are we likely to get a correction request?"
       },
       {
         "from": "agent",
-        "text": "One candidate may trigger import/export restrictions or agency review, depending on the final CCC code. I've prepared supplier questions to confirm the specs, and an authority question with the product facts and source documents attached."
+        "text": "Possibly. The most likely requests are product specs and agency-related documents.\nThe documents only show it's a Wireless IoT Gateway — they can't confirm whether it's an RF device, a comms module, or general networking gear. Different classifications can mean different import rules.\nI'd confirm the specs with the supplier first, then let your broker decide whether to ask the authority."
       },
-      { "from": "user", "text": "Draft both." },
+      { "from": "user", "text": "Draft the next questions to ask." },
       {
         "from": "agent",
-        "text": "Done. The supplier and authority questions are drafted — source-backed and ready for your review."
+        "text": "Done. I prepared two sets of reviewable questions — one for the supplier to fill gaps, one to confirm direction with the authority.\n\nSupplier questions (draft):\nPlease confirm whether this Wireless IoT Gateway includes Wi-Fi, Bluetooth, RF, LTE, or other wireless functions. Please provide the full model number, product datasheet, frequency range, output power, intended use, manufacturer spec sheet, and any existing NCC or type-approval documents.\n\nAuthority question (draft):\nThe documents list the product as a Wireless IoT Gateway, and the catalog mentions Wi-Fi / Bluetooth, but frequency, output power, and full model data are still missing. Could you confirm whether, under this product description, RF / telecom-controlled equipment rules may apply, or whether further agency documents are needed for pre-filing review."
       },
       { "from": "user", "text": "What should we tell the customer?" },
       {
         "from": "status",
-        "text": "Your shipment is under pre-filing review. The HS / CCC classification isn't confirmed yet — we've flagged missing product details and an invoice / packing-list address mismatch, and drafted supplier and authority questions. Once the details come back, the case can move to filing review."
+        "text": "Your shipment is still under pre-filing review.\nTwo items need confirming first: the invoice and packing-list product names don't match, and the product may include wireless RF functions but the documents don't yet provide full frequency, output power, model, and certification data.\nWe've compiled the product specs to request from the supplier and prepared the authority-confirmation questions. Once the details come back, it can move to broker review."
       }
     ]
   },
   "pilotCta": {
     "eyebrow": "Looking for design partners",
     "title": "Test Meriq with 5 real shipment cases.",
-    "subtitle": "We'll map each shipment's document gaps, HS / CCC questions, and likely permit or authority issues — and produce supplier follow-up drafts.",
+    "subtitle": "We turn each shipment into a pre-filing case review: missing documents, field mismatches, HS / CCC questions, likely permit or authority issues, and follow-up drafts you can send to customers or suppliers.",
     "note": "Free pilot · no tool switching · validated on real cases"
   },
   "faq": {
@@ -207,7 +213,7 @@
     "backToBlog": "All posts"
   },
   "footer": {
-    "tagline": "The AI operational layer for customs brokers and freight forwarders.",
+    "tagline": "Pre-filing case reviews for customs teams.",
     "contact": "Contact",
     "rights": "All rights reserved."
   },
