@@ -63,7 +63,7 @@ export default async function Page({
           "@type": "Offer",
           price: "0",
           priceCurrency: "USD",
-          description: "Free pilot for design partners",
+          description: "Pilot for design partners",
         },
         audience: {
           "@type": "Audience",

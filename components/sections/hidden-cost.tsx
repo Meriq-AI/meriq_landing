@@ -1,6 +1,7 @@
 import {
   AlarmClock,
   Inbox,
+  Receipt,
   Repeat,
   Scale,
   ShieldQuestion,
@@ -11,7 +12,14 @@ import { BlurFade } from "@/components/ui/blur-fade"
 import { Eyebrow, Section, SectionHeading } from "@/components/section"
 import type { Dictionary } from "@/app/[lang]/dictionaries"
 
-const ICONS: LucideIcon[] = [Inbox, AlarmClock, Scale, ShieldQuestion, Repeat]
+const ICONS: LucideIcon[] = [
+  Inbox,
+  AlarmClock,
+  Scale,
+  ShieldQuestion,
+  Repeat,
+  Receipt,
+]
 
 export function HiddenCost({
   hiddenCost,
