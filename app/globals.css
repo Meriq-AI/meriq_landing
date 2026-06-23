@@ -162,3 +162,10 @@
     color: oklch(0.155 0.010 260);
   }
 }
+
+/* Pause cursor — shown over the looping demo (hover/focus pauses it). */
+.cursor-pause {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%23111111' fill-opacity='0.55'/%3E%3Crect x='8.4' y='6.8' width='2.7' height='10.4' rx='1.1' fill='white'/%3E%3Crect x='12.9' y='6.8' width='2.7' height='10.4' rx='1.1' fill='white'/%3E%3C/svg%3E")
+      12 12,
+    auto;
+}

@@ -35,6 +35,8 @@ export function AgentDemo({ watch }: { watch: Watch }) {
 
   const [visible, setVisible] = useState(0)
   const [typing, setTyping] = useState(false)
+  // Pause the loop while the user is reading (hover / focus within the window).
+  const pausedRef = useRef(false)
 
   useEffect(() => {
     if (!inView || reduced) return
@@ -42,41 +44,62 @@ export function AgentDemo({ watch }: { watch: Watch }) {
     let i = 0
     const timers: ReturnType<typeof setTimeout>[] = []
     const at = (fn: () => void, ms: number) => timers.push(setTimeout(fn, ms))
+    // Hold the sequence while paused (don't advance or restart mid-read).
+    const run = (fn: () => void) => {
+      if (pausedRef.current) at(() => run(fn), 250)
+      else fn()
+    }
 
     const next = () => {
       if (i >= watch.chat.length) {
         // Hold on the finished result ~8s, then loop from the top.
-        at(() => {
-          i = 0
-          setVisible(0)
-          setTyping(false)
-          at(next, 600)
-        }, 8000)
+        at(
+          () =>
+            run(() => {
+              i = 0
+              setVisible(0)
+              setTyping(false)
+              at(() => run(next), 600)
+            }),
+          8000
+        )
         return
       }
       const isAgent = watch.chat[i].from !== "user"
       if (isAgent) {
         setTyping(true)
-        at(() => {
-          setTyping(false)
-          setVisible(i + 1)
-          i += 1
-          at(next, 600)
-        }, 1000)
+        at(
+          () =>
+            run(() => {
+              setTyping(false)
+              setVisible(i + 1)
+              i += 1
+              at(() => run(next), 600)
+            }),
+          1000
+        )
       } else {
-        at(() => {
-          setVisible(i + 1)
-          i += 1
-          at(next, 500)
-        }, 750)
+        at(
+          () =>
+            run(() => {
+              setVisible(i + 1)
+              i += 1
+              at(() => run(next), 500)
+            }),
+          750
+        )
       }
     }
 
-    at(() => {
-      setVisible(0)
-      setTyping(false)
-      next()
-    }, 300)
+    at(
+      () =>
+        run(() => {
+          setVisible(0)
+          setTyping(false)
+          next()
+        }),
+      300
+    )
     return () => timers.forEach(clearTimeout)
   }, [inView, reduced, watch.chat])
 
@@ -90,7 +113,22 @@ export function AgentDemo({ watch }: { watch: Watch }) {
     <div>
       <div
         ref={windowRef}
-        className="relative overflow-hidden rounded-2xl border border-border bg-card text-left shadow-[0_30px_90px_-40px] shadow-primary/30"
+        onMouseEnter={() => {
+          pausedRef.current = true
+        }}
+        onMouseLeave={() => {
+          pausedRef.current = false
+        }}
+        onFocus={() => {
+          pausedRef.current = true
+        }}
+        onBlur={() => {
+          pausedRef.current = false
+        }}
+        className={cn(
+          "relative overflow-hidden rounded-2xl border border-border bg-card text-left shadow-[0_30px_90px_-40px] shadow-primary/30",
+          !reduced && "cursor-pause"
+        )}
       >
         {/* Window header */}
         <div className="flex items-center gap-3 border-b border-border bg-muted/30 px-4 py-3 sm:px-5">
@@ -339,7 +377,7 @@ function ChatRow({ from, text }: { from: string; text: string }) {
       )}
       <div
         className={cn(
-          "max-w-[82%] rounded-2xl px-4 py-2.5 text-[13.5px] leading-relaxed",
+          "max-w-[82%] rounded-2xl px-4 py-2.5 text-[13.5px] leading-relaxed whitespace-pre-line",
           isUser
             ? "rounded-tr-sm bg-foreground text-background"
             : "rounded-tl-sm bg-muted/60 text-foreground"
@@ -408,7 +446,7 @@ function CustomerStatusCard({
           {label}
         </span>
       </div>
-      <p className="px-4 py-3 text-[13px] leading-relaxed text-foreground">
+      <p className="px-4 py-3 text-[13px] leading-relaxed whitespace-pre-line text-foreground">
         {text}
       </p>
     </div>
