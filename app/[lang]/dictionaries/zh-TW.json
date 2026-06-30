@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Meriq — AI Agent for Customs Brokers & Freight Forwarders",
-    "description": "Meriq 把出貨郵件、發票、裝箱單與提單，整理成附證據、可送單的案件審查 — 找出缺漏文件、HS / CCC 分類疑義、許可風險，並產出可直接回覆客戶的狀態更新，專為報關行、貨代與貿易團隊打造。"
+    "title": "協助報關行與貨代導入 AI 流程 — Meriq",
+    "description": "Meriq 協助報關行與貨代在送單前找出缺漏文件、HS／CCC 號列疑義與許可風險，把雜亂的郵件與文件整理成可直接申報的案件，減少退關與人工追件。"
   },
   "nav": {
     "product": "產品",
