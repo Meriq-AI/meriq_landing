@@ -6,7 +6,7 @@ import { SITE_URL } from "@/lib/seo"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getPosts()
-  const paths = ["", "/blog", ...posts.map((p) => `/blog/${p.slug}`)]
+  const paths = ["", "/tariff", "/blog", ...posts.map((p) => `/blog/${p.slug}`)]
 
   const lastModified = (path: string) => {
     const post = posts.find((p) => `/blog/${p.slug}` === path)
@@ -22,7 +22,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}/${lang}${path}`,
       lastModified: lastModified(path),
       changeFrequency: path === "" ? "weekly" : "monthly",
-      priority: path === "" ? 1 : path === "/blog" ? 0.6 : 0.7,
+      priority:
+        path === "" ? 1 : path === "/tariff" ? 0.8 : path === "/blog" ? 0.6 : 0.7,
       alternates: { languages },
     }))
   })

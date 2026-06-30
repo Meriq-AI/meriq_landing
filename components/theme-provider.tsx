@@ -22,7 +22,9 @@ function systemPreference(): Resolved {
 }
 
 function readStoredTheme(): Theme {
-  if (typeof window === "undefined") return "system"
+  // Default to dark when there's no stored choice (the inline init script does
+  // the same, so the pre-paint class matches this initial state — no flash).
+  if (typeof window === "undefined") return "dark"
   try {
     const stored = localStorage.getItem(STORAGE_KEY)
     if (stored === "light" || stored === "dark" || stored === "system") {
@@ -31,7 +33,7 @@ function readStoredTheme(): Theme {
   } catch {
     // ignore (private mode, etc.)
   }
-  return "system"
+  return "dark"
 }
 
 // Tracks the OS-level color-scheme preference.

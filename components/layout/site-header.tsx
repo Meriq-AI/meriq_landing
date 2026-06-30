@@ -37,6 +37,7 @@ export function SiteHeader({
   // just the landing page. "Vision" is the blog.
   const links = [
     { href: `/${lang}#how`, label: nav.how },
+    { href: `/${lang}/tariff`, label: nav.tariff },
     { href: `/${lang}/blog`, label: nav.vision },
   ]
 
