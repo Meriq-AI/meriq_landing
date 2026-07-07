@@ -139,7 +139,8 @@ export function ArtifactQuotes() {
   ]
   return (
     <Sheet rotate="rotate-1">
-      <Stamp className="top-9 -right-2">Best fit</Stamp>
+      {/* overhang only where the sheet doesn't span the viewport */}
+      <Stamp className="top-9 right-2 sm:-right-2">Best fit</Stamp>
       <SheetHeading>Quote comparison · normalized</SheetHeading>
       <div className="mt-3 space-y-1">
         {rows.map((row) => (
@@ -151,10 +152,13 @@ export function ArtifactQuotes() {
               row.best ? "bg-primary/[0.07] font-semibold" : ""
             )}
           >
-            <span>{row.name}</span>
-            <span className="flex-1 overflow-hidden text-muted-foreground/50">
-              {"·".repeat(40)}
-            </span>
+            <span className="whitespace-nowrap">{row.name}</span>
+            {/* dotted leader as a border (a repeated-char string blows up the
+                column's min-content on mobile) */}
+            <span
+              className="mx-1 mb-0.5 flex-1 self-end border-b border-dotted border-muted-foreground/40"
+              aria-hidden
+            />
             <span className="tabular-nums">{row.total}</span>
             <span className="w-8 text-right text-muted-foreground tabular-nums">
               {row.days}

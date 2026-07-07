@@ -33,7 +33,8 @@ export function Capabilities({
 }) {
   return (
     <Section id="capabilities">
-      <div className="grid gap-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
+      {/* minmax(0,…) everywhere: never let an artifact's min-content widen the track */}
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
         {/* Sticky rail: heading + live case tracker */}
         <div className="lg:sticky lg:top-24 lg:self-start">
           <BlurFade delay={0.05}>
