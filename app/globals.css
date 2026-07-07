@@ -5,8 +5,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-    --font-heading: var(--font-sans);
+    --font-heading: var(--font-display), var(--font-sans), var(--font-zh);
     --font-sans: var(--font-sans), var(--font-zh);
+    --font-display: var(--font-display), var(--font-sans), var(--font-zh);
     --font-mono: var(--font-mono);
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
@@ -52,98 +53,63 @@
 }
 
 :root {
-    /* Linear-style light mode — cool off-white base, blue accent, minimal chrome.
-       Ported from meriq_app to keep the landing visually consistent with the product. */
+    /* Light-only, Derya-inspired: warm-white canvas, near-black type, one vivid
+       working blue. No dark mode — the site ships light everywhere. */
 
-    /* Surfaces — 3-layer elevation: L1 base (canvas) · L2 surface (panels) · L3 block (cards) */
-    --background: oklch(0.963 0.0015 260);       /* L1 base */
-    --foreground: oklch(0.145 0.008 260);        /* near-black, cool undertone */
-    --surface: #fcfcfd;                          /* L2 surface */
-    --card: oklch(1 0 0);                        /* L3 block — pure white */
-    --card-foreground: oklch(0.155 0.010 260);
+    --background: oklch(0.988 0.001 250);        /* warm white canvas */
+    --foreground: oklch(0.17 0.012 260);         /* near-black, cool undertone */
+    --surface: oklch(0.975 0.002 250);           /* quiet panel */
+    --card: oklch(1 0 0);                        /* pure white blocks */
+    --card-foreground: oklch(0.17 0.012 260);
     --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.155 0.010 260);
+    --popover-foreground: oklch(0.17 0.012 260);
 
-    /* Primary — Meriq blue */
-    --primary: oklch(0.55 0.12 222);
+    /* Primary — vivid working blue (Derya-style CTA blue) */
+    --primary: oklch(0.546 0.215 263);
     --primary-foreground: oklch(1 0 0);
 
-    --secondary: oklch(0.962 0.002 258);
-    --secondary-foreground: oklch(0.230 0.010 260);
+    --secondary: oklch(0.96 0.003 255);
+    --secondary-foreground: oklch(0.23 0.01 260);
 
-    --muted: oklch(0.962 0.002 258);
-    --muted-foreground: oklch(0.500 0.006 260);
+    --muted: oklch(0.96 0.003 255);
+    --muted-foreground: oklch(0.5 0.008 260);
 
-    --accent: oklch(0.945 0.003 260);
-    --accent-foreground: oklch(0.230 0.010 260);
+    --accent: oklch(0.945 0.005 255);
+    --accent-foreground: oklch(0.23 0.01 260);
 
-    /* Status — used only where it carries meaning (must_fix / warning / info) */
     --destructive: oklch(0.577 0.220 25);
-    --warning: oklch(0.705 0.165 60);    /* amber */
-    --success: oklch(0.620 0.155 155);   /* green */
+    --warning: oklch(0.705 0.165 60);
+    --success: oklch(0.620 0.155 155);
 
-    --border: oklch(0.918 0.003 258);
-    --input: oklch(0.918 0.003 258);
-    --ring: oklch(0.55 0.12 222);
+    --border: oklch(0.922 0.004 255);
+    --input: oklch(0.922 0.004 255);
+    --ring: oklch(0.546 0.215 263);
 
-    --chart-1: oklch(0.55 0.12 222);
+    --chart-1: oklch(0.546 0.215 263);
     --chart-2: oklch(0.640 0.145 200);
     --chart-3: oklch(0.680 0.145 145);
     --chart-4: oklch(0.700 0.175 35);
     --chart-5: oklch(0.610 0.210 340);
 
-    --radius: 0.5rem;
+    --radius: 0.625rem;
 
-    --sidebar: oklch(0.963 0.0015 260);
-    --sidebar-foreground: oklch(0.145 0.008 260);
-    --sidebar-primary: oklch(0.55 0.12 222);
+    --sidebar: oklch(0.988 0.001 250);
+    --sidebar-foreground: oklch(0.17 0.012 260);
+    --sidebar-primary: oklch(0.546 0.215 263);
     --sidebar-primary-foreground: oklch(1 0 0);
-    --sidebar-accent: oklch(0.940 0.003 260);
-    --sidebar-accent-foreground: oklch(0.230 0.010 260);
-    --sidebar-border: oklch(0.918 0.003 258);
-    --sidebar-ring: oklch(0.55 0.12 222);
-}
-
-.dark {
-    --background: oklch(0.165 0 0);
-    --foreground: oklch(0.985 0 0);
-    --surface: oklch(0.205 0 0);
-    --card: oklch(0.225 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.225 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.72 0.13 215);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --warning: oklch(0.760 0.150 70);
-    --success: oklch(0.700 0.150 158);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.72 0.13 215);
-    --chart-1: oklch(0.72 0.13 215);
-    --chart-2: oklch(0.640 0.145 200);
-    --chart-3: oklch(0.680 0.145 145);
-    --chart-4: oklch(0.700 0.175 35);
-    --chart-5: oklch(0.610 0.210 340);
-    --sidebar: oklch(0.165 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.72 0.13 215);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.72 0.13 215);
+    --sidebar-accent: oklch(0.945 0.005 255);
+    --sidebar-accent-foreground: oklch(0.23 0.01 260);
+    --sidebar-border: oklch(0.922 0.004 255);
+    --sidebar-ring: oklch(0.546 0.215 263);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    color-scheme: light;
   }
   body {
     @apply text-foreground antialiased;
@@ -151,21 +117,48 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  html {
-    @apply font-sans;
-  }
   button:not(:disabled), [role="button"]:not(:disabled) {
     cursor: pointer;
   }
   ::selection {
-    background: oklch(0.55 0.12 222 / 18%);
-    color: oklch(0.155 0.010 260);
+    background: oklch(0.546 0.215 263 / 16%);
+    color: oklch(0.17 0.012 260);
   }
 }
 
-/* Pause cursor — shown over the looping demo (hover/focus pauses it). */
-.cursor-pause {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%23111111' fill-opacity='0.55'/%3E%3Crect x='8.4' y='6.8' width='2.7' height='10.4' rx='1.1' fill='white'/%3E%3Crect x='12.9' y='6.8' width='2.7' height='10.4' rx='1.1' fill='white'/%3E%3C/svg%3E")
-      12 12,
-    auto;
+@layer utilities {
+  /* Blueprint hatching for grid gutters (Derya-style engineering margins). */
+  .hatch {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      var(--border) 0,
+      var(--border) 1px,
+      transparent 1px,
+      transparent 7px
+    );
+  }
+}
+
+/* ── Hero-demo animations ───────────────────────────────────────────────── */
+
+/* Typing indicator dots */
+@keyframes vignette-dot {
+  0%, 60%, 100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
+/* Gentle float for the hero plan card */
+@keyframes hero-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }

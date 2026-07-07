@@ -1,273 +1,387 @@
 {
   "meta": {
-    "title": "協助報關行與貨代導入 AI 流程 — Meriq",
-    "description": "Meriq 協助報關行與貨代在送單前找出缺漏文件、HS／CCC 號列疑義與許可風險，把雜亂的郵件與文件整理成可直接申報的案件，減少退關與人工追件。"
+    "title": "把海外詢價，變成可出貨的出口方案 — Meriq｜台灣製造商的 AI 出口營運夥伴",
+    "description": "國外客戶問 CIF、DAP、DDP？Meriq 幫台灣製造商與出口商整理運費與貨代報價、關稅與 landed cost、出口文件與出貨風險，把一筆海外詢價變成可以回覆客戶、可以出貨的出口方案。"
   },
   "nav": {
-    "product": "產品",
     "how": "運作方式",
-    "roles": "給你的團隊",
-    "tariff": "關稅試算",
-    "vision": "部落格",
+    "useCases": "適用情境",
+    "faq": "常見問題",
     "openMenu": "開啟選單",
     "closeMenu": "關閉選單"
   },
   "hero": {
-    "eyebrow": "給報關行、貨代與企業進出口團隊",
-    "titleLead": "報關前的文件，",
-    "titleEmph": "不該靠人一票一票追。",
-    "pitch": "Meriq 幫你處理報關前流程：供應商 email、缺漏文件、Invoice / Packing List 不一致、HS / CCC 疑義、許可風險與補件追問。",
-    "outcome": "你的團隊審查結果，不再追著零散對話跑。",
-    "secondaryCta": "看範例審查",
-    "ctaNote": "早期 Design Partner 計畫"
+    "eyebrow": "給台灣製造商的 AI 出口營運夥伴",
+    "titleLead": "把海外詢價，變成",
+    "titleEmph": "可出貨的出口方案",
+    "titleEnd": "。",
+    "pitch": "國外客戶問價時，不只要知道產品價格，還要算清楚運費、關稅、文件、交期與 landed cost。",
+    "outcome": "Meriq 幫你整理出口成本、物流報價、文件需求與出貨風險——讓你更快回覆客戶，也更清楚這張海外訂單能不能接。",
+    "secondaryCta": "看看我們怎麼運作",
+    "chips": [
+      "免費檢查一筆海外詢價",
+      "AI 先整理，人再確認",
+      "不用換貨代、不用導入系統"
+    ]
   },
-  "trustBar": {
-    "lead": "專為處理大量文件的報關行、承攬業與貿易作業團隊打造。",
-    "pills": ["送單前審查", "文件一致性", "缺件追蹤", "可直接交接給報關"]
+  "problem": {
+    "eyebrow": "真正的麻煩",
+    "title": "海外客戶問價，真正麻煩的不是報產品價格。",
+    "intro": "你可能每天都遇到這些狀況：",
+    "items": [
+      "客戶問 CIF、DAP、DDP，但你不知道運費與目的地費用怎麼算。",
+      "問了三家貨代，每家報價格式都不一樣，看不出誰真的便宜。",
+      "不確定這個產品出口到美國、歐洲、日本要不要特殊文件。",
+      "不知道目的國關稅、清關費用、文件要求會不會吃掉毛利。",
+      "每次都要重新整理產品資料、尺寸重量、裝箱資料、HS code、MSDS、invoice、packing list。",
+      "國外客戶急著要報價，但內部還在等貨代回覆。"
+    ],
+    "punchLead": "結果就是——海外詢價進來了，但你很難快速判斷：",
+    "punchEmph": "這張單到底能不能接？"
   },
-  "hiddenCost": {
-    "eyebrow": "隱形成本",
-    "title": "報關前的來回確認，才是最耗時間的地方。",
-    "subtitle": "email 分散、文件不齊、品名不清、HS / CCC 待確認、簽審問題不明確。在送件之前，團隊就已經花掉大量時間。",
+  "solution": {
+    "eyebrow": "我們的角色",
+    "titleLead": "我們是你的 ",
+    "titleEmph": "AI Export Operator",
+    "titleEnd": "。",
+    "lead": "Meriq 不是單純的報關工具，也不是貨代比價網站。我們幫你把一筆海外詢價，整理成完整的出口方案：",
+    "items": [
+      "出口條件整理",
+      "貨代報價比較",
+      "初步關稅與 landed cost 估算",
+      "文件需求 checklist",
+      "可能的通關與目的國風險",
+      "給貨代、報關行與國外客戶的問題清單",
+      "可直接拿去回覆客戶的出口方案摘要"
+    ],
+    "closing1": "你不用先懂所有物流術語，也不用自己來回追問每家貨代。",
+    "closing2": "你只要提供產品、數量、目的地與出貨需求，我們幫你把後面的細節整理清楚。"
+  },
+  "capabilities": {
+    "eyebrow": "我們幫你做什麼",
+    "title": "從模糊詢價到可執行方案，只需要一個出口窗口。",
     "items": [
       {
-        "title": "散落在各個信箱",
-        "desc": "供應商郵件、附件與回覆，散落在沒人完全負責的信件串裡。"
+        "num": "01",
+        "title": "整理海外詢價",
+        "desc": "我們把客戶需求轉成完整的出口 RFQ：",
+        "points": [
+          "出貨地與目的地",
+          "Incoterms",
+          "貨物尺寸與重量",
+          "FCL / LCL / 空運 / 快遞建議",
+          "危險品、食品、電子或特殊貨判斷",
+          "預計出貨時間",
+          "door-to-door、清關與目的地派送需求"
+        ],
+        "note": "資料不完整也沒關係，我們會幫你列出缺什麼。"
       },
       {
-        "title": "缺件太晚才發現",
-        "desc": "缺少產證或許可，往往在報關前一天才浮現，而不是文件進來那天。"
+        "num": "02",
+        "title": "比較物流報價",
+        "desc": "我們協助向合作貨代詢價，並把不同報價整理成同一張表：",
+        "points": [
+          "運費",
+          "local charges",
+          "destination charges",
+          "transit time",
+          "free time",
+          "是否包含報關",
+          "是否適合這票貨"
+        ],
+        "note": "你不用再自己看一堆格式不同的 Excel、PDF 與 email。"
       },
       {
-        "title": "發票與裝箱單對不起來",
-        "desc": "數量、重量與金額，在不同文件之間悄悄不一致。"
+        "num": "03",
+        "title": "估算 landed cost",
+        "desc": "我們幫你整理這張海外訂單的總成本假設：",
+        "points": [
+          "產品價格",
+          "國際運費",
+          "保險",
+          "關稅",
+          "清關相關費用",
+          "目的地費用",
+          "可能的額外文件或合規成本"
+        ],
+        "note": "讓你在報價前，先知道毛利會不會被吃掉。"
       },
       {
-        "title": "不確定簽審 / 主管機關是否到位",
-        "desc": "BSMI、NCC、FDA、商檢或其他主管機關的許可或審查，往往等到變急才確認。"
+        "num": "04",
+        "title": "檢查文件與風險",
+        "desc": "我們幫你整理出口前需要注意的資料：",
+        "points": [
+          "Commercial Invoice",
+          "Packing List",
+          "B/L 或 AWB",
+          "C/O 產地證明",
+          "MSDS",
+          "產品型錄與規格書",
+          "目的國可能要求的文件",
+          "需要向貨代、報關行或客戶確認的問題"
+        ],
+        "note": "缺什麼、要問誰，一次列清楚。"
       },
       {
-        "title": "同樣的資訊，一再追問",
-        "desc": "操作人員重複向供應商索取早已埋在前一封郵件裡的資訊。"
-      },
-      {
-        "title": "金額與代墊依據難追",
-        "desc": "申報金額、預估稅費與可能代墊項目，常常分散在 Invoice、報單、繳款書、場站費用與 email 裡。當客戶追問金額時，團隊又要重新翻文件找依據。"
+        "num": "05",
+        "title": "協調下一步",
+        "desc": "我們不只給你一份報告，也幫你把下一步整理好：",
+        "points": [
+          "給國外客戶的回覆摘要",
+          "給貨代的 RFQ package",
+          "給報關行的確認問題",
+          "內部成本與風險摘要",
+          "出貨前 checklist"
+        ],
+        "note": "你的團隊做決策，我們幫你準備資訊。"
       }
     ]
   },
   "howItWorks": {
     "eyebrow": "運作方式",
-    "title": "把一票貨交給 Meriq，它負責審查，你只核准下一步。",
-    "subtitle": "三步，從雜亂的進件到可直接交接給報關的案件。",
-    "forwardLabel": "轉寄至",
-    "forwardAddress": "review@meriqai.com",
-    "forwardHint": "或上傳案件",
+    "title": "三步驟，把海外詢價變成出口方案。",
+    "subtitle": "AI 先整理，人再確認。你不用導入任何系統。",
     "steps": [
       {
         "step": "01",
-        "title": "上傳或分享一票出貨案件",
-        "desc": "上傳近期的供應商 email、Invoice、Packing List、B/L、產品資料與相關簽審文件。Meriq 會先整理案件、標記缺漏與疑義，再產出可審查的結果。"
+        "title": "上傳詢價與產品資料",
+        "desc": "提供國外客戶的詢價內容、產品名稱、型錄、數量、尺寸重量、貨值與目的地。資料不完整也沒關係，我們會幫你列出缺什麼。"
       },
       {
         "step": "02",
-        "title": "Meriq 審查這個案件",
-        "desc": "Meriq 整理文件、偵測缺漏資訊、比對發票與裝箱單差異、標記報關前的卡關項目，並草擬補件追問。"
+        "title": "我們整理成本、文件與物流方案",
+        "desc": "AI 先整理資料，人員再協助確認。必要時，我們會向合作貨代、報關行或專家確認細節。"
       },
       {
         "step": "03",
-        "title": "你的團隊核准下一步",
-        "desc": "審查結果、核准補件追問，把案件推向可送單 — 每個問題都能追溯回原始證據。"
+        "title": "你收到可回覆客戶的出口方案",
+        "desc": "包含物流報價比較、landed cost、文件 checklist、風險提醒與下一步建議。"
+      }
+    ],
+    "cta": "提交一筆海外詢價"
+  },
+  "useCases": {
+    "eyebrow": "適用情境",
+    "title": "這些時候，把詢價丟給我們。",
+    "items": [
+      {
+        "title": "國外客戶第一次詢價",
+        "desc": "客戶問你 CIF / DAP / DDP，你需要快速知道運費、關稅與目的地成本。"
+      },
+      {
+        "title": "想開拓新市場",
+        "desc": "你想把產品賣到美國、歐洲、日本或東南亞，但不確定當地文件、關稅與物流成本。"
+      },
+      {
+        "title": "貨代報價看不懂",
+        "desc": "你問了多家貨代，但每家報價項目不同，不知道誰真的便宜、誰漏報費用。"
+      },
+      {
+        "title": "出貨資料常常不完整",
+        "desc": "尺寸、重量、材質、用途、MSDS、型錄、HS code，每次都要重新整理。"
+      },
+      {
+        "title": "想知道這張海外單能不能接",
+        "desc": "你不只想知道運費，而是想知道這張訂單扣掉物流、關稅與目的地成本後，毛利是否合理。"
       }
     ]
   },
-  "watch": {
-    "eyebrow": "報關前分類檢查",
-    "title": "在你打電話問主管機關之前，Meriq 先幫你把案件準備好。",
-    "subtitle": "Meriq 整理出可能的 HS / CCC 候選號列、缺漏的產品資訊，以及可附證據、供報關判斷的問題 — 都在你送單之前。",
-    "caseTitle": "Acme Electronics Co. · 1 pallet",
-    "caseSub": "Wireless IoT Gateway · 報關前審查",
-    "statusWorking": "主管機關待確認",
-    "statusReady": "可交由報關人員審查",
-    "railLabel": "案件目前進度",
-    "rail": [
-      { "title": "文件已讀取", "sub": "CI · PL · B/L · 照片 · 型錄" },
-      { "title": "欄位比對", "sub": "Invoice / PL 品名不一致" },
-      { "title": "分類疑義", "sub": "可能涉射頻 · HS / CCC 待確認" },
-      { "title": "主管機關待確認", "sub": "NCC / 型式認證 待釐清" },
-      { "title": "問題已備妥", "sub": "供應商 + 主管機關提問" },
-      { "title": "客戶狀態已備妥", "sub": "可發給客戶的更新" },
-      { "title": "可交報關人員審查", "sub": "送單前由人工判斷" }
-    ],
-    "blockersLabel": "主管機關待確認 · 送單前",
-    "blockers": [
-      {
-        "state": "review",
-        "title": "是否屬射頻 / 無線通訊設備",
-        "desc": "型錄提到 Wi-Fi / Bluetooth，文件未確認",
-        "tag": "確認"
-      },
-      {
-        "state": "review",
-        "title": "HS / CCC 是否屬電信管制射頻器材",
-        "desc": "分類會影響輸入規定",
-        "tag": "分類"
-      },
-      {
-        "state": "review",
-        "title": "是否需 NCC / 型式認證文件",
-        "desc": "視最終分類而定",
-        "tag": "主管機關"
-      },
-      {
-        "state": "missing",
-        "title": "產品規格不足",
-        "desc": "缺 datasheet、頻率、輸出功率、完整型號、品牌、NCC 證書",
-        "tag": "供應商"
-      }
-    ],
+  "customers": {
+    "eyebrow": "適合誰",
+    "title": "我們適合誰？",
+    "lead": "Meriq 適合有海外詢價、出口需求，或正在拓展國際市場的台灣公司：",
     "chips": [
-      "這票現在可以送件嗎？",
-      "如果現在送件，會不會被要求補件？",
-      "還缺什麼才能確認 HS / CCC？",
-      "申報金額與預估稅費從哪裡來？",
-      "整理下一步要問的問題。"
+      "製造商",
+      "出口商",
+      "貿易商",
+      "工業零組件供應商",
+      "自行車 / 戶外用品品牌",
+      "汽車零件供應商",
+      "五金 / 模具 / 機械零件廠",
+      "電子零件與硬體品牌",
+      "Kickstarter / Amazon / Shopify 出貨團隊"
     ],
-    "composer": "詢問 Meriq 這票貨…",
-    "statusLabel": "客戶狀態草稿",
-    "note": "Meriq 協助整理可能的規定疑義與缺漏依據，最終判斷仍由你的團隊審查。",
-    "chat": [
-      {
-        "from": "agent",
-        "text": "我已讀取 Commercial Invoice、Packing List、B/L、產品照片與型錄，並比對主要欄位。"
-      },
-      {
-        "from": "agent",
-        "text": "目前發現 2 個需要先確認的地方：Invoice 寫的是「Wireless IoT Gateway」，Packing List 寫的是「RF Communication Module」，品名不完全一致；另外，型錄裡提到 Wi-Fi / Bluetooth 功能，但文件沒有附上頻率、輸出功率與完整型號規格。"
-      },
-      { "from": "user", "text": "這票現在可以送件嗎？" },
-      {
-        "from": "agent",
-        "text": "建議先補資料再送。目前主要卡在兩件事：\n第一，Invoice 和 Packing List 的品名不一致，會影響產品分類判斷。\n第二，產品看起來可能含有射頻功能，但目前文件不足以確認 HS / CCC 分類，以及是否涉及主管機關或海關協助查核。"
-      },
-      { "from": "card", "text": "" },
-      {
-        "from": "user",
-        "text": "如果現在送件，會不會被要求補件？"
-      },
-      {
-        "from": "agent",
-        "text": "有可能。目前最可能被要求補的是產品規格與主管機關相關文件。\n因為文件只看得出這是 Wireless IoT Gateway，但無法確認它是否屬於射頻設備、通訊模組或一般網路設備。分類不同，後續可能適用的輸入規定也不同。\n我建議先向供應商確認產品規格，再由報關人員判斷是否需要詢問主管機關。"
-      },
-      { "from": "user", "text": "幫我整理下一步要問的問題。" },
-      {
-        "from": "agent",
-        "text": "完成。我已整理兩組可審查的問題：一組給供應商補資料，一組給主管機關確認方向。\n\n供應商問題草稿：\n請協助確認此批 Wireless IoT Gateway 是否含 Wi-Fi、Bluetooth、RF、LTE 或其他無線通訊功能？請提供完整型號、產品 datasheet、頻率範圍、輸出功率、用途說明、製造商規格書，以及是否已有 NCC 或相關型式認證文件。\n\n主管機關確認問題草稿：\n本批貨品文件顯示品名為 Wireless IoT Gateway，型錄提及 Wi-Fi / Bluetooth 功能，但目前尚缺頻率、輸出功率與完整型號資料。想請協助確認，在此產品描述下，是否可能涉及電信管制射頻器材相關規定，或需要進一步提供主管機關文件供報關前審查。"
-      },
-      { "from": "user", "text": "那要怎麼跟客戶說？" },
-      {
-        "from": "status",
-        "text": "這票貨目前仍在報關前審查中。\n目前有兩個項目需要先確認：Invoice 與 Packing List 的品名不一致，以及產品可能含有無線射頻功能，但文件尚未提供完整頻率、輸出功率、型號與認證資料。\n我們已整理需要向供應商補充的產品規格，並準備好主管機關確認問題。待資料回覆後，就可以進一步交由報關人員審查。"
-      }
-    ]
+    "closing": "如果你常常收到海外客戶詢價，但每次都要花很多時間確認物流、文件與成本——這就是我們可以幫你的地方。"
   },
-  "pilotCta": {
-    "eyebrow": "尋找 Design Partner",
-    "title": "用 5 票真實出貨案件測試 Meriq。",
-    "subtitle": "我們會幫你把每票貨整理成一份報關前案件審查：文件缺漏、欄位不一致、HS / CCC 疑義、可能的許可或主管機關問題，以及可發給客戶或供應商的追問草稿。",
-    "note": "試用 · 不用換系統 · 真實案件驗證"
+  "pilotOffer": {
+    "eyebrow": "Export Desk Pilot",
+    "title": "先從一筆海外詢價開始。",
+    "lead": "你不需要導入系統，也不用更換原本合作的貨代。把一筆真實海外詢價給我們，我們幫你整理：",
+    "items": [
+      "出口條件與缺漏資料",
+      "適合的物流方案",
+      "貨代報價比較",
+      "初步關稅與 landed cost",
+      "文件需求 checklist",
+      "通關與目的國風險問題",
+      "可回覆國外客戶的摘要"
+    ],
+    "cta": "申請 Export Desk Pilot",
+    "note": "早期 Pilot 名額有限。"
+  },
+  "whyUs": {
+    "eyebrow": "為什麼是我們",
+    "title": "不是再多一個系統，而是多一個出口營運夥伴。",
+    "body": "我們不要求你改掉現有流程，也不取代你的貨代或報關行。我們做的是把海外詢價前期最混亂、最耗時的部分整理乾淨，讓你、貨代、報關行與國外客戶都能更快對齊。",
+    "quoteLabel": "你可以把我們想成：",
+    "quote": "你的 AI 國貿助理＋物流報價整理員＋出口成本分析師。",
+    "line1": "AI 先整理，人再確認。",
+    "line2": "你的團隊做決策，我們幫你準備資訊。"
+  },
+  "finalCta": {
+    "title": "有海外客戶正在問價嗎？",
+    "body": "把詢價內容、產品資料與目的地丟給我們。我們幫你整理成一份可以回覆客戶、比較物流方案、評估毛利與安排出貨的出口方案。",
+    "cta": "免費檢查一筆海外詢價",
+    "secondaryCta": "預約 15 分鐘聊聊"
   },
   "faq": {
     "eyebrow": "常見問題",
-    "title": "報關行常問的問題",
+    "title": "出口商常問的問題",
     "items": [
       {
-        "q": "Meriq 是什麼？",
-        "a": "Meriq 是報關行與貨運承攬業的 AI 營運層。它在送單前審查出貨郵件、發票、裝箱單與提單 — 找出缺漏文件、HS / CCC 分類疑義、許可風險，並產出可直接回覆客戶的狀態更新。"
+        "q": "你們是貨代嗎？",
+        "a": "我們不是傳統貨代，也不取代你的貨代。我們是出口營運協調層，幫你整理海外詢價、物流報價、文件需求與 landed cost。正式承攬、運輸與報關會由合作貨代、報關行或你原本配合的夥伴執行。"
       },
       {
-        "q": "Meriq 適合誰用？",
-        "a": "報關行、貨運承攬業，以及處理大量文件的進出口與貿易作業團隊。"
+        "q": "我已經有固定貨代，還需要你們嗎？",
+        "a": "需要。你可以繼續使用原本貨代。我們幫你把詢價資料整理乾淨、比較不同報價、確認文件缺口，讓你更清楚知道每家報價包含什麼、漏了什麼、哪個方案更適合。"
       },
       {
-        "q": "Meriq 會幫我送報關單嗎？",
-        "a": "不會。Meriq 處理的是報關前的準備工作 — 整理文件、交叉比對欄位、找出可能的 HS / CCC 與許可問題，並草擬供應商與主管機關的追問。最終的分類與送單決定，仍由你的團隊負責。"
+        "q": "你們可以保證 HS code 或關稅一定正確嗎？",
+        "a": "不會。我們提供的是初步分析、風險整理與需要確認的問題清單。最終分類、關稅與正式報關仍應由報關行、licensed broker 或相關專業人員確認。"
       },
       {
-        "q": "Meriq 如何處理 HS / CCC 分類？",
-        "a": "Meriq 依它能讀到的產品資訊，整理出可能的 HS / CCC 候選號列，標記還缺什麼才能確認號列，並草擬要問供應商或主管機關的問題。它不做最終的法規判定。"
+        "q": "資料不完整可以送出嗎？",
+        "a": "可以。很多海外詢價一開始本來就不完整。我們會幫你整理缺少哪些資料，例如尺寸重量、材質、用途、MSDS、型錄、目的地地址或 Incoterms。"
       },
       {
-        "q": "我的出貨資料能被追溯嗎？",
-        "a": "可以。每個抽取的欄位與發現都連回原始文件，讓你的團隊能逐一查證。試用期間，我們在與你團隊的直接協議下審查你的真實案件。"
+        "q": "適合小量出貨嗎？",
+        "a": "可以。如果是小量樣品、空運、快遞、LCL 或第一次出口，我們也可以協助整理適合的物流方式與文件需求。"
       },
       {
-        "q": "要怎麼開始？",
-        "a": "申請試用。給我們 5 票真實出貨案件，Meriq 會讓你看到它抓到什麼 — 缺漏文件、HS / CCC 疑義、許可風險，以及一段可直接回覆客戶的狀態更新。"
+        "q": "你們怎麼收費？",
+        "a": "早期可以先從單次 Export Desk Pilot 開始。後續如果你有固定海外詢價或出貨需求，可以選擇月費方案，由我們持續協助處理出口詢價、報價比較、landed cost 與出貨協調。"
       }
     ]
   },
   "blog": {
     "title": "願景與文章",
-    "subtitle": "關於送單前那段工作，我們是怎麼想的。",
+    "subtitle": "關於出口與跨境貿易那段最混亂的工作，我們是怎麼想的。",
     "backToBlog": "所有文章"
   },
   "footer": {
-    "tagline": "報關前審查，不再從零開始。",
+    "tagline": "把海外詢價，變成可出貨的出口方案。",
     "contact": "聯絡",
+    "partnerLead": "你是貨代或承運商嗎？",
+    "partnerCta": "成為物流合作夥伴",
     "rights": "版權所有。"
   },
-  "pilot": {
-    "cta": "申請試用",
-    "title": "早期 Design Partner 計畫",
-    "subtitle": "幾個快速問題，讓我們判斷是否適合 — 不到一分鐘。",
+  "plan": {
+    "cta": "取得出口方案",
+    "metaTitle": "取得出口方案",
+    "metaDescription": "把一筆海外詢價交給 Meriq：留下目的地、貨物與聯絡方式，1 個工作天內收到含貨代報價比較、初步關稅與 landed cost、文件 checklist 的出口方案。",
+    "title": "把一筆海外詢價，\n交給你的出口窗口。",
+    "subtitle": "資訊不完整也沒關係——我們會幫你列出缺什麼。送出後 1 個工作天內，你會收到可以回覆客戶的出口方案。",
+    "sectionShipment": "路線與條件",
+    "sectionCargo": "貨物",
+    "sectionContact": "聯絡方式",
+    "origin": "出貨地",
+    "originPlaceholder": "例：台中",
+    "destination": "目的地（國家 / 城市）",
+    "destinationPlaceholder": "例：美國 Dallas",
+    "incoterm": "客戶要求的條件（Incoterm）",
+    "incotermUnsure": "還不確定",
+    "mode": "運送方式",
+    "modeOptions": [
+      {
+        "value": "fcl",
+        "label": "海運整櫃 FCL"
+      },
+      {
+        "value": "lcl",
+        "label": "海運併櫃 LCL"
+      },
+      {
+        "value": "air",
+        "label": "空運"
+      },
+      {
+        "value": "courier",
+        "label": "快遞"
+      },
+      {
+        "value": "unsure",
+        "label": "還不確定"
+      }
+    ],
+    "product": "產品是什麼",
+    "productPlaceholder": "例：自行車碳纖維輪組",
+    "quantity": "數量",
+    "quantityPlaceholder": "例：500 組 / 2 板",
+    "weight": "總重（約略即可）",
+    "weightPlaceholder": "例：640 kg",
+    "readyDate": "預計出貨時間",
+    "readyDatePlaceholder": "例：8 月中",
+    "dangerous": "含電池、化學品或其他特殊貨",
+    "inquiry": "直接貼上客戶的詢價內容（選填）",
+    "inquiryPlaceholder": "把客戶的 email 原文貼進來，我們幫你整理成出口 RFQ…",
     "name": "姓名",
     "namePlaceholder": "你的名字",
-    "company": "公司名稱",
-    "companyPlaceholder": "範例報關行",
-    "role": "你的角色",
-    "volume": "每月出貨量",
-    "pain": "目前最大的痛點",
-    "sampleDocs": "能提供範例出貨文件嗎？",
-    "wantsCall": "想約 30 分鐘初談嗎？",
+    "company": "公司（選填）",
+    "companyPlaceholder": "範例精密工業",
     "email": "Email",
     "emailPlaceholder": "you@company.com",
-    "selectPlaceholder": "請選擇…",
-    "painOtherPlaceholder": "簡單描述一下",
-    "roleOptions": [
-      { "value": "operator", "label": "OP / 操作人員" },
-      { "value": "manager", "label": "主管 / 組長" },
-      { "value": "owner", "label": "老闆 / 創辦人" },
-      { "value": "other", "label": "其他" }
-    ],
-    "volumeOptions": [
-      { "value": "lt50", "label": "50 票以下" },
-      { "value": "50-200", "label": "50–200 票" },
-      { "value": "200-1000", "label": "200–1,000 票" },
-      { "value": "gt1000", "label": "1,000 票以上" }
-    ],
-    "painOptions": [
-      { "value": "missing_docs", "label": "缺件" },
-      { "value": "mismatch", "label": "發票 / 裝箱單比對" },
-      { "value": "regulatory", "label": "FDA / APHIS / 簽審法規" },
-      { "value": "chasing", "label": "追供應商與客戶" },
-      { "value": "other", "label": "其他" }
-    ],
-    "sampleDocsOptions": [
-      { "value": "yes", "label": "可以" },
-      { "value": "maybe", "label": "之後可以" },
-      { "value": "no", "label": "不行" }
-    ],
-    "wantsCallOptions": [
-      { "value": "yes", "label": "想" },
-      { "value": "no", "label": "先不用" }
-    ],
-    "submit": "送出申請",
+    "phone": "電話（選填）",
+    "phonePlaceholder": "0912 345 678",
+    "wantsCall": "順便約 15 分鐘通話",
+    "requiredHint": "只有目的地、產品、姓名與 Email 是必填。",
+    "submit": "送出，取得出口方案",
     "submitting": "傳送中…",
-    "successTitle": "已收到你的申請",
-    "successBody": "謝謝！我們會檢視後與你聯繫安排簡短通話。",
-    "bookCallBody": "已收到！挑一個方便的 30 分鐘時段吧。",
-    "errorBody": "送出失敗，請再試一次。",
-    "close": "完成"
+    "errorBody": "送出失敗，請再試一次，或直接寫信給我們。",
+    "successTitle": "已收到你的詢價",
+    "successBody": "我們會在 1 個工作天內回覆你的出口方案。有急件？直接寫信到 justinli@meriqai.com。",
+    "successBook": "想現在聊？挑一個方便的時段：",
+    "backHome": "回首頁",
+    "preview": {
+      "title": "你的出口方案",
+      "caseNo": "案件編號",
+      "status": "送出後開始整理",
+      "route": "路線",
+      "incoterm": "條件",
+      "cargo": "貨物",
+      "ready": "出貨時間",
+      "deliver": "你會收到",
+      "deliverables": [
+        "貨代報價比較（同一張表）",
+        "初步關稅與 landed cost",
+        "文件需求 checklist",
+        "可回覆客戶的摘要"
+      ],
+      "customs": "報關"
+    },
+    "customs": "報關 / 清關由誰處理？",
+    "customsOptions": [
+      {
+        "value": "both",
+        "label": "都需要（出口＋目的地）"
+      },
+      {
+        "value": "origin",
+        "label": "只需要出口端報關"
+      },
+      {
+        "value": "destination",
+        "label": "只需要目的地清關"
+      },
+      {
+        "value": "own_broker",
+        "label": "我們有自己的報關行"
+      },
+      {
+        "value": "unsure",
+        "label": "不確定，請給建議"
+      }
+    ],
+    "successBookCta": "預約時段"
   }
 }

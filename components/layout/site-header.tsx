@@ -10,18 +10,17 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import type { Locale } from "@/lib/i18n/config"
 import type { Dictionary } from "@/app/[lang]/dictionaries"
-import { ApplyPilotDialog } from "@/components/apply-pilot-dialog"
 import { LanguageSwitcher } from "./language-switcher"
-import { ThemeToggle } from "./theme-toggle"
 
+/** Floating pill nav: a rounded white bar hovering over the page. */
 export function SiteHeader({
   lang,
   nav,
-  pilot,
+  cta,
 }: {
   lang: Locale
   nav: Dictionary["nav"]
-  pilot: Dictionary["pilot"]
+  cta: string
 }) {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
@@ -33,89 +32,102 @@ export function SiteHeader({
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  // Absolute targets so the nav works from any route (e.g. blog pages), not
-  // just the landing page. "Vision" is the blog.
+  // Absolute targets so the nav works from any route, not just the landing.
   const links = [
     { href: `/${lang}#how`, label: nav.how },
-    { href: `/${lang}/tariff`, label: nav.tariff },
-    { href: `/${lang}/blog`, label: nav.vision },
+    { href: `/${lang}#use-cases`, label: nav.useCases },
+    { href: `/${lang}#faq`, label: nav.faq },
   ]
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
-        scrolled
-          ? "border-b border-border bg-background/80 backdrop-blur-md"
-          : "border-b border-transparent"
-      )}
-    >
-      <div className="mx-auto flex h-[72px] w-full max-w-6xl items-center justify-between gap-4 px-6">
-        <Link
-          href={`/${lang}`}
-          className="flex items-center gap-2.5"
-          aria-label="Meriq home"
-        >
-          <Image
-            src="/meriq-mark.png"
-            alt=""
-            width={34}
-            height={34}
-            className="size-[34px]"
-            quality={100}
-            unoptimized
-            priority
-          />
-          <span className="text-2xl font-semibold tracking-tight">Meriq</span>
-        </Link>
-
-        <nav className="hidden items-center gap-1 md:flex">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() =>
-                posthog.capture("nav_link_clicked", {
-                  label: link.label,
-                  href: link.href,
-                  lang,
-                })
-              }
-              className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-2">
-          <LanguageSwitcher current={lang} className="hidden sm:inline-flex" />
-          <ThemeToggle />
-          <ApplyPilotDialog pilot={pilot} lang={lang} location="header">
-            <Button size="sm" className="hidden sm:inline-flex">
-              {pilot.cta}
-            </Button>
-          </ApplyPilotDialog>
-          <Button
-            variant="ghost"
-            size="icon-sm"
-            className="md:hidden"
-            aria-label={open ? nav.closeMenu : nav.openMenu}
-            aria-expanded={open}
-            onClick={() => {
-              const next = !open
-              setOpen(next)
-              if (next) posthog.capture("mobile_menu_opened", { lang })
-            }}
+    <header className="fixed inset-x-0 top-3 z-50 px-3 sm:top-4 sm:px-6">
+      <div
+        className={cn(
+          "mx-auto w-full max-w-4xl rounded-4xl border bg-card/90 backdrop-blur-md transition-shadow duration-300",
+          scrolled
+            ? "border-border shadow-lg shadow-foreground/[0.06]"
+            : "border-border/70 shadow-md shadow-foreground/[0.04]"
+        )}
+      >
+        <div className="flex h-14 items-center justify-between gap-3 pr-2.5 pl-5">
+          <Link
+            href={`/${lang}`}
+            className="flex items-center"
+            aria-label="Meriq home"
           >
-            {open ? <X className="size-5" /> : <Menu className="size-5" />}
-          </Button>
-        </div>
-      </div>
+            {/* White wordmark asset, inverted for the light theme. */}
+            <Image
+              src="/meriq-wordmark.png"
+              alt="MERIQ AI"
+              width={680}
+              height={93}
+              className="h-[17px] w-auto invert"
+              quality={100}
+              unoptimized
+              priority
+            />
+          </Link>
 
-      {open && (
-        <div className="border-t border-border bg-background/95 backdrop-blur-md md:hidden">
-          <nav className="mx-auto flex w-full max-w-6xl flex-col gap-1 px-6 py-4">
+          <nav className="hidden items-center gap-0.5 md:flex">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() =>
+                  posthog.capture("nav_link_clicked", {
+                    label: link.label,
+                    href: link.href,
+                    lang,
+                  })
+                }
+                className="rounded-full px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-1.5">
+            <LanguageSwitcher
+              current={lang}
+              className="hidden sm:inline-flex"
+            />
+            <Button
+              size="sm"
+              className="hidden rounded-full sm:inline-flex"
+              asChild
+            >
+              <Link
+                href={`/${lang}/export-plan`}
+                onClick={() =>
+                  posthog.capture("get_plan_clicked", {
+                    location: "header",
+                    lang,
+                  })
+                }
+              >
+                {cta}
+              </Link>
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon-sm"
+              className="rounded-full md:hidden"
+              aria-label={open ? nav.closeMenu : nav.openMenu}
+              aria-expanded={open}
+              onClick={() => {
+                const next = !open
+                setOpen(next)
+                if (next) posthog.capture("mobile_menu_opened", { lang })
+              }}
+            >
+              {open ? <X className="size-5" /> : <Menu className="size-5" />}
+            </Button>
+          </div>
+        </div>
+
+        {open && (
+          <nav className="flex flex-col gap-1 border-t border-border px-3 py-3 md:hidden">
             {links.map((link) => (
               <a
                 key={link.href}
@@ -129,27 +141,31 @@ export function SiteHeader({
                     mobile: true,
                   })
                 }}
-                className="rounded-md px-3 py-2.5 text-sm text-foreground/90 hover:bg-accent"
+                className="rounded-xl px-3 py-2.5 text-sm text-foreground/90 hover:bg-accent"
               >
                 {link.label}
               </a>
             ))}
-            <div className="mt-2 flex flex-col gap-3">
-              {/* Opens over the menu (doesn't close it, so the dialog stays mounted). */}
-              <ApplyPilotDialog
-                pilot={pilot}
-                lang={lang}
-                location="header_mobile"
-              >
-                <Button size="sm" className="w-full">
-                  {pilot.cta}
-                </Button>
-              </ApplyPilotDialog>
+            <div className="mt-2 flex flex-col gap-3 px-1 pb-1">
+              <Button size="sm" className="w-full rounded-full" asChild>
+                <Link
+                  href={`/${lang}/export-plan`}
+                  onClick={() => {
+                    setOpen(false)
+                    posthog.capture("get_plan_clicked", {
+                      location: "header_mobile",
+                      lang,
+                    })
+                  }}
+                >
+                  {cta}
+                </Link>
+              </Button>
               <LanguageSwitcher current={lang} />
             </div>
           </nav>
-        </div>
-      )}
+        )}
+      </div>
     </header>
   )
 }

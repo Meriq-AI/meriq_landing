@@ -5,10 +5,16 @@ import { ScrollProgress } from "@/components/ui/scroll-progress"
 import { SiteHeader } from "@/components/layout/site-header"
 import { SiteFooter } from "@/components/layout/site-footer"
 import { Hero } from "@/components/sections/hero"
-import { HiddenCost } from "@/components/sections/hidden-cost"
+import { Problem } from "@/components/sections/problem"
+import { Solution } from "@/components/sections/solution"
+import { Capabilities } from "@/components/sections/capabilities"
 import { HowItWorks } from "@/components/sections/how-it-works"
+import { UseCases } from "@/components/sections/use-cases"
+import { Customers } from "@/components/sections/customers"
+import { PilotOffer } from "@/components/sections/pilot-offer"
+import { WhyUs } from "@/components/sections/why-us"
+import { FinalCta } from "@/components/sections/final-cta"
 import { Faq } from "@/components/sections/faq"
-import { PilotCta } from "@/components/sections/pilot-cta"
 import { htmlLang, isLocale, type Locale } from "@/lib/i18n/config"
 import { alternates, SITE_URL } from "@/lib/seo"
 import { getDictionary } from "./dictionaries"
@@ -53,22 +59,18 @@ export default async function Page({
         inLanguage: htmlLang[lang],
       },
       {
-        "@type": "SoftwareApplication",
-        name: "Meriq",
-        applicationCategory: "BusinessApplication",
-        operatingSystem: "Web",
+        "@type": "Service",
+        name: "Meriq Export Desk",
+        serviceType:
+          "Export operations: freight quote comparison, landed cost estimation, export documentation review, shipment coordination",
+        provider: { "@id": `${SITE_URL}/#organization` },
+        areaServed: "TW",
         url: `${SITE_URL}/${lang}`,
         description: dict.meta.description,
-        offers: {
-          "@type": "Offer",
-          price: "0",
-          priceCurrency: "USD",
-          description: "Pilot for design partners",
-        },
         audience: {
           "@type": "Audience",
           audienceType:
-            "Customs brokers, freight forwarders, and trade operations teams",
+            "Taiwanese manufacturers, exporters, and trading companies",
         },
       },
       {
@@ -90,18 +92,37 @@ export default async function Page({
         {JSON.stringify(jsonLd).replace(/</g, "\\u003c")}
       </script>
       <ScrollProgress className="z-[60] h-0.5 bg-primary" />
-      <SiteHeader lang={lang} nav={dict.nav} pilot={dict.pilot} />
+      <SiteHeader lang={lang} nav={dict.nav} cta={dict.plan.cta} />
       <main>
-        <Hero
-          hero={dict.hero}
-          lang={lang}
-          pilot={dict.pilot}
-          watch={dict.watch}
-        />
-        <HiddenCost hiddenCost={dict.hiddenCost} />
-        <HowItWorks howItWorks={dict.howItWorks} />
-        <Faq faq={dict.faq} />
-        <PilotCta pilotCta={dict.pilotCta} pilot={dict.pilot} lang={lang} />
+        <Hero hero={dict.hero} lang={lang} cta={dict.plan.cta} />
+
+        {/* Blueprint frame (Derya-style): one bordered column with hatched
+            rails; divide-y draws the rule between each section. */}
+        <div className="px-3 sm:px-6">
+          <div className="relative mx-auto w-full max-w-6xl">
+            <div
+              aria-hidden
+              className="hatch pointer-events-none absolute inset-y-0 -left-7 hidden w-6 xl:block"
+            />
+            <div
+              aria-hidden
+              className="hatch pointer-events-none absolute inset-y-0 -right-7 hidden w-6 xl:block"
+            />
+            <div className="divide-y divide-border border-x border-t border-border">
+              <Problem problem={dict.problem} />
+              <Solution solution={dict.solution} />
+              <Capabilities capabilities={dict.capabilities} lang={lang} />
+              <HowItWorks howItWorks={dict.howItWorks} lang={lang} />
+              <UseCases useCases={dict.useCases} />
+              <Customers customers={dict.customers} />
+              <PilotOffer pilotOffer={dict.pilotOffer} lang={lang} />
+              <WhyUs whyUs={dict.whyUs} />
+              <Faq faq={dict.faq} />
+            </div>
+          </div>
+        </div>
+
+        <FinalCta finalCta={dict.finalCta} lang={lang} />
       </main>
       <SiteFooter lang={lang} footer={dict.footer} />
     </>

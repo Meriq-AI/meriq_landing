@@ -9,6 +9,12 @@ export const SITE_URL = (
 
 export const SITE_NAME = "Meriq"
 
+// Single source of truth for contact/booking surfaces (footer, final CTA,
+// export-plan form) — these drifted when duplicated per-file.
+export const CONTACT_EMAIL = "justinli@meriqai.com"
+export const BOOKING_URL = "https://calendar.app.google/YwUWhSyPuiBRTf4N6"
+export const LINKEDIN_URL = "https://www.linkedin.com/company/meriq-ai"
+
 export const ogLocale: Record<Locale, string> = {
   en: "en_US",
   "zh-TW": "zh_TW",
@@ -16,22 +22,23 @@ export const ogLocale: Record<Locale, string> = {
 
 // Search terms relevant people would use to find this kind of product.
 export const KEYWORDS = [
-  "customs broker software",
-  "AI for customs brokers",
-  "freight forwarder software",
-  "pre-filing review",
+  "AI export operator",
+  "export RFQ",
+  "freight quote comparison",
+  "landed cost calculator",
+  "export documentation checklist",
+  "Incoterms CIF DAP DDP quote",
+  "export operations for manufacturers",
+  "Taiwan export logistics",
   "HS code classification",
-  "CCC code classification",
-  "customs compliance AI",
-  "shipment document review",
-  "broker-ready case",
-  "trade operations software",
-  "報關行軟體",
-  "報關 AI",
-  "貨運承攬",
-  "報關前審查",
-  "HS / CCC 號列查詢",
-  "出貨文件審查",
+  "出口報價",
+  "海外詢價",
+  "貨代報價比較",
+  "landed cost 計算",
+  "出口文件",
+  "出口關稅查詢",
+  "國際運費估算",
+  "台灣製造商出口",
 ]
 
 /**

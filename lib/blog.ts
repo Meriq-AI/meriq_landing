@@ -24,7 +24,8 @@ const POSTS: PostEntry[] = [
     date: "2026-06-19",
     i18n: {
       en: {
-        title: "Turn messy shipment communication into reviewable pre-filing cases",
+        title:
+          "Turn messy shipment communication into reviewable pre-filing cases",
         excerpt:
           "Meriq helps customs brokers, forwarders, and trade teams turn scattered emails, documents, product details, and regulatory questions into clear, traceable, reviewable shipment cases — before filing.",
         readingTime: "3 min read",

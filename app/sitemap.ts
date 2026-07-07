@@ -1,17 +1,11 @@
 import type { MetadataRoute } from "next"
 
 import { htmlLang, locales } from "@/lib/i18n/config"
-import { getPosts } from "@/lib/blog"
 import { SITE_URL } from "@/lib/seo"
 
+// Blog routes still exist in code but are intentionally unlisted for now.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const posts = getPosts()
-  const paths = ["", "/tariff", "/blog", ...posts.map((p) => `/blog/${p.slug}`)]
-
-  const lastModified = (path: string) => {
-    const post = posts.find((p) => `/blog/${p.slug}` === path)
-    return post ? new Date(post.date) : new Date()
-  }
+  const paths = ["", "/export-plan"]
 
   return paths.flatMap((path) => {
     const languages: Record<string, string> = {}
@@ -20,10 +14,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     return locales.map((lang) => ({
       url: `${SITE_URL}/${lang}${path}`,
-      lastModified: lastModified(path),
-      changeFrequency: path === "" ? "weekly" : "monthly",
-      priority:
-        path === "" ? 1 : path === "/tariff" ? 0.8 : path === "/blog" ? 0.6 : 0.7,
+      lastModified: new Date(),
+      changeFrequency: path === "" ? ("weekly" as const) : ("monthly" as const),
+      priority: path === "" ? 1 : 0.8,
       alternates: { languages },
     }))
   })

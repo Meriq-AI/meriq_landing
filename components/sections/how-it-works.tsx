@@ -1,16 +1,21 @@
+import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
+import { Button } from "@/components/ui/button"
 import { BlurFade } from "@/components/ui/blur-fade"
 import { Eyebrow, Section, SectionHeading } from "@/components/section"
+import type { Locale } from "@/lib/i18n/config"
 import type { Dictionary } from "@/app/[lang]/dictionaries"
 
 export function HowItWorks({
   howItWorks,
+  lang,
 }: {
   howItWorks: Dictionary["howItWorks"]
+  lang: Locale
 }) {
   return (
-    <Section id="how">
+    <Section id="how" className="bg-surface">
       <div className="mx-auto max-w-2xl text-center">
         <BlurFade delay={0.05} className="flex justify-center">
           <Eyebrow>{howItWorks.eyebrow}</Eyebrow>
@@ -29,7 +34,7 @@ export function HowItWorks({
         <ol className="mt-12 grid gap-4 lg:grid-cols-[1fr_auto_1fr_auto_1fr] lg:items-stretch">
           {howItWorks.steps.map((step, i) => (
             <li key={step.step} className="contents">
-              <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+              <div className="rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/[0.07]">
                 <span className="font-mono text-sm font-semibold text-primary">
                   {step.step}
                 </span>
@@ -51,6 +56,17 @@ export function HowItWorks({
             </li>
           ))}
         </ol>
+      </BlurFade>
+
+      <BlurFade delay={0.26}>
+        <div className="mt-10 flex justify-center">
+          <Button size="lg" className="rounded-full" asChild>
+            <Link href={`/${lang}/export-plan`}>
+              {howItWorks.cta}
+              <ArrowRight className="size-4" />
+            </Link>
+          </Button>
+        </div>
       </BlurFade>
     </Section>
   )

@@ -4,6 +4,16 @@ import type { NextConfig } from "next"
 const nextConfig: NextConfig = {
   // Allow MDX files to be treated as pages/imports
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  async redirects() {
+    return [
+      // The tariff tool was removed (2026-07); its URLs were indexed/shared.
+      {
+        source: "/:lang(en|zh-TW)/tariff",
+        destination: "/:lang",
+        permanent: true,
+      },
+    ]
+  },
   async rewrites() {
     return [
       {

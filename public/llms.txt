@@ -1,31 +1,30 @@
 # Meriq
 
-> Meriq is an AI operations layer for customs brokers and freight forwarders. It turns shipment emails, invoices, packing lists, and bills of lading into source-backed, ready-to-file case reviews — surfacing missing documents, HS / CCC classification questions, permit and agency-review risks, and customer-ready status updates. Meriq prepares the pre-filing work; licensed brokers and operators make the final classification and filing decisions.
+> Meriq is the AI export operator for Taiwanese manufacturers and exporters. It turns an overseas buyer inquiry into a shippable export plan: a structured export RFQ, forwarder freight quotes normalized into one comparable table, a preliminary duty and landed-cost estimate, an export document checklist, destination-country risk questions, and a reply summary ready to send back to the buyer. AI organizes the work first; people verify it. Meriq coordinates — the customer's own forwarders and customs brokers still execute carriage and filing, and final HS classification and duty rates are always confirmed by licensed professionals.
 
 ## What Meriq does
-- Reads shipment documents and emails and organizes them into one structured case.
-- Cross-checks invoice, packing list, and bill of lading fields and flags mismatches (e.g. address or weight discrepancies between documents).
-- Surfaces likely HS / CCC classification candidates and flags what product details are missing to confirm the code.
-- Flags possible import/export permit requirements, restricted-item risks, and agency review — without making the final legal determination.
-- Drafts supplier follow-ups and authority questions for human approval.
-- Produces a plain-language, customer-ready status update for each shipment so teams field fewer status calls.
-- Keeps every extracted field and finding traceable back to its source document.
+- Structures a vague buyer inquiry (email, spec sheets, quantities, destination) into a complete export RFQ: origin/destination, Incoterms, cargo dimensions and weight, FCL / LCL / air / courier recommendation, special-cargo flags, target ship date.
+- Requests quotes from partner freight forwarders and normalizes them into one table: freight, local charges, destination charges, transit time, free time, and whether customs clearance is included.
+- Estimates landed cost per order: product price, international freight, insurance, duties, clearance fees, destination charges — so exporters know whether the margin holds before quoting.
+- Assembles the export document checklist (Commercial Invoice, Packing List, B/L or AWB, Certificate of Origin, MSDS, spec sheets) and flags what is missing and who to ask.
+- Prepares the next steps: a buyer-ready reply summary, an RFQ package for forwarders, confirmation questions for the customs broker, and a pre-shipment checklist.
 
 ## Who it is for
-Customs brokers, freight forwarders, and in-house import/export and trade operations teams that handle document-heavy shipments.
+Taiwanese manufacturers, exporters, and trading companies with overseas inquiries — industrial components, bicycles and outdoor gear, auto parts, hardware and tooling, electronics, and Kickstarter / Amazon / Shopify shipping teams.
 
 ## How it works
-1. Send Meriq a shipment case (forward the email or upload the documents).
-2. Meriq reviews the case, cross-checks documents, surfaces HS / CCC and permit questions, and drafts follow-ups.
-3. Your team reviews the outcome, approves the next step, and files.
+1. Submit one overseas inquiry at https://meriqai.com/zh-TW/export-plan (or /en/export-plan) — incomplete details are fine; Meriq lists what is missing.
+2. AI structures the costs, documents, and logistics options; the Meriq team verifies with partner forwarders, brokers, or specialists.
+3. Within one business day the exporter receives an export plan they can send to their buyer.
 
 ## Pricing
-Pilot for early design partners. Send 5 real shipment cases to see what Meriq catches. No tool switching required; Meriq reviews your real cases under a direct agreement.
+Early access: a free check of one real inquiry, then a one-off Export Desk Pilot. Monthly plans are available for teams with a steady flow of overseas inquiries.
 
 ## Key pages
-- Home: https://meriqai.com/en
-- Vision and writing: https://meriqai.com/en/blog
-- Apply for a pilot: https://meriqai.com/en (application form on the homepage)
+- Home (zh-TW): https://meriqai.com/zh-TW
+- Home (English): https://meriqai.com/en
+- Get an export plan: https://meriqai.com/zh-TW/export-plan
 
 ## Contact
-justinli@meriqai.com
+- Email: justinli@meriqai.com
+- LinkedIn: https://www.linkedin.com/company/meriq-ai

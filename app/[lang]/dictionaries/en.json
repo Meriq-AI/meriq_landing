@@ -1,278 +1,387 @@
 {
   "meta": {
-    "title": "Meriq — AI operations layer for customs brokers & freight forwarders",
-    "description": "Meriq turns shipment emails, invoices, packing lists, and bills of lading into source-backed, ready-to-file case reviews — surfacing missing documents, HS / CCC classification questions, permit risks, and customer-ready status updates for customs brokers, freight forwarders, and trade teams."
+    "title": "Turn overseas inquiries into shippable export plans — Meriq | AI export operator for Taiwanese manufacturers",
+    "description": "A buyer just asked for CIF, DAP, or DDP pricing? Meriq helps Taiwanese manufacturers and exporters sort out freight quotes, duties, landed cost, export documents, and shipping risks — turning one overseas inquiry into an export plan you can quote, ship, and stand behind."
   },
   "nav": {
-    "product": "Product",
     "how": "How it works",
-    "roles": "For your team",
-    "tariff": "Tariff calculator",
-    "vision": "Blog",
+    "useCases": "Use cases",
+    "faq": "FAQ",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
   "hero": {
-    "eyebrow": "For customs brokers, forwarders & in-house trade teams",
-    "titleLead": "Your shipments don't get ready by themselves. ",
-    "titleEmph": "Meriq does.",
-    "pitch": "Meriq works your pre-filing queue: supplier emails, missing documents, HS / CCC questions, permit risks, and follow-ups.",
-    "outcome": "Your team reviews the case, approves the follow-up, and moves the shipment forward.",
-    "secondaryCta": "See Sample Review",
-    "ctaNote": "Early design partner program"
-  },
-  "trustBar": {
-    "lead": "Built for customs brokers, freight forwarders, and trade operations teams handling document-heavy shipments.",
-    "pills": [
-      "Pre-filing review",
-      "Document consistency",
-      "Missing document tracking",
-      "Broker-ready handoff"
+    "eyebrow": "The AI export operations partner for Taiwanese manufacturers",
+    "titleLead": "Turn overseas inquiries into ",
+    "titleEmph": "shippable export plans",
+    "titleEnd": ".",
+    "pitch": "When a buyer asks for a price, the product price is the easy part. You also need freight, duties, documents, lead time, and landed cost.",
+    "outcome": "Meriq organizes your export costs, forwarder quotes, document requirements, and shipping risks — so you reply faster and know whether the order is worth taking.",
+    "secondaryCta": "See how we work",
+    "chips": [
+      "Free check on one real inquiry",
+      "AI organizes first, people verify",
+      "Keep your forwarders — nothing to install"
     ]
   },
-  "hiddenCost": {
-    "eyebrow": "The hidden cost",
-    "title": "Pre-filing work is where shipments get stuck",
-    "subtitle": "Before a single entry is filed, your team is already buried in back-and-forth. That's where the time leaks and delays begin.",
+  "problem": {
+    "eyebrow": "The real problem",
+    "title": "When a buyer asks for pricing, the product price isn't the hard part.",
+    "intro": "You probably run into these every week:",
+    "items": [
+      "The buyer asks for CIF, DAP, or DDP — but you don't know how to price freight and destination charges.",
+      "You asked three forwarders and got three different quote formats. No idea who's actually cheaper.",
+      "You're not sure whether this product needs special documents for the US, Europe, or Japan.",
+      "You don't know if destination duties, clearance fees, and document requirements will eat the margin.",
+      "Every inquiry means re-assembling product data, dimensions, packing details, HS codes, MSDS, invoices, packing lists.",
+      "The buyer wants a quote now — but you're still waiting on the forwarder."
+    ],
+    "punchLead": "So the inquiry sits there, and the one question you can't answer fast is:",
+    "punchEmph": "Can we actually take this order?"
+  },
+  "solution": {
+    "eyebrow": "What we are",
+    "titleLead": "We're your ",
+    "titleEmph": "AI Export Operator",
+    "titleEnd": ".",
+    "lead": "Meriq isn't a customs tool, and it isn't a freight-comparison site. We turn one overseas inquiry into a complete export plan:",
+    "items": [
+      "Export terms, organized",
+      "Forwarder quotes, compared",
+      "Preliminary duty & landed cost estimate",
+      "Document checklist",
+      "Clearance & destination-country risks",
+      "Question lists for forwarders, brokers, and your buyer",
+      "A summary you can send straight to the customer"
+    ],
+    "closing1": "You don't need to speak logistics first, and you don't need to chase every forwarder yourself.",
+    "closing2": "Give us the product, quantity, destination, and shipping needs — we sort out the details behind it."
+  },
+  "capabilities": {
+    "eyebrow": "What we do for you",
+    "title": "From vague inquiry to executable plan — one export desk.",
     "items": [
       {
-        "title": "Scattered across inboxes",
-        "desc": "Supplier emails, attachments, and replies spread across threads no one fully owns."
+        "num": "01",
+        "title": "Structure the inquiry",
+        "desc": "We turn the buyer's request into a complete export RFQ:",
+        "points": [
+          "Origin & destination",
+          "Incoterms",
+          "Cargo dimensions & weight",
+          "FCL / LCL / air / courier recommendation",
+          "DG, food, electronics & special-cargo flags",
+          "Target ship date",
+          "Door-to-door, clearance & delivery needs"
+        ],
+        "note": "Incomplete data is fine — we'll list exactly what's missing."
       },
       {
-        "title": "Missing documents found too late",
-        "desc": "A missing COO or permit surfaces the day before filing — not the day it arrived."
+        "num": "02",
+        "title": "Compare freight quotes",
+        "desc": "We request quotes from partner forwarders and normalize them into one table:",
+        "points": [
+          "Freight",
+          "Local charges",
+          "Destination charges",
+          "Transit time",
+          "Free time",
+          "Customs clearance included or not",
+          "Fit for this specific shipment"
+        ],
+        "note": "No more decoding mismatched Excels, PDFs, and email threads."
       },
       {
-        "title": "Invoice / packing-list mismatches",
-        "desc": "Quantities, weights, and values quietly disagree across documents."
+        "num": "03",
+        "title": "Estimate landed cost",
+        "desc": "We build the full cost picture for this order:",
+        "points": [
+          "Product price",
+          "International freight",
+          "Insurance",
+          "Duties",
+          "Clearance-related fees",
+          "Destination charges",
+          "Possible extra document & compliance costs"
+        ],
+        "note": "Know whether the margin survives — before you quote."
       },
       {
-        "title": "Agency / inspection readiness uncertainty",
-        "desc": "Whether an agency permit, inspection, or prior notice is needed often isn't clear until it's urgent."
+        "num": "04",
+        "title": "Check documents & risks",
+        "desc": "We assemble what needs attention before the cargo moves:",
+        "points": [
+          "Commercial Invoice",
+          "Packing List",
+          "B/L or AWB",
+          "Certificate of Origin",
+          "MSDS",
+          "Catalogs & spec sheets",
+          "Documents the destination country may require",
+          "Questions to confirm with forwarders, brokers, or the buyer"
+        ],
+        "note": "What's missing and who to ask — listed once, clearly."
       },
       {
-        "title": "The same information, chased again",
-        "desc": "Operators re-ask suppliers for details already buried in an earlier email."
-      },
-      {
-        "title": "Value & disbursement basis is hard to trace",
-        "desc": "Declared values, estimated duties, and possible disbursements are scattered across invoices, the entry, payment slips, terminal charges, and email. When a customer asks about an amount, the team digs back through documents for the basis."
+        "num": "05",
+        "title": "Coordinate the next step",
+        "desc": "You don't just get a report — you get the next moves, prepared:",
+        "points": [
+          "A reply summary for your buyer",
+          "An RFQ package for forwarders",
+          "Confirmation questions for the broker",
+          "An internal cost & risk summary",
+          "A pre-shipment checklist"
+        ],
+        "note": "Your team decides. We prepare the information."
       }
     ]
   },
   "howItWorks": {
     "eyebrow": "How it works",
-    "title": "Send Meriq a shipment. It does the review. You approve the next step.",
-    "subtitle": "Three steps from messy intake to a broker-ready case.",
-    "forwardLabel": "Forward to",
-    "forwardAddress": "review@meriqai.com",
-    "forwardHint": "or upload a case",
+    "title": "Three steps from inquiry to export plan.",
+    "subtitle": "AI organizes first, people verify. Nothing to install.",
     "steps": [
       {
         "step": "01",
-        "title": "Upload or share a shipment case",
-        "desc": "Upload recent supplier emails, invoices, packing lists, B/Ls, product details, and related compliance documents. Meriq organizes the case, flags gaps and questions, and produces a reviewable result."
+        "title": "Send the inquiry & product data",
+        "desc": "Share the buyer's inquiry, product name, catalog, quantity, dimensions and weight, cargo value, and destination. Incomplete is fine — we'll list what's missing."
       },
       {
         "step": "02",
-        "title": "Meriq reviews the case",
-        "desc": "Meriq organizes the documents, detects missing information, checks invoice and packing-list mismatches, flags pre-filing blockers, and drafts supplier follow-ups."
+        "title": "We build the costs, documents & logistics options",
+        "desc": "AI structures the data first, then our team verifies. Where needed, we confirm details with partner forwarders, brokers, or specialists."
       },
       {
         "step": "03",
-        "title": "Your team approves the next step",
-        "desc": "Review the outcome, approve follow-ups, and move the case toward ready-to-file with every issue traceable back to source evidence."
+        "title": "You get a plan you can send to the customer",
+        "desc": "Freight quote comparison, landed cost, document checklist, risk flags, and recommended next steps."
+      }
+    ],
+    "cta": "Submit an inquiry"
+  },
+  "useCases": {
+    "eyebrow": "Use cases",
+    "title": "Send us the inquiry when…",
+    "items": [
+      {
+        "title": "A new overseas buyer asks for pricing",
+        "desc": "They want CIF / DAP / DDP, and you need freight, duties, and destination costs — fast."
+      },
+      {
+        "title": "You're entering a new market",
+        "desc": "You want to sell into the US, Europe, Japan, or Southeast Asia, but local documents, duties, and logistics costs are unclear."
+      },
+      {
+        "title": "Forwarder quotes don't line up",
+        "desc": "Every forwarder itemizes differently. You can't tell who's actually cheaper or who left charges out."
+      },
+      {
+        "title": "Shipment data is always incomplete",
+        "desc": "Dimensions, weight, materials, use case, MSDS, catalogs, HS codes — rebuilt from scratch every time."
+      },
+      {
+        "title": "You need to know if the order is worth taking",
+        "desc": "Not just the freight — whether the margin holds after logistics, duties, and destination costs."
       }
     ]
   },
-  "watch": {
-    "eyebrow": "Pre-filing classification check",
-    "title": "Before your team calls the authority, Meriq prepares the case.",
-    "subtitle": "Meriq surfaces likely HS / CCC candidates, missing product details, and source-backed questions for broker review — before your team files.",
-    "caseTitle": "Acme Electronics Co. · 1 pallet",
-    "caseSub": "Wireless IoT Gateway · pre-filing review",
-    "statusWorking": "Agency check pending",
-    "statusReady": "Ready for broker review",
-    "railLabel": "Where this case is",
-    "rail": [
-      { "title": "Documents read", "sub": "CI · PL · B/L · photos · catalog" },
-      { "title": "Fields compared", "sub": "Invoice / PL product-name mismatch" },
-      { "title": "Classification flagged", "sub": "Possible RF · HS / CCC unconfirmed" },
-      { "title": "Agency check pending", "sub": "NCC / type approval to clarify" },
-      { "title": "Questions prepared", "sub": "Supplier + authority" },
-      { "title": "Customer update ready", "sub": "Plain-language status to send" },
-      { "title": "Ready for broker review", "sub": "Human decision before filing" }
-    ],
-    "blockersLabel": "Agency check pending · before filing",
-    "blockers": [
-      {
-        "state": "review",
-        "title": "RF / wireless device?",
-        "desc": "Catalog mentions Wi-Fi / Bluetooth; docs don't confirm",
-        "tag": "Confirm"
-      },
-      {
-        "state": "review",
-        "title": "HS / CCC under RF telecom control?",
-        "desc": "Classification changes the import rules",
-        "tag": "Classify"
-      },
-      {
-        "state": "review",
-        "title": "NCC / type-approval docs needed?",
-        "desc": "Depends on the final classification",
-        "tag": "Authority"
-      },
-      {
-        "state": "missing",
-        "title": "Product specs incomplete",
-        "desc": "Missing datasheet, frequency, output power, full model, brand, NCC cert",
-        "tag": "Supplier"
-      }
-    ],
+  "customers": {
+    "eyebrow": "Who it's for",
+    "title": "Who is Meriq for?",
+    "lead": "Meriq fits Taiwanese companies with overseas inquiries, export needs, or international expansion underway:",
     "chips": [
-      "Can this case be filed now?",
-      "If we file now, will we get a correction request?",
-      "What's missing to confirm the HS / CCC code?",
-      "Where do the declared value and estimated duties come from?",
-      "Draft the next questions to ask."
+      "Manufacturers",
+      "Exporters",
+      "Trading companies",
+      "Industrial component suppliers",
+      "Bicycle / outdoor brands",
+      "Auto parts suppliers",
+      "Hardware / tooling / machined parts",
+      "Electronics & hardware brands",
+      "Kickstarter / Amazon / Shopify teams"
     ],
-    "composer": "Ask Meriq about this shipment…",
-    "statusLabel": "Customer status draft",
-    "note": "Meriq surfaces likely requirements and missing evidence. Your team makes the final filing decision.",
-    "chat": [
-      {
-        "from": "agent",
-        "text": "I've read the commercial invoice, packing list, B/L, product photos, and catalog, and compared the main fields."
-      },
-      {
-        "from": "agent",
-        "text": "I found 2 things to confirm first: the invoice says “Wireless IoT Gateway” while the packing list says “RF Communication Module” — the product names don't fully match. And the catalog mentions Wi-Fi / Bluetooth, but the documents don't include the frequency, output power, or full model spec."
-      },
-      { "from": "user", "text": "Can we file this now?" },
-      {
-        "from": "agent",
-        "text": "I'd add the missing details first. Two things are blocking it:\nFirst, the invoice and packing-list product names disagree, which affects classification.\nSecond, the product may include RF functions, but the documents aren't enough to confirm the HS / CCC classification or whether an agency or customs-assisted inspection applies."
-      },
-      { "from": "card", "text": "" },
-      {
-        "from": "user",
-        "text": "If we file now, are we likely to get a correction request?"
-      },
-      {
-        "from": "agent",
-        "text": "Possibly. The most likely requests are product specs and agency-related documents.\nThe documents only show it's a Wireless IoT Gateway — they can't confirm whether it's an RF device, a comms module, or general networking gear. Different classifications can mean different import rules.\nI'd confirm the specs with the supplier first, then let your broker decide whether to ask the authority."
-      },
-      { "from": "user", "text": "Draft the next questions to ask." },
-      {
-        "from": "agent",
-        "text": "Done. I prepared two sets of reviewable questions — one for the supplier to fill gaps, one to confirm direction with the authority.\n\nSupplier questions (draft):\nPlease confirm whether this Wireless IoT Gateway includes Wi-Fi, Bluetooth, RF, LTE, or other wireless functions. Please provide the full model number, product datasheet, frequency range, output power, intended use, manufacturer spec sheet, and any existing NCC or type-approval documents.\n\nAuthority question (draft):\nThe documents list the product as a Wireless IoT Gateway, and the catalog mentions Wi-Fi / Bluetooth, but frequency, output power, and full model data are still missing. Could you confirm whether, under this product description, RF / telecom-controlled equipment rules may apply, or whether further agency documents are needed for pre-filing review."
-      },
-      { "from": "user", "text": "What should we tell the customer?" },
-      {
-        "from": "status",
-        "text": "Your shipment is still under pre-filing review.\nTwo items need confirming first: the invoice and packing-list product names don't match, and the product may include wireless RF functions but the documents don't yet provide full frequency, output power, model, and certification data.\nWe've compiled the product specs to request from the supplier and prepared the authority-confirmation questions. Once the details come back, it can move to broker review."
-      }
-    ]
+    "closing": "If overseas inquiries keep landing on your desk and each one costs hours of logistics, document, and cost checking — that's exactly what we take off your plate."
   },
-  "pilotCta": {
-    "eyebrow": "Looking for design partners",
-    "title": "Test Meriq with 5 real shipment cases.",
-    "subtitle": "We turn each shipment into a pre-filing case review: missing documents, field mismatches, HS / CCC questions, likely permit or authority issues, and follow-up drafts you can send to customers or suppliers.",
-    "note": "Pilot · no tool switching · validated on real cases"
+  "pilotOffer": {
+    "eyebrow": "Export Desk Pilot",
+    "title": "Start with one real inquiry.",
+    "lead": "No system to adopt, no need to switch forwarders. Give us one real overseas inquiry and we'll put together:",
+    "items": [
+      "Export terms & missing data",
+      "The right logistics options",
+      "Forwarder quote comparison",
+      "Preliminary duties & landed cost",
+      "Document checklist",
+      "Clearance & destination-country risk questions",
+      "A summary you can send to the buyer"
+    ],
+    "cta": "Apply for the Export Desk Pilot",
+    "note": "Early pilot spots are limited."
+  },
+  "whyUs": {
+    "eyebrow": "Why us",
+    "title": "Not another system. An export operations partner.",
+    "body": "We don't ask you to change how you work, and we don't replace your forwarder or customs broker. We clean up the messiest, most time-consuming front end of every overseas inquiry — so you, your forwarders, your broker, and your buyer align faster.",
+    "quoteLabel": "Think of us as:",
+    "quote": "Your AI trade assistant + freight-quote wrangler + export cost analyst.",
+    "line1": "AI organizes first. People verify.",
+    "line2": "Your team decides. We prepare the information."
+  },
+  "finalCta": {
+    "title": "Is a buyer asking for pricing right now?",
+    "body": "Send us the inquiry, the product data, and the destination. We'll turn it into an export plan you can use to reply to the customer, compare logistics options, check the margin, and arrange the shipment.",
+    "cta": "Check one inquiry — free",
+    "secondaryCta": "Book a 15-min chat"
   },
   "faq": {
     "eyebrow": "FAQ",
-    "title": "Questions brokers ask",
+    "title": "Questions exporters ask us",
     "items": [
       {
-        "q": "What is Meriq?",
-        "a": "Meriq is an AI operations layer for customs brokers and freight forwarders. It reviews shipment emails, invoices, packing lists, and bills of lading before filing — surfacing missing documents, HS / CCC classification questions, permit risks, and customer-ready status updates."
+        "q": "Are you a freight forwarder?",
+        "a": "We're not a traditional forwarder, and we don't replace yours. We're the export operations layer: we organize your overseas inquiries, freight quotes, document requirements, and landed cost. The actual carriage, transport, and customs filing are executed by partner forwarders, brokers, or the partners you already work with."
       },
       {
-        "q": "Who is Meriq for?",
-        "a": "Customs brokers, freight forwarders, and in-house import/export and trade operations teams that handle document-heavy shipments."
+        "q": "I already have a forwarder. Do I still need you?",
+        "a": "Yes — keep your forwarder. We clean up the inquiry data, compare quotes across forwarders, and check for document gaps, so you know exactly what each quote includes, what it leaves out, and which option fits this shipment."
       },
       {
-        "q": "Does Meriq file customs entries for me?",
-        "a": "No. Meriq handles the pre-filing work — organizing documents, cross-checking fields, surfacing likely HS / CCC and permit questions, and drafting supplier and authority follow-ups. Your team makes the final classification and filing decisions."
+        "q": "Can you guarantee HS codes or duty rates are correct?",
+        "a": "No. We provide preliminary analysis, risk mapping, and a list of questions that need confirming. Final classification, duty rates, and the formal customs filing should always be confirmed by a customs broker, licensed broker, or the relevant professional."
       },
       {
-        "q": "How does Meriq handle HS / CCC classification?",
-        "a": "Meriq surfaces likely HS / CCC candidates from the product details it can read, flags what's missing to confirm the code, and drafts the questions to ask suppliers or the relevant authority. It does not make the final legal determination."
+        "q": "Can I submit an incomplete inquiry?",
+        "a": "Yes. Most overseas inquiries start incomplete. We'll map out what's missing — dimensions and weight, materials, use case, MSDS, catalogs, delivery address, or Incoterms."
       },
       {
-        "q": "Is my shipment data kept traceable?",
-        "a": "Yes. Every extracted field and finding links back to its source document, so your team can verify everything. During the pilot we review your real cases under a direct agreement with your team."
+        "q": "Does this work for small shipments?",
+        "a": "Yes. For small sample runs, air freight, courier, LCL, or a first-ever export, we'll help you find the right logistics mode and document requirements."
       },
       {
-        "q": "How do I get started?",
-        "a": "Apply for a pilot. Send us 5 real shipment cases and Meriq shows what it catches — missing documents, HS / CCC questions, permit risks, and a customer-ready status update."
+        "q": "How do you charge?",
+        "a": "Start with a one-off Export Desk Pilot. If you have a steady flow of overseas inquiries or shipments, a monthly plan is available — we keep handling your export inquiries, quote comparisons, landed costs, and shipment coordination."
       }
     ]
   },
   "blog": {
     "title": "Vision & writing",
-    "subtitle": "How we think about the work that happens before filing.",
+    "subtitle": "How we think about the messiest part of cross-border trade.",
     "backToBlog": "All posts"
   },
   "footer": {
-    "tagline": "Pre-filing case reviews for customs teams.",
+    "tagline": "Turn overseas inquiries into shippable export plans.",
     "contact": "Contact",
+    "partnerLead": "Are you a forwarder or carrier?",
+    "partnerCta": "Partner with us",
     "rights": "All rights reserved."
   },
-  "pilot": {
-    "cta": "Start a pilot",
-    "title": "Early design partner program",
-    "subtitle": "A few quick questions to see if Meriq's a fit — under a minute.",
+  "plan": {
+    "cta": "Get Export Plan",
+    "metaTitle": "Get your export plan",
+    "metaDescription": "Hand Meriq one overseas inquiry: destination, cargo, and contact details. Within one business day you'll get an export plan with normalized forwarder quotes, preliminary duties and landed cost, and a document checklist.",
+    "title": "Hand one inquiry to your export desk.",
+    "subtitle": "Incomplete details are fine — we'll list what's missing. Within one business day, you'll get an export plan you can send to your buyer.",
+    "sectionShipment": "Route & terms",
+    "sectionCargo": "Cargo",
+    "sectionContact": "Contact",
+    "origin": "Origin",
+    "originPlaceholder": "e.g. Taichung",
+    "destination": "Destination (country / city)",
+    "destinationPlaceholder": "e.g. Dallas, USA",
+    "incoterm": "Terms your buyer asked for (Incoterm)",
+    "incotermUnsure": "Not sure yet",
+    "mode": "Shipping mode",
+    "modeOptions": [
+      {
+        "value": "fcl",
+        "label": "Ocean FCL"
+      },
+      {
+        "value": "lcl",
+        "label": "Ocean LCL"
+      },
+      {
+        "value": "air",
+        "label": "Air freight"
+      },
+      {
+        "value": "courier",
+        "label": "Courier"
+      },
+      {
+        "value": "unsure",
+        "label": "Not sure yet"
+      }
+    ],
+    "product": "What's the product?",
+    "productPlaceholder": "e.g. carbon fiber bicycle wheelsets",
+    "quantity": "Quantity",
+    "quantityPlaceholder": "e.g. 500 sets / 2 pallets",
+    "weight": "Total weight (rough is fine)",
+    "weightPlaceholder": "e.g. 640 kg",
+    "readyDate": "Target ship date",
+    "readyDatePlaceholder": "e.g. mid-August",
+    "dangerous": "Contains batteries, chemicals, or other special cargo",
+    "inquiry": "Paste the buyer's inquiry (optional)",
+    "inquiryPlaceholder": "Paste the buyer's email as-is — we'll turn it into an export RFQ…",
     "name": "Name",
     "namePlaceholder": "Your name",
-    "company": "Company name",
-    "companyPlaceholder": "Acme Customs Brokerage",
-    "role": "Your role",
-    "volume": "Shipments / month",
-    "pain": "Biggest pain right now",
-    "sampleDocs": "Can you share sample shipment docs?",
-    "wantsCall": "Want a 30-min intro call?",
+    "company": "Company (optional)",
+    "companyPlaceholder": "Acme Precision Industries",
     "email": "Email",
     "emailPlaceholder": "you@company.com",
-    "selectPlaceholder": "Select…",
-    "painOtherPlaceholder": "Tell us briefly",
-    "roleOptions": [
-      { "value": "operator", "label": "Operator / OP" },
-      { "value": "manager", "label": "Manager / team lead" },
-      { "value": "owner", "label": "Owner / founder" },
-      { "value": "other", "label": "Other" }
-    ],
-    "volumeOptions": [
-      { "value": "lt50", "label": "Under 50" },
-      { "value": "50-200", "label": "50–200" },
-      { "value": "200-1000", "label": "200–1,000" },
-      { "value": "gt1000", "label": "Over 1,000" }
-    ],
-    "painOptions": [
-      { "value": "missing_docs", "label": "Missing documents" },
-      { "value": "mismatch", "label": "Invoice / packing-list mismatches" },
-      { "value": "regulatory", "label": "FDA / APHIS / regulatory" },
-      { "value": "chasing", "label": "Chasing suppliers & customers" },
-      { "value": "other", "label": "Something else" }
-    ],
-    "sampleDocsOptions": [
-      { "value": "yes", "label": "Yes" },
-      { "value": "maybe", "label": "Maybe later" },
-      { "value": "no", "label": "No" }
-    ],
-    "wantsCallOptions": [
-      { "value": "yes", "label": "Yes" },
-      { "value": "no", "label": "No" }
-    ],
-    "submit": "Apply for pilot",
+    "phone": "Phone (optional)",
+    "phonePlaceholder": "+886 912 345 678",
+    "wantsCall": "Also book a 15-min call",
+    "requiredHint": "Only destination, product, name, and email are required.",
+    "submit": "Submit — get my export plan",
     "submitting": "Sending…",
-    "successTitle": "Application received",
-    "successBody": "Thanks! We'll review and reach out to set up a short call.",
-    "bookCallBody": "You're in. Pick a 30-minute slot that works for you.",
-    "errorBody": "Something went wrong — please try again.",
-    "close": "Done"
+    "errorBody": "Something went wrong. Please try again, or just email us.",
+    "successTitle": "Inquiry received",
+    "successBody": "You'll get your export plan within one business day. Urgent? Email justinli@meriqai.com directly.",
+    "successBook": "Want to talk now? Pick a time:",
+    "backHome": "Back to home",
+    "preview": {
+      "title": "Your export plan",
+      "caseNo": "Case no.",
+      "status": "starts once you submit",
+      "route": "Route",
+      "incoterm": "Terms",
+      "cargo": "Cargo",
+      "ready": "Ship date",
+      "deliver": "You'll receive",
+      "deliverables": [
+        "Forwarder quotes, one normalized table",
+        "Preliminary duties & landed cost",
+        "Document checklist",
+        "A summary you can send to the buyer"
+      ],
+      "customs": "Customs"
+    },
+    "customs": "Who handles customs clearance?",
+    "customsOptions": [
+      {
+        "value": "both",
+        "label": "Both ends (export + import)"
+      },
+      {
+        "value": "origin",
+        "label": "Origin (export) only"
+      },
+      {
+        "value": "destination",
+        "label": "Destination (import) only"
+      },
+      {
+        "value": "own_broker",
+        "label": "We use our own broker"
+      },
+      {
+        "value": "unsure",
+        "label": "Not sure — advise me"
+      }
+    ],
+    "successBookCta": "Pick a time"
   }
 }

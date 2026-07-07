@@ -1,9 +1,13 @@
 import type { Metadata } from "next"
-import { Geist_Mono, Inter, Noto_Sans_TC } from "next/font/google"
+import {
+  Bricolage_Grotesque,
+  Geist_Mono,
+  Inter,
+  Noto_Sans_TC,
+} from "next/font/google"
 import { notFound } from "next/navigation"
 
 import "../globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import { htmlLang, isLocale, locales, type Locale } from "@/lib/i18n/config"
 import { KEYWORDS, ogLocale, SITE_NAME, SITE_URL } from "@/lib/seo"
@@ -12,6 +16,15 @@ import { getDictionary } from "./dictionaries"
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 const fontMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
+
+// Latin display face for headlines; zh headlines fall back to Noto Sans TC.
+// Every font-display usage is semibold — ship just the 600 instance, not the
+// whole variable axis.
+const display = Bricolage_Grotesque({
+  subsets: ["latin"],
+  weight: "600",
+  variable: "--font-display",
+})
 
 const notoTC = Noto_Sans_TC({
   subsets: ["latin"],
@@ -89,23 +102,16 @@ export default async function RootLayout({
   return (
     <html
       lang={htmlLang[lang]}
-      suppressHydrationWarning
       className={cn(
         "antialiased",
         inter.variable,
         fontMono.variable,
+        display.variable,
         notoTC.variable,
         "font-sans"
       )}
     >
-      <body>
-        {/* Pre-paint theme: a tiny external script (not inline) so React 19
-            doesn't warn about scripts in components. Loaded synchronously on
-            purpose so the theme class is set before first paint (no flash). */}
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script src="/theme-init.js" />
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
+      <body>{children}</body>
     </html>
   )
 }
