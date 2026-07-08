@@ -38,6 +38,17 @@ export function WhyUs({ whyUs }: { whyUs: Dictionary["whyUs"] }) {
           <p className="text-base text-muted-foreground">{whyUs.line2}</p>
         </div>
       </BlurFade>
+
+      <BlurFade delay={0.32}>
+        <div className="mx-auto mt-12 max-w-2xl rounded-2xl border border-border bg-background p-6 text-left sm:p-8">
+          <p className="text-lg font-semibold tracking-tight text-balance sm:text-xl">
+            {whyUs.trustLead}
+          </p>
+          <p className="mt-3 text-base leading-relaxed text-pretty text-muted-foreground">
+            {whyUs.trustBody}
+          </p>
+        </div>
+      </BlurFade>
     </Section>
   )
 }

@@ -19,7 +19,7 @@
     "outcome": "Meriq organizes your export costs, forwarder quotes, document requirements, and shipping risks — so you reply faster and know whether the order is worth taking.",
     "secondaryCta": "See how we work",
     "chips": [
-      "Free check on one real inquiry",
+      "Preliminary export plan in 48 hours",
       "AI organizes first, people verify",
       "Keep your forwarders — nothing to install"
     ]
@@ -206,7 +206,7 @@
   "pilotOffer": {
     "eyebrow": "Export Desk Pilot",
     "title": "Start with one real inquiry.",
-    "lead": "No system to adopt, no need to switch forwarders. Give us one real overseas inquiry and we'll put together:",
+    "lead": "No system to adopt, no need to switch forwarders. Send us one real overseas inquiry and we'll return a preliminary export plan within 48 hours:",
     "items": [
       "Export terms & missing data",
       "The right logistics options",
@@ -217,7 +217,7 @@
       "A summary you can send to the buyer"
     ],
     "cta": "Apply for the Export Desk Pilot",
-    "note": "Early pilot spots are limited."
+    "note": "Early pilot — first inquiry review available for qualified exporters. Spots are limited."
   },
   "whyUs": {
     "eyebrow": "Why us",
@@ -226,12 +226,14 @@
     "quoteLabel": "Think of us as:",
     "quote": "Your AI trade assistant + freight-quote wrangler + export cost analyst.",
     "line1": "AI organizes first. People verify.",
-    "line2": "Your team decides. We prepare the information."
+    "line2": "Your team decides. We prepare the information.",
+    "trustLead": "Every export plan is more than AI.",
+    "trustBody": "Meriq uses AI to first organize the inquiry, documents, and costs, then hands off to our partner forwarders and customs brokers to confirm — so exporters get a more complete, executable shipping plan."
   },
   "finalCta": {
     "title": "Is a buyer asking for pricing right now?",
     "body": "Send us the inquiry, the product data, and the destination. We'll turn it into an export plan you can use to reply to the customer, compare logistics options, check the margin, and arrange the shipment.",
-    "cta": "Check one inquiry — free",
+    "cta": "Start with one real inquiry",
     "secondaryCta": "Book a 15-min chat"
   },
   "faq": {

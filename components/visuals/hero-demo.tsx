@@ -86,7 +86,7 @@ const COPY = {
     planTitle: "出口方案",
     planStatus: "可回覆客戶",
     rows: [
-      { icon: Ship, text: "3 家貨代報價已整理成同一張表" },
+      { icon: Ship, text: "貨代報價整理成同一張表" },
       { icon: Scale, text: "關稅 + landed cost：毛利 18%，可以接" },
       {
         icon: FileWarning,
@@ -104,7 +104,7 @@ const COPY = {
     planTitle: "Export plan",
     planStatus: "ready to send",
     rows: [
-      { icon: Ship, text: "3 forwarder quotes, one normalized table" },
+      { icon: Ship, text: "Forwarder quotes normalized into one table" },
       { icon: Scale, text: "Duties + landed cost: 18% margin — take it" },
       {
         icon: FileWarning,
