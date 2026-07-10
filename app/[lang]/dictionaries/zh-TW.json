@@ -385,5 +385,48 @@
       }
     ],
     "successBookCta": "預約時段"
+  },
+  "demo": {
+    "cta": "預約示範",
+    "metaTitle": "預約 20 分鐘示範",
+    "metaDescription": "用你們自己的真實文件跑一次：一封詢價信、一票的 CI/PL，看 Meriq 怎麼產出報價單草稿、核對文件、擬好中英文回覆。20 分鐘，不用先導入任何系統。",
+    "title": "用你們自己的文件，\n看 Meriq 怎麼跑。",
+    "subtitle": "留下基本資料，我們會在 1 個工作天內聯絡你，安排 20 分鐘線上示範。想讓示範更有感？先貼一封最近的詢價信，我們當場用它跑。",
+    "sectionCompany": "你的團隊",
+    "sectionContact": "聯絡方式",
+    "company": "公司名稱",
+    "companyPlaceholder": "範例海空運承攬",
+    "role": "你的角色",
+    "roleOptions": [
+      { "value": "op", "label": "OP" },
+      { "value": "docs", "label": "文件 / 業助" },
+      { "value": "sales", "label": "業務" },
+      { "value": "manager", "label": "主管" },
+      { "value": "owner", "label": "老闆 / 總經理" }
+    ],
+    "volume": "每月大約幾票",
+    "volumeOptions": [
+      { "value": "lt50", "label": "50 票以下" },
+      { "value": "50-200", "label": "50–200 票" },
+      { "value": "200-500", "label": "200–500 票" },
+      { "value": "gt500", "label": "500 票以上" }
+    ],
+    "currentSystem": "現在怎麼作業（選填）",
+    "currentSystemPlaceholder": "例：Excel + Outlook、自建系統、XX 系統",
+    "inquiry": "貼一封最近的詢價信（選填）",
+    "inquiryPlaceholder": "原文貼上就好，不用整理格式——示範時我們直接用這封跑給你看…",
+    "name": "姓名",
+    "namePlaceholder": "你的名字",
+    "email": "Email",
+    "emailPlaceholder": "you@company.com",
+    "requiredHint": "只有公司、姓名與 Email 是必填。",
+    "submit": "預約 20 分鐘示範",
+    "submitting": "傳送中…",
+    "errorBody": "送出失敗，請再試一次，或直接寫信給我們。",
+    "successTitle": "已收到你的預約需求",
+    "successBody": "我們會在 1 個工作天內回覆你確認時間。有急件？直接寫信到 justinli@meriqai.com。",
+    "successBook": "想直接挑時段？",
+    "successBookCta": "選一個方便的時間",
+    "backHome": "回首頁"
   }
 }

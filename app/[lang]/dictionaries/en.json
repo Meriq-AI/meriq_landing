@@ -385,5 +385,48 @@
       }
     ],
     "successBookCta": "Pick a time"
+  },
+  "demo": {
+    "cta": "Book a demo",
+    "metaTitle": "Book a 20-minute demo",
+    "metaDescription": "Run Meriq on your own real documents: one inquiry email, one shipment's CI/PL — and watch it draft the quotation, cross-check the documents, and prepare the bilingual replies. 20 minutes, nothing to install first.",
+    "title": "See Meriq run\non your own documents.",
+    "subtitle": "Leave your details and we'll reach out within one business day to set up a 20-minute online demo. Want it to hit closer to home? Paste a recent inquiry email — we'll run the demo on it live.",
+    "sectionCompany": "Your team",
+    "sectionContact": "Contact",
+    "company": "Company",
+    "companyPlaceholder": "Acme Freight Forwarding",
+    "role": "Your role",
+    "roleOptions": [
+      { "value": "op", "label": "OP" },
+      { "value": "docs", "label": "Docs / sales support" },
+      { "value": "sales", "label": "Sales" },
+      { "value": "manager", "label": "Manager" },
+      { "value": "owner", "label": "Owner / GM" }
+    ],
+    "volume": "Shipments per month (roughly)",
+    "volumeOptions": [
+      { "value": "lt50", "label": "Under 50" },
+      { "value": "50-200", "label": "50–200" },
+      { "value": "200-500", "label": "200–500" },
+      { "value": "gt500", "label": "500+" }
+    ],
+    "currentSystem": "How you work today (optional)",
+    "currentSystemPlaceholder": "e.g. Excel + Outlook, in-house system",
+    "inquiry": "Paste a recent inquiry email (optional)",
+    "inquiryPlaceholder": "Paste it as-is, no cleanup needed — we'll run the demo on this exact email…",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "you@company.com",
+    "requiredHint": "Only company, name, and email are required.",
+    "submit": "Book a 20-minute demo",
+    "submitting": "Sending…",
+    "errorBody": "Something went wrong. Please try again, or just email us.",
+    "successTitle": "Request received",
+    "successBody": "We'll get back to you within one business day to confirm a time. Urgent? Email justinli@meriqai.com directly.",
+    "successBook": "Want to pick a slot right now?",
+    "successBookCta": "Pick a time",
+    "backHome": "Back to home"
   }
 }
