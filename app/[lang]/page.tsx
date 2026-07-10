@@ -12,7 +12,12 @@ import { WhyUs } from "@/components/sections/why-us"
 import { Proof } from "@/components/sections/proof"
 import { FinalCta } from "@/components/sections/final-cta"
 import { Faq } from "@/components/sections/faq"
-import { htmlLang, isLocale, type Locale } from "@/lib/i18n/config"
+import {
+  defaultLocale,
+  htmlLang,
+  isLocale,
+  type Locale,
+} from "@/lib/i18n/config"
 import { alternates, SITE_URL } from "@/lib/seo"
 import { getDictionary } from "./dictionaries"
 
@@ -22,7 +27,7 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>
 }): Promise<Metadata> {
   const { lang } = await params
-  const locale: Locale = isLocale(lang) ? lang : "en"
+  const locale: Locale = isLocale(lang) ? lang : defaultLocale
   return { alternates: alternates("", locale) }
 }
 

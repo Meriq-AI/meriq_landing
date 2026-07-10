@@ -9,7 +9,13 @@ import { notFound } from "next/navigation"
 
 import "../globals.css"
 import { cn } from "@/lib/utils"
-import { htmlLang, isLocale, locales, type Locale } from "@/lib/i18n/config"
+import {
+  defaultLocale,
+  htmlLang,
+  isLocale,
+  locales,
+  type Locale,
+} from "@/lib/i18n/config"
 import { KEYWORDS, ogLocale, SITE_NAME, SITE_URL } from "@/lib/seo"
 import { getDictionary } from "./dictionaries"
 
@@ -42,7 +48,7 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>
 }): Promise<Metadata> {
   const { lang } = await params
-  const locale: Locale = isLocale(lang) ? lang : "en"
+  const locale: Locale = isLocale(lang) ? lang : defaultLocale
   const dict = await getDictionary(locale)
   return {
     metadataBase: new URL(SITE_URL),

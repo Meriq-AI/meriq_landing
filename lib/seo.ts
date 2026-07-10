@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-import { htmlLang, locales, type Locale } from "@/lib/i18n/config"
+import { defaultLocale, htmlLang, locales, type Locale } from "@/lib/i18n/config"
 
 /** Production origin. Override with NEXT_PUBLIC_SITE_URL on the deploy host. */
 export const SITE_URL = (
@@ -22,23 +22,21 @@ export const ogLocale: Record<Locale, string> = {
 
 // Search terms relevant people would use to find this kind of product.
 export const KEYWORDS = [
-  "AI export operator",
-  "export RFQ",
-  "freight quote comparison",
-  "landed cost calculator",
-  "export documentation checklist",
-  "Incoterms CIF DAP DDP quote",
-  "export operations for manufacturers",
-  "Taiwan export logistics",
-  "HS code classification",
-  "出口報價",
-  "海外詢價",
-  "貨代報價比較",
-  "landed cost 計算",
-  "出口文件",
-  "出口關稅查詢",
-  "國際運費估算",
-  "台灣製造商出口",
+  "freight forwarder automation",
+  "forwarding operations AI",
+  "freight forwarder AI Taiwan",
+  "quotation automation freight",
+  "shipping document cross-check",
+  "S/O automation",
+  "pre-alert automation",
+  "海空運承攬 AI",
+  "貨代 自動化",
+  "報價單 自動化",
+  "詢價信 自動報價",
+  "文件核對 CI PL 提單",
+  "OP 文件繕打",
+  "承攬業 系統",
+  "台灣 中小型 forwarder",
 ]
 
 /**
@@ -48,6 +46,6 @@ export const KEYWORDS = [
 export function alternates(path: string, lang: Locale): Metadata["alternates"] {
   const languages: Record<string, string> = {}
   for (const l of locales) languages[htmlLang[l]] = `${SITE_URL}/${l}${path}`
-  languages["x-default"] = `${SITE_URL}/en${path}`
+  languages["x-default"] = `${SITE_URL}/${defaultLocale}${path}`
   return { canonical: `${SITE_URL}/${lang}${path}`, languages }
 }

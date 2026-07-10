@@ -21,9 +21,9 @@ This is **Next.js 16** with **React 19** — a version with breaking changes fro
 
 ## What this site is
 
-The Meriq marketing site: **AI export operator for Taiwanese manufacturers** — turning overseas buyer inquiries into shippable export plans (freight quote comparison, landed cost, document checklists, shipment coordination). Bilingual (en / zh-TW), deployed at `meriqai.com`. Surfaces: the landing page and the quote-request page at `/[lang]/export-plan`. An MDX blog exists at `/[lang]/blog` but is intentionally unlisted (no nav link, not in the sitemap); the old tariff calculator was deleted.
+The Meriq marketing site: **AI 作業引擎 for small/mid-sized Taiwanese freight forwarders (5–50 人)** — reads 詢價信 and shipping docs, drafts 報價單, fills S/O, cross-checks CI/PL/提單/報單, prepares bilingual replies; people only handle exceptions; nothing to replace. Built with a 43-year 報關 team. Bilingual (zh-TW default / en), deployed at `meriqai.com`. Surfaces: the landing page and the demo-booking page at `/[lang]/demo` (`/export-plan` and `/tariff` 301 to their successors). An MDX blog exists at `/[lang]/blog` but is intentionally unlisted (no nav link, not in the sitemap).
 
-Positioning notes: demand side = exporters (primary CTA 取得出口方案 / Get Export Plan); supply side = forwarders/carriers (quiet "Partner with us" link in the footer only — deliberately secondary). Do not use "Book Freight" wording — Meriq is not a licensed forwarder.
+Positioning notes: demand side = forwarders (primary CTA 預約 20 分鐘示範 / Book a 20-minute demo, run on the prospect's own documents); supply side = 報關行/carriers (quiet "成為夥伴" link in the footer only — deliberately secondary). Meriq is not a licensed forwarder and does not file customs entries. Tone rules: no 賦能/顛覆/革命; every claim hangs on a concrete document or action (繕打, 核對, pre-alert); trade jargon stays English (S/O, pre-alert, HB/L, CI/PL). Sections in order: hero / 痛點 3-card / 三步 how-it-works / 快準不加人 values / why-us / Design-Partner proof (testimonial cards gated by `proof.testimonialsEnabled` until real numbers exist) / FAQ / final CTA.
 
 ## Design system: light mode ONLY
 
@@ -33,7 +33,7 @@ Visual language (Derya/YC-startup inspired, but differentiated):
 - Warm-white canvas, one vivid working blue (`--primary: oklch(0.546 0.215 263)`), near-black type.
 - Floating pill nav (`site-header.tsx`) with the **wordmark asset** `public/meriq-wordmark.png` (white PNG, rendered with CSS `invert` on light backgrounds), blue radial hero wash, full-bleed blue final CTA band. Footer carries the LinkedIn link (`linkedin.com/company/meriq-ai`; lucide has no brand icons — inline SVG).
 - "Blueprint frame": the mid-page sections sit inside one bordered column with hatched gutters (`.hatch` utility) and `divide-y` rules — assembled in `app/[lang]/page.tsx`.
-- **Animations are a feature, in Meriq's own language (trade paperwork, not app-UI cards)**: `components/visuals/hero-demo.tsx` (looping buyer-email → export-plan scene, synced via one shared duration + keyframe `times`), `paper-artifacts.tsx` (scroll-triggered stage artifacts: RFQ form, stamped quote sheet, landed-cost till receipt, doc checklist, perforated handoff stubs), `case-tracker.tsx` (shipment-tracking card cycling the five desk stages). Respect `prefers-reduced-motion` (`MotionConfig reducedMotion="user"`, `motion-reduce:animate-none`, reduced → finished state).
+- **Animations are a feature, in Meriq's own language (trade paperwork, not app-UI cards)**: `components/visuals/hero-demo.tsx` (looping 詢價信+CI/PL → worked shipment-file scene, synced via one shared duration + keyframe `times`), `paper-artifacts.tsx` (scroll-triggered value artifacts: stamped quotation sheet, cross-doc check report, perforated triage stubs), `case-tracker.tsx` (一票 doc-flow card cycling five dictionary-fed stops). Respect `prefers-reduced-motion` (`MotionConfig reducedMotion="user"`, `motion-reduce:animate-none`, reduced → finished state).
 - Fonts: Inter → `--font-sans`, Bricolage Grotesque → `--font-display` (Latin headlines, via `font-display` class), Noto Sans TC → `--font-zh` (zh fallback), Geist Mono → `--font-mono`.
 
 ## Architecture
@@ -42,24 +42,24 @@ Visual language (Derya/YC-startup inspired, but differentiated):
 
 Every page lives under `app/[lang]/` — there is **no root `app/layout.tsx`**; `app/[lang]/layout.tsx` is the root layout (fonts, metadata).
 
-- `lib/i18n/config.ts` — single source of truth: `locales = ["en", "zh-TW"]`, default `en`, `htmlLang` maps `zh-TW` → `zh-Hant-TW`.
+- `lib/i18n/config.ts` — single source of truth: `locales = ["en", "zh-TW"]`, default `zh-TW` (also the hreflang/sitemap x-default), `htmlLang` maps `zh-TW` → `zh-Hant-TW`.
 - `proxy.ts` (repo root) — redirects locale-less paths via Accept-Language. Its matcher deliberately excludes `_next`, `/api`, `/ingest` (PostHog proxy), and static assets — keep those exclusions.
 - **All user-facing copy** lives in `app/[lang]/dictionaries/{en,zh-TW}.json`, loaded via `getDictionary()` (`server-only`). The `Dictionary` type is inferred from `en.json`, so both files must stay structurally identical. Components receive dict slices as props; zh-TW is the copy master. Product-UI text inside vignettes is intentionally hardcoded trade English (Incoterms, doc names); `hero-demo.tsx` carries its own zh/en copy map keyed by `lang`.
 - Adding a page: put it in `app/[lang]/`, add copy to both dictionaries, emit `alternates(path, lang)` from `lib/seo.ts` in `generateMetadata`, add the path to `app/sitemap.ts`.
 
 ### Pages & data flow
 
-- **Landing** (`app/[lang]/page.tsx`) — hero + blueprint-framed sections from `components/sections/` (problem, solution, capabilities, how-it-works, use-cases, customers, pilot-offer, why-us, faq) + full-bleed final CTA; emits JSON-LD (Organization / WebSite / Service / FAQPage).
-- **Lead capture** — every CTA links to `/[lang]/export-plan` (`app/[lang]/export-plan/`): a stacked form (route & terms / cargo / contact, chip selectors, paste-the-buyer's-email textarea) with a **live plan-preview sheet** that fills in as the user types. Submits to `app/api/plan/route.ts` → Supabase `export_plan_requests` insert (insert-only RLS, anon key) + best-effort Resend email; Calendly embed on success when the user opts into a call. Only destination, product, name, email are required.
+- **Landing** (`app/[lang]/page.tsx`) — hero + blueprint-framed sections from `components/sections/` (problem, how-it-works, values, why-us, proof, faq) + full-bleed final CTA; emits JSON-LD (Organization / WebSite / Service / FAQPage).
+- **Lead capture** — every CTA links to `/[lang]/demo` (`app/[lang]/demo/`): a lean forwarder-qualification form (company / role chips / monthly-shipment-volume chips / current system / paste-a-recent-詢價信 textarea). Submits to `app/api/demo/route.ts` → Supabase `demo_requests` insert (insert-only RLS, anon key) + best-effort Resend email; booking link always shown on success. Only company, name, email are required. The old `export_plan_requests` table remains as historical lead data.
 - **Blog** (unlisted) — metadata registry in `lib/blog.ts` (`POSTS`); bodies at `content/blog/<slug>/<locale>.mdx` via `@next/mdx`; article typography in root `mdx-components.tsx`. Content still carries pre-pivot positioning; rewrite before re-listing.
 
 ### Analytics (PostHog)
 
-Client init in `instrumentation-client.ts`; events reverse-proxied through `/ingest` rewrites in `next.config.ts` (why both the rewrites and `proxy.ts` special-case `/ingest`). Server client in `lib/posthog-server.ts`. Key events: `export_plan_submitted`, `get_plan_clicked`, `nav_link_clicked`, `language_switched`.
+Client init in `instrumentation-client.ts`; events reverse-proxied through `/ingest` rewrites in `next.config.ts` (why both the rewrites and `proxy.ts` special-case `/ingest`). Server client in `lib/posthog-server.ts`. Key events: `demo_requested`, `book_demo_clicked`, `nav_link_clicked`, `language_switched` (pre-pivot dashboards used `export_plan_submitted`/`get_plan_clicked` — annotate, don't alias).
 
 ### SEO
 
-`lib/seo.ts`: `SITE_URL` (override via `NEXT_PUBLIC_SITE_URL`), bilingual export-focused `KEYWORDS`, and `alternates()` for canonical + hreflang. `app/sitemap.ts`, `app/robots.ts`, `public/llms.txt`.
+`lib/seo.ts`: `SITE_URL` (override via `NEXT_PUBLIC_SITE_URL`), bilingual forwarder-automation `KEYWORDS`, and `alternates()` for canonical + hreflang. `app/sitemap.ts`, `app/robots.ts`, `public/llms.txt`.
 
 ## Environment variables
 

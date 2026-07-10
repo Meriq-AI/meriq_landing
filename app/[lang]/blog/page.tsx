@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { ArrowRight } from "lucide-react"
 
-import { isLocale, type Locale } from "@/lib/i18n/config"
+import { defaultLocale, isLocale, type Locale } from "@/lib/i18n/config"
 import { alternates } from "@/lib/seo"
 import { formatPostDate, getPosts } from "@/lib/blog"
 import { getDictionary } from "../dictionaries"
@@ -14,7 +14,7 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>
 }): Promise<Metadata> {
   const { lang } = await params
-  const locale: Locale = isLocale(lang) ? lang : "en"
+  const locale: Locale = isLocale(lang) ? lang : defaultLocale
   const dict = await getDictionary(locale)
   return {
     title: dict.blog.title,

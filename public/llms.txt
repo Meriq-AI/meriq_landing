@@ -1,29 +1,30 @@
 # Meriq
 
-> Meriq is the AI export operator for Taiwanese manufacturers and exporters. It turns an overseas buyer inquiry into a shippable export plan: a structured export RFQ, forwarder freight quotes normalized into one comparable table, a preliminary duty and landed-cost estimate, an export document checklist, destination-country risk questions, and a reply summary ready to send back to the buyer. AI organizes the work first; people verify it. Meriq coordinates — the customer's own forwarders and customs brokers still execute carriage and filing, and final HS classification and duty rates are always confirmed by licensed professionals.
+> Meriq is the AI operations engine for small and mid-sized Taiwanese freight forwarders (5–50 staff). It reads inquiry emails and shipping documents, drafts the quotation, fills the S/O, cross-checks CI / PL / HB/L / customs declarations against each other, and prepares bilingual (Chinese/English) reply drafts for customers and overseas agents. AI handles the semantic reading; every calculation and field mapping runs through deterministic, verifiable program logic — every number can answer "why is it this number." People only handle flagged exceptions. Nothing in the forwarder's existing systems has to be replaced: Meriq's output imports into whatever they already use. Built together with a Taiwanese customs brokerage team with 43 years of experience.
 
 ## What Meriq does
-- Structures a vague buyer inquiry (email, spec sheets, quantities, destination) into a complete export RFQ: origin/destination, Incoterms, cargo dimensions and weight, FCL / LCL / air / courier recommendation, special-cargo flags, target ship date.
-- Requests quotes from partner freight forwarders and normalizes them into one table: freight, local charges, destination charges, transit time, free time, and whether customs clearance is included.
-- Estimates landed cost per order: product price, international freight, insurance, duties, clearance fees, destination charges — so exporters know whether the margin holds before quoting.
-- Assembles the export document checklist (Commercial Invoice, Packing List, B/L or AWB, Certificate of Origin, MSDS, spec sheets) and flags what is missing and who to ask.
-- Prepares the next steps: a buyer-ready reply summary, an RFQ package for forwarders, confirmation questions for the customs broker, and a pre-shipment checklist.
+- Reads inquiry emails as-is (Chinese/English mixed, no formatting needed) and drafts the quotation: O/F, THC, DOC and other charges filled from the forwarder's own rate sheets, in minutes instead of half a day.
+- Pulls S/O and shipping-instruction fields directly from the attached CI/PL.
+- Cross-checks Commercial Invoice, Packing List, HB/L, and customs declaration data field by field (counts, weights, marks, consignee) and flags mismatches before anything is sent — not at customs.
+- Drafts replies to customers and overseas agents in English and Chinese for the OP to review and send.
+- Produces structured data ready to import into the forwarder's existing TMS or in-house system; queues pre-alerts.
+- Flags what it isn't sure about; the OP confirms exceptions and sends. Everything else runs itself.
 
 ## Who it is for
-Taiwanese manufacturers, exporters, and trading companies with overseas inquiries — industrial components, bicycles and outdoor gear, auto parts, hardware and tooling, electronics, and Kickstarter / Amazon / Shopify shipping teams.
+Small and mid-sized Taiwanese freight forwarders (海空運承攬業, roughly 5–50 people). Users are OPs, documentation clerks, and sales assistants; buyers are owners and general managers. Customs brokers and carriers are partners, not competitors — Meriq does not file customs entries and is not a licensed forwarder.
 
 ## How it works
-1. Submit one overseas inquiry at https://meriqai.com/zh-TW/export-plan (or /en/export-plan) — incomplete details are fine; Meriq lists what is missing.
-2. AI structures the costs, documents, and logistics options; the Meriq team verifies with partner forwarders, brokers, or specialists.
-3. Within one business day the exporter receives an export plan they can send to their buyer.
+1. Drop it in: forward inquiry emails, CI/PL, SI, or rate sheets as-is.
+2. Everything drafts itself: quotation draft, cross-document check report, bilingual reply drafts, structured data.
+3. People only check exceptions: AI flags doubts, the OP confirms and sends.
 
-## Pricing
-Early access: a free check of one real inquiry, then a one-off Export Desk Pilot. Monthly plans are available for teams with a steady flow of overseas inquiries.
+## Status & pricing
+First Design Partners are onboarding now (limited spots). Design Partner pricing is locked in permanently. Book a 20-minute demo run live on the forwarder's own documents.
 
 ## Key pages
-- Home (zh-TW): https://meriqai.com/zh-TW
+- Home (zh-TW, default): https://meriqai.com/zh-TW
 - Home (English): https://meriqai.com/en
-- Get an export plan: https://meriqai.com/zh-TW/export-plan
+- Book a demo: https://meriqai.com/zh-TW/demo
 
 ## Contact
 - Email: justinli@meriqai.com

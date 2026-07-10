@@ -3,7 +3,7 @@ import { notFound } from "next/navigation"
 
 import { SiteHeader } from "@/components/layout/site-header"
 import { SiteFooter } from "@/components/layout/site-footer"
-import { isLocale, type Locale } from "@/lib/i18n/config"
+import { defaultLocale, isLocale, type Locale } from "@/lib/i18n/config"
 import { alternates } from "@/lib/seo"
 import { getDictionary } from "../dictionaries"
 import { DemoForm } from "./demo-form"
@@ -14,7 +14,7 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>
 }): Promise<Metadata> {
   const { lang } = await params
-  const locale: Locale = isLocale(lang) ? lang : "en"
+  const locale: Locale = isLocale(lang) ? lang : defaultLocale
   const dict = await getDictionary(locale)
   return {
     title: dict.demo.metaTitle,
