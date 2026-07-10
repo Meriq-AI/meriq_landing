@@ -12,6 +12,18 @@ const nextConfig: NextConfig = {
         destination: "/:lang",
         permanent: true,
       },
+      // /export-plan retired with the forwarder pivot (2026-07); the funnel
+      // is now /demo. Bare rule too — these run before proxy.ts localizes.
+      {
+        source: "/:lang(en|zh-TW)/export-plan",
+        destination: "/:lang/demo",
+        permanent: true,
+      },
+      {
+        source: "/export-plan",
+        destination: "/demo",
+        permanent: true,
+      },
     ]
   },
   async rewrites() {

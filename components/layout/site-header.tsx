@@ -98,9 +98,9 @@ export function SiteHeader({
               asChild
             >
               <Link
-                href={`/${lang}/export-plan`}
+                href={`/${lang}/demo`}
                 onClick={() =>
-                  posthog.capture("get_plan_clicked", {
+                  posthog.capture("book_demo_clicked", {
                     location: "header",
                     lang,
                   })
@@ -149,10 +149,10 @@ export function SiteHeader({
             <div className="mt-2 flex flex-col gap-3 px-1 pb-1">
               <Button size="sm" className="w-full rounded-full" asChild>
                 <Link
-                  href={`/${lang}/export-plan`}
+                  href={`/${lang}/demo`}
                   onClick={() => {
                     setOpen(false)
-                    posthog.capture("get_plan_clicked", {
+                    posthog.capture("book_demo_clicked", {
                       location: "header_mobile",
                       lang,
                     })

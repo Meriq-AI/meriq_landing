@@ -36,7 +36,7 @@ export function PilotOffer({
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Button size="lg" className="rounded-full" asChild>
-                  <Link href={`/${lang}/export-plan`}>
+                  <Link href={`/${lang}/demo`}>
                     {pilotOffer.cta}
                     <ArrowRight className="size-4" />
                   </Link>

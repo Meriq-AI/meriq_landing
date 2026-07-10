@@ -18,7 +18,7 @@ export default async function BlogLayout({
 
   return (
     <>
-      <SiteHeader lang={lang} nav={dict.nav} cta={dict.plan.cta} />
+      <SiteHeader lang={lang} nav={dict.nav} cta={dict.demo.cta} />
       <main className="px-6 pt-24">{children}</main>
       <SiteFooter lang={lang} footer={dict.footer} />
     </>

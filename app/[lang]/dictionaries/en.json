@@ -278,114 +278,6 @@
     "partnerCta": "Partner with us",
     "rights": "All rights reserved."
   },
-  "plan": {
-    "cta": "Get Export Plan",
-    "metaTitle": "Get your export plan",
-    "metaDescription": "Hand Meriq one overseas inquiry: destination, cargo, and contact details. Within one business day you'll get an export plan with normalized forwarder quotes, preliminary duties and landed cost, and a document checklist.",
-    "title": "Hand one inquiry to your export desk.",
-    "subtitle": "Incomplete details are fine — we'll list what's missing. Within one business day, you'll get an export plan you can send to your buyer.",
-    "sectionShipment": "Route & terms",
-    "sectionCargo": "Cargo",
-    "sectionContact": "Contact",
-    "origin": "Origin",
-    "originPlaceholder": "e.g. Taichung",
-    "destination": "Destination (country / city)",
-    "destinationPlaceholder": "e.g. Dallas, USA",
-    "incoterm": "Terms your buyer asked for (Incoterm)",
-    "incotermUnsure": "Not sure yet",
-    "mode": "Shipping mode",
-    "modeOptions": [
-      {
-        "value": "fcl",
-        "label": "Ocean FCL"
-      },
-      {
-        "value": "lcl",
-        "label": "Ocean LCL"
-      },
-      {
-        "value": "air",
-        "label": "Air freight"
-      },
-      {
-        "value": "courier",
-        "label": "Courier"
-      },
-      {
-        "value": "unsure",
-        "label": "Not sure yet"
-      }
-    ],
-    "product": "What's the product?",
-    "productPlaceholder": "e.g. carbon fiber bicycle wheelsets",
-    "quantity": "Quantity",
-    "quantityPlaceholder": "e.g. 500 sets / 2 pallets",
-    "weight": "Total weight (rough is fine)",
-    "weightPlaceholder": "e.g. 640 kg",
-    "readyDate": "Target ship date",
-    "readyDatePlaceholder": "e.g. mid-August",
-    "dangerous": "Contains batteries, chemicals, or other special cargo",
-    "inquiry": "Paste the buyer's inquiry (optional)",
-    "inquiryPlaceholder": "Paste the buyer's email as-is — we'll turn it into an export RFQ…",
-    "name": "Name",
-    "namePlaceholder": "Your name",
-    "company": "Company (optional)",
-    "companyPlaceholder": "Acme Precision Industries",
-    "email": "Email",
-    "emailPlaceholder": "you@company.com",
-    "phone": "Phone (optional)",
-    "phonePlaceholder": "+886 912 345 678",
-    "wantsCall": "Also book a 15-min call",
-    "requiredHint": "Only destination, product, name, and email are required.",
-    "submit": "Submit — get my export plan",
-    "submitting": "Sending…",
-    "errorBody": "Something went wrong. Please try again, or just email us.",
-    "successTitle": "Inquiry received",
-    "successBody": "You'll get your export plan within one business day. Urgent? Email justinli@meriqai.com directly.",
-    "successBook": "Want to talk now? Pick a time:",
-    "backHome": "Back to home",
-    "preview": {
-      "title": "Your export plan",
-      "caseNo": "Case no.",
-      "status": "starts once you submit",
-      "route": "Route",
-      "incoterm": "Terms",
-      "cargo": "Cargo",
-      "ready": "Ship date",
-      "deliver": "You'll receive",
-      "deliverables": [
-        "Forwarder quotes, one normalized table",
-        "Preliminary duties & landed cost",
-        "Document checklist",
-        "A summary you can send to the buyer"
-      ],
-      "customs": "Customs"
-    },
-    "customs": "Who handles customs clearance?",
-    "customsOptions": [
-      {
-        "value": "both",
-        "label": "Both ends (export + import)"
-      },
-      {
-        "value": "origin",
-        "label": "Origin (export) only"
-      },
-      {
-        "value": "destination",
-        "label": "Destination (import) only"
-      },
-      {
-        "value": "own_broker",
-        "label": "We use our own broker"
-      },
-      {
-        "value": "unsure",
-        "label": "Not sure — advise me"
-      }
-    ],
-    "successBookCta": "Pick a time"
-  },
   "demo": {
     "cta": "Book a demo",
     "metaTitle": "Book a 20-minute demo",
@@ -398,18 +290,45 @@
     "companyPlaceholder": "Acme Freight Forwarding",
     "role": "Your role",
     "roleOptions": [
-      { "value": "op", "label": "OP" },
-      { "value": "docs", "label": "Docs / sales support" },
-      { "value": "sales", "label": "Sales" },
-      { "value": "manager", "label": "Manager" },
-      { "value": "owner", "label": "Owner / GM" }
+      {
+        "value": "op",
+        "label": "OP"
+      },
+      {
+        "value": "docs",
+        "label": "Docs / sales support"
+      },
+      {
+        "value": "sales",
+        "label": "Sales"
+      },
+      {
+        "value": "manager",
+        "label": "Manager"
+      },
+      {
+        "value": "owner",
+        "label": "Owner / GM"
+      }
     ],
     "volume": "Shipments per month (roughly)",
     "volumeOptions": [
-      { "value": "lt50", "label": "Under 50" },
-      { "value": "50-200", "label": "50–200" },
-      { "value": "200-500", "label": "200–500" },
-      { "value": "gt500", "label": "500+" }
+      {
+        "value": "lt50",
+        "label": "Under 50"
+      },
+      {
+        "value": "50-200",
+        "label": "50–200"
+      },
+      {
+        "value": "200-500",
+        "label": "200–500"
+      },
+      {
+        "value": "gt500",
+        "label": "500+"
+      }
     ],
     "currentSystem": "How you work today (optional)",
     "currentSystemPlaceholder": "e.g. Excel + Outlook, in-house system",

@@ -5,7 +5,7 @@ import { SITE_URL } from "@/lib/seo"
 
 // Blog routes still exist in code but are intentionally unlisted for now.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = ["", "/export-plan"]
+  const paths = ["", "/demo"]
 
   return paths.flatMap((path) => {
     const languages: Record<string, string> = {}

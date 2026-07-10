@@ -61,7 +61,7 @@ export function HowItWorks({
       <BlurFade delay={0.26}>
         <div className="mt-10 flex justify-center">
           <Button size="lg" className="rounded-full" asChild>
-            <Link href={`/${lang}/export-plan`}>
+            <Link href={`/${lang}/demo`}>
               {howItWorks.cta}
               <ArrowRight className="size-4" />
             </Link>

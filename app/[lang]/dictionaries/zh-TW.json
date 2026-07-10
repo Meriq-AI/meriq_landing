@@ -278,114 +278,6 @@
     "partnerCta": "成為物流合作夥伴",
     "rights": "版權所有。"
   },
-  "plan": {
-    "cta": "取得出口方案",
-    "metaTitle": "取得出口方案",
-    "metaDescription": "把一筆海外詢價交給 Meriq：留下目的地、貨物與聯絡方式，1 個工作天內收到含貨代報價比較、初步關稅與 landed cost、文件 checklist 的出口方案。",
-    "title": "把一筆海外詢價，\n交給你的出口窗口。",
-    "subtitle": "資訊不完整也沒關係——我們會幫你列出缺什麼。送出後 1 個工作天內，你會收到可以回覆客戶的出口方案。",
-    "sectionShipment": "路線與條件",
-    "sectionCargo": "貨物",
-    "sectionContact": "聯絡方式",
-    "origin": "出貨地",
-    "originPlaceholder": "例：台中",
-    "destination": "目的地（國家 / 城市）",
-    "destinationPlaceholder": "例：美國 Dallas",
-    "incoterm": "客戶要求的條件（Incoterm）",
-    "incotermUnsure": "還不確定",
-    "mode": "運送方式",
-    "modeOptions": [
-      {
-        "value": "fcl",
-        "label": "海運整櫃 FCL"
-      },
-      {
-        "value": "lcl",
-        "label": "海運併櫃 LCL"
-      },
-      {
-        "value": "air",
-        "label": "空運"
-      },
-      {
-        "value": "courier",
-        "label": "快遞"
-      },
-      {
-        "value": "unsure",
-        "label": "還不確定"
-      }
-    ],
-    "product": "產品是什麼",
-    "productPlaceholder": "例：自行車碳纖維輪組",
-    "quantity": "數量",
-    "quantityPlaceholder": "例：500 組 / 2 板",
-    "weight": "總重（約略即可）",
-    "weightPlaceholder": "例：640 kg",
-    "readyDate": "預計出貨時間",
-    "readyDatePlaceholder": "例：8 月中",
-    "dangerous": "含電池、化學品或其他特殊貨",
-    "inquiry": "直接貼上客戶的詢價內容（選填）",
-    "inquiryPlaceholder": "把客戶的 email 原文貼進來，我們幫你整理成出口 RFQ…",
-    "name": "姓名",
-    "namePlaceholder": "你的名字",
-    "company": "公司（選填）",
-    "companyPlaceholder": "範例精密工業",
-    "email": "Email",
-    "emailPlaceholder": "you@company.com",
-    "phone": "電話（選填）",
-    "phonePlaceholder": "0912 345 678",
-    "wantsCall": "順便約 15 分鐘通話",
-    "requiredHint": "只有目的地、產品、姓名與 Email 是必填。",
-    "submit": "送出，取得出口方案",
-    "submitting": "傳送中…",
-    "errorBody": "送出失敗，請再試一次，或直接寫信給我們。",
-    "successTitle": "已收到你的詢價",
-    "successBody": "我們會在 1 個工作天內回覆你的出口方案。有急件？直接寫信到 justinli@meriqai.com。",
-    "successBook": "想現在聊？挑一個方便的時段：",
-    "backHome": "回首頁",
-    "preview": {
-      "title": "你的出口方案",
-      "caseNo": "案件編號",
-      "status": "送出後開始整理",
-      "route": "路線",
-      "incoterm": "條件",
-      "cargo": "貨物",
-      "ready": "出貨時間",
-      "deliver": "你會收到",
-      "deliverables": [
-        "貨代報價比較（同一張表）",
-        "初步關稅與 landed cost",
-        "文件需求 checklist",
-        "可回覆客戶的摘要"
-      ],
-      "customs": "報關"
-    },
-    "customs": "報關 / 清關由誰處理？",
-    "customsOptions": [
-      {
-        "value": "both",
-        "label": "都需要（出口＋目的地）"
-      },
-      {
-        "value": "origin",
-        "label": "只需要出口端報關"
-      },
-      {
-        "value": "destination",
-        "label": "只需要目的地清關"
-      },
-      {
-        "value": "own_broker",
-        "label": "我們有自己的報關行"
-      },
-      {
-        "value": "unsure",
-        "label": "不確定，請給建議"
-      }
-    ],
-    "successBookCta": "預約時段"
-  },
   "demo": {
     "cta": "預約示範",
     "metaTitle": "預約 20 分鐘示範",
@@ -398,18 +290,45 @@
     "companyPlaceholder": "範例海空運承攬",
     "role": "你的角色",
     "roleOptions": [
-      { "value": "op", "label": "OP" },
-      { "value": "docs", "label": "文件 / 業助" },
-      { "value": "sales", "label": "業務" },
-      { "value": "manager", "label": "主管" },
-      { "value": "owner", "label": "老闆 / 總經理" }
+      {
+        "value": "op",
+        "label": "OP"
+      },
+      {
+        "value": "docs",
+        "label": "文件 / 業助"
+      },
+      {
+        "value": "sales",
+        "label": "業務"
+      },
+      {
+        "value": "manager",
+        "label": "主管"
+      },
+      {
+        "value": "owner",
+        "label": "老闆 / 總經理"
+      }
     ],
     "volume": "每月大約幾票",
     "volumeOptions": [
-      { "value": "lt50", "label": "50 票以下" },
-      { "value": "50-200", "label": "50–200 票" },
-      { "value": "200-500", "label": "200–500 票" },
-      { "value": "gt500", "label": "500 票以上" }
+      {
+        "value": "lt50",
+        "label": "50 票以下"
+      },
+      {
+        "value": "50-200",
+        "label": "50–200 票"
+      },
+      {
+        "value": "200-500",
+        "label": "200–500 票"
+      },
+      {
+        "value": "gt500",
+        "label": "500 票以上"
+      }
     ],
     "currentSystem": "現在怎麼作業（選填）",
     "currentSystemPlaceholder": "例：Excel + Outlook、自建系統、XX 系統",

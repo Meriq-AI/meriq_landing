@@ -70,7 +70,7 @@ export function Hero({
                   className="h-12 rounded-full px-7 text-[15px] shadow-lg shadow-primary/25 transition-transform hover:-translate-y-0.5"
                   asChild
                 >
-                  <Link href={`/${lang}/export-plan`}>
+                  <Link href={`/${lang}/demo`}>
                     {cta}
                     <ArrowRight className="size-4" />
                   </Link>

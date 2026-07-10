@@ -92,9 +92,9 @@ export default async function Page({
         {JSON.stringify(jsonLd).replace(/</g, "\\u003c")}
       </script>
       <ScrollProgress className="z-[60] h-0.5 bg-primary" />
-      <SiteHeader lang={lang} nav={dict.nav} cta={dict.plan.cta} />
+      <SiteHeader lang={lang} nav={dict.nav} cta={dict.demo.cta} />
       <main>
-        <Hero hero={dict.hero} lang={lang} cta={dict.plan.cta} />
+        <Hero hero={dict.hero} lang={lang} cta={dict.demo.cta} />
 
         {/* Blueprint frame (Derya-style): one bordered column with hatched
             rails; divide-y draws the rule between each section. */}

@@ -44,7 +44,7 @@ export function FinalCta({
               className="h-12 rounded-full bg-white px-7 text-[15px] text-primary shadow-lg shadow-black/15 hover:bg-white/90"
               asChild
             >
-              <Link href={`/${lang}/export-plan`}>
+              <Link href={`/${lang}/demo`}>
                 {finalCta.cta}
                 <ArrowRight className="size-4" />
               </Link>
