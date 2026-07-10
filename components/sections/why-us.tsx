@@ -3,11 +3,16 @@ import { Eyebrow, Section, SectionHeading } from "@/components/section"
 import type { Dictionary } from "@/app/[lang]/dictionaries"
 
 export function WhyUs({ whyUs }: { whyUs: Dictionary["whyUs"] }) {
+  const paras = [
+    { title: whyUs.para1Title, body: whyUs.para1 },
+    { title: whyUs.para2Title, body: whyUs.para2 },
+  ]
+
   return (
     <Section
-      id="why-us"
+      id="why"
       className="bg-surface"
-      containerClassName="max-w-3xl text-center"
+      containerClassName="max-w-4xl text-center"
     >
       <BlurFade delay={0.05} className="flex justify-center">
         <Eyebrow>{whyUs.eyebrow}</Eyebrow>
@@ -15,38 +20,22 @@ export function WhyUs({ whyUs }: { whyUs: Dictionary["whyUs"] }) {
       <BlurFade delay={0.1}>
         <SectionHeading className="mt-4">{whyUs.title}</SectionHeading>
       </BlurFade>
-      <BlurFade delay={0.16}>
-        <p className="mt-5 text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">
-          {whyUs.body}
-        </p>
-      </BlurFade>
 
-      <BlurFade delay={0.2}>
-        <figure className="mt-12">
-          <figcaption className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
-            {whyUs.quoteLabel}
-          </figcaption>
-          <blockquote className="mx-auto mt-4 max-w-2xl border-l-2 border-primary pl-6 text-left text-2xl leading-snug font-semibold tracking-tight text-balance sm:text-3xl">
-            {whyUs.quote}
-          </blockquote>
-        </figure>
-      </BlurFade>
-
-      <BlurFade delay={0.26}>
-        <div className="mt-10 space-y-1">
-          <p className="text-lg font-medium text-primary">{whyUs.line1}</p>
-          <p className="text-base text-muted-foreground">{whyUs.line2}</p>
-        </div>
-      </BlurFade>
-
-      <BlurFade delay={0.32}>
-        <div className="mx-auto mt-12 max-w-2xl rounded-2xl border border-border bg-background p-6 text-left sm:p-8">
-          <p className="text-lg font-semibold tracking-tight text-balance sm:text-xl">
-            {whyUs.trustLead}
-          </p>
-          <p className="mt-3 text-base leading-relaxed text-pretty text-muted-foreground">
-            {whyUs.trustBody}
-          </p>
+      <BlurFade delay={0.18}>
+        <div className="mt-12 grid gap-3 text-left sm:grid-cols-2">
+          {paras.map((p) => (
+            <div
+              key={p.title}
+              className="rounded-2xl border border-border bg-background p-6 sm:p-8"
+            >
+              <p className="text-lg font-semibold tracking-tight text-balance sm:text-xl">
+                {p.title}
+              </p>
+              <p className="mt-3 text-base leading-relaxed text-pretty text-muted-foreground">
+                {p.body}
+              </p>
+            </div>
+          ))}
         </div>
       </BlurFade>
     </Section>

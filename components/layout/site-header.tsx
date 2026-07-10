@@ -35,7 +35,7 @@ export function SiteHeader({
   // Absolute targets so the nav works from any route, not just the landing.
   const links = [
     { href: `/${lang}#how`, label: nav.how },
-    { href: `/${lang}#use-cases`, label: nav.useCases },
+    { href: `/${lang}#proof`, label: nav.proof },
     { href: `/${lang}#faq`, label: nav.faq },
   ]
 

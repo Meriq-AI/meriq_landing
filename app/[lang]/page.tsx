@@ -6,13 +6,10 @@ import { SiteHeader } from "@/components/layout/site-header"
 import { SiteFooter } from "@/components/layout/site-footer"
 import { Hero } from "@/components/sections/hero"
 import { Problem } from "@/components/sections/problem"
-import { Solution } from "@/components/sections/solution"
-import { Capabilities } from "@/components/sections/capabilities"
 import { HowItWorks } from "@/components/sections/how-it-works"
-import { UseCases } from "@/components/sections/use-cases"
-import { Customers } from "@/components/sections/customers"
-import { PilotOffer } from "@/components/sections/pilot-offer"
+import { Values } from "@/components/sections/values"
 import { WhyUs } from "@/components/sections/why-us"
+import { Proof } from "@/components/sections/proof"
 import { FinalCta } from "@/components/sections/final-cta"
 import { Faq } from "@/components/sections/faq"
 import { htmlLang, isLocale, type Locale } from "@/lib/i18n/config"
@@ -60,9 +57,9 @@ export default async function Page({
       },
       {
         "@type": "Service",
-        name: "Meriq Export Desk",
+        name: "Meriq Operations Engine",
         serviceType:
-          "Export operations: freight quote comparison, landed cost estimation, export documentation review, shipment coordination",
+          "Freight forwarding operations automation: quotation drafting, S/O preparation, cross-document checking, bilingual reply drafting",
         provider: { "@id": `${SITE_URL}/#organization` },
         areaServed: "TW",
         url: `${SITE_URL}/${lang}`,
@@ -70,7 +67,7 @@ export default async function Page({
         audience: {
           "@type": "Audience",
           audienceType:
-            "Taiwanese manufacturers, exporters, and trading companies",
+            "Small and mid-sized Taiwanese freight forwarders (5–50 staff)",
         },
       },
       {
@@ -94,7 +91,7 @@ export default async function Page({
       <ScrollProgress className="z-[60] h-0.5 bg-primary" />
       <SiteHeader lang={lang} nav={dict.nav} cta={dict.demo.cta} />
       <main>
-        <Hero hero={dict.hero} lang={lang} cta={dict.demo.cta} />
+        <Hero hero={dict.hero} lang={lang} />
 
         {/* Blueprint frame (Derya-style): one bordered column with hatched
             rails; divide-y draws the rule between each section. */}
@@ -110,13 +107,10 @@ export default async function Page({
             />
             <div className="divide-y divide-border border-x border-t border-border">
               <Problem problem={dict.problem} />
-              <Solution solution={dict.solution} />
-              <Capabilities capabilities={dict.capabilities} lang={lang} />
               <HowItWorks howItWorks={dict.howItWorks} lang={lang} />
-              <UseCases useCases={dict.useCases} />
-              <Customers customers={dict.customers} />
-              <PilotOffer pilotOffer={dict.pilotOffer} lang={lang} />
+              <Values values={dict.values} lang={lang} />
               <WhyUs whyUs={dict.whyUs} />
+              <Proof proof={dict.proof} lang={lang} />
               <Faq faq={dict.faq} />
             </div>
           </div>

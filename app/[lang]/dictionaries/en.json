@@ -1,270 +1,173 @@
 {
   "meta": {
-    "title": "Turn overseas inquiries into shippable export plans — Meriq | AI export operator for Taiwanese manufacturers",
-    "description": "A buyer just asked for CIF, DAP, or DDP pricing? Meriq helps Taiwanese manufacturers and exporters sort out freight quotes, duties, landed cost, export documents, and shipping risks — turning one overseas inquiry into an export plan you can quote, ship, and stand behind."
+    "title": "Stop retyping shipping documents — Meriq | The AI operations engine for Taiwanese freight forwarders",
+    "description": "Meriq reads inquiry emails and shipping docs, drafts quotations, cross-checks CI / PL / B/L / customs declarations, and prepares bilingual replies to customers and overseas agents. People only handle exceptions — nothing to replace. Built with a customs brokerage team with 43 years of experience."
   },
   "nav": {
     "how": "How it works",
-    "useCases": "Use cases",
+    "proof": "Design Partners",
     "faq": "FAQ",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
   "hero": {
-    "eyebrow": "The AI export operations partner for Taiwanese manufacturers",
-    "titleLead": "Turn overseas inquiries into ",
-    "titleEmph": "shippable export plans",
+    "eyebrow": "The AI operations engine for Taiwanese freight forwarders",
+    "titleLead": "Your OPs shouldn't be ",
+    "titleEmph": "retyping documents",
     "titleEnd": ".",
-    "pitch": "When a buyer asks for a price, the product price is the easy part. You also need freight, duties, documents, lead time, and landed cost.",
-    "outcome": "Meriq organizes your export costs, forwarder quotes, document requirements, and shipping risks — so you reply faster and know whether the order is worth taking.",
-    "secondaryCta": "See how we work",
-    "chips": [
-      "Preliminary export plan in 48 hours",
-      "AI organizes first, people verify",
-      "Keep your forwarders — nothing to install"
-    ]
+    "pitch": "Meriq reads inquiry emails and shipping docs, drafts the quotation, cross-checks the documents, and prepares replies in English and Chinese.",
+    "outcome": "Nothing to replace — keep your systems. People only handle the exceptions.",
+    "primaryCta": "Book a 20-minute demo",
+    "secondaryCta": "See how it works",
+    "trustLine": "Built with a customs brokerage team with 43 years of experience"
   },
   "problem": {
-    "eyebrow": "The real problem",
-    "title": "When a buyer asks for pricing, the product price isn't the hard part.",
-    "intro": "You probably run into these every week:",
-    "items": [
-      "The buyer asks for CIF, DAP, or DDP — but you don't know how to price freight and destination charges.",
-      "You asked three forwarders — you can see whose ocean freight is cheaper, but not which option actually pencils out in the end.",
-      "You're not sure whether this product needs special documents for the US, Europe, or Japan.",
-      "You don't know if destination duties, clearance fees, and document requirements will eat the margin.",
-      "Every inquiry means re-assembling product data, dimensions, packing details, HS codes, MSDS, invoices, packing lists.",
-      "The buyer wants a quote now — but you're still waiting on the forwarder."
-    ],
-    "punchLead": "So the inquiry sits there, and the one question you can't answer fast is:",
-    "punchEmph": "Can we actually take this order?"
-  },
-  "solution": {
-    "eyebrow": "What we are",
-    "titleLead": "We're your ",
-    "titleEmph": "AI Export Operator",
-    "titleEnd": ".",
-    "lead": "Meriq isn't a customs tool, and it isn't a freight-comparison site. We turn one overseas inquiry into a complete export plan:",
-    "items": [
-      "Export terms, organized",
-      "Forwarder quotes, compared",
-      "Preliminary duty & landed cost estimate",
-      "Document checklist",
-      "Clearance & destination-country risks",
-      "Question lists for forwarders, brokers, and your buyer",
-      "A summary you can send straight to the customer"
-    ],
-    "closing1": "You don't need to speak logistics first, and you don't need to chase every forwarder yourself.",
-    "closing2": "Give us the product, quantity, destination, and shipping needs — we sort out the details behind it."
-  },
-  "capabilities": {
-    "eyebrow": "What we do for you",
-    "title": "From vague inquiry to executable plan — one export desk.",
+    "eyebrow": "A day on the desk",
+    "title": "What does your team actually do all day?",
     "items": [
       {
-        "num": "01",
-        "title": "Structure the inquiry",
-        "desc": "We turn the buyer's request into a complete export RFQ:",
-        "points": [
-          "Origin & destination",
-          "Incoterms",
-          "Cargo dimensions & weight",
-          "FCL / LCL / air / courier recommendation",
-          "DG, food, electronics & special-cargo flags",
-          "Target ship date",
-          "Door-to-door, clearance & delivery needs"
-        ],
-        "note": "Incomplete data is fine — we'll list exactly what's missing."
+        "title": "Retyping the same data",
+        "desc": "One shipment's data gets retyped four or five times — quotation, S/O, B/L, customs declaration. Same cargo description, same counts, same marks."
       },
       {
-        "num": "02",
-        "title": "Compare freight quotes",
-        "desc": "We request quotes from partner forwarders and normalize them into one table:",
-        "points": [
-          "Freight",
-          "Local charges",
-          "Destination charges",
-          "Transit time",
-          "Free time",
-          "Customs clearance included or not",
-          "Fit for this specific shipment"
-        ],
-        "note": "No more decoding mismatched Excels, PDFs, and email threads."
+        "title": "Quotes go out too slow",
+        "desc": "Chase rates, wait for replies, stitch the Excel together — half a day later, the buyer already booked with whoever quoted first."
       },
       {
-        "num": "03",
-        "title": "Estimate landed cost",
-        "desc": "We build the full cost picture for this order:",
-        "points": [
-          "Product price",
-          "International freight",
-          "Insurance",
-          "Duties",
-          "Clearance-related fees",
-          "Destination charges",
-          "Possible extra document & compliance costs"
-        ],
-        "note": "Know whether the margin survives — before you quote."
-      },
-      {
-        "num": "04",
-        "title": "Check documents & risks",
-        "desc": "We assemble what needs attention before the cargo moves:",
-        "points": [
-          "Commercial Invoice",
-          "Packing List",
-          "B/L or AWB",
-          "Certificate of Origin",
-          "MSDS",
-          "Catalogs & spec sheets",
-          "Documents the destination country may require",
-          "Questions to confirm with forwarders, brokers, or the buyer"
-        ],
-        "note": "What's missing and who to ask — listed once, clearly."
-      },
-      {
-        "num": "05",
-        "title": "Coordinate the next step",
-        "desc": "You don't just get a report — you get the next moves, prepared:",
-        "points": [
-          "A reply summary for your buyer",
-          "An RFQ package for forwarders",
-          "Confirmation questions for the broker",
-          "An internal cost & risk summary",
-          "A pre-shipment checklist"
-        ],
-        "note": "Your team decides. We prepare the information."
+        "title": "Can't hire for the desk",
+        "desc": "The docs-clerk opening has been up for three months. Whoever comes needs six months of training — then leaves."
       }
-    ]
+    ],
+    "punchLead": "And it's not just your company —",
+    "punchEmph": "Taiwan's job boards carry thousands of unfilled docs-clerk openings, permanently."
   },
   "howItWorks": {
     "eyebrow": "How it works",
-    "title": "Three steps from inquiry to export plan.",
-    "subtitle": "AI organizes first, people verify. Nothing to install.",
+    "title": "Three steps. Nothing about how you work changes.",
+    "subtitle": "Keep your systems and your habits. AI drafts, people check the exceptions.",
     "steps": [
       {
         "step": "01",
-        "title": "Send the inquiry & product data",
-        "desc": "Share the buyer's inquiry, product name, catalog, quantity, dimensions and weight, cargo value, and destination. Incomplete is fine — we'll list what's missing."
+        "title": "Drop it in",
+        "desc": "Forward the inquiry email, CI/PL, SI, or rate sheets as-is. No formatting, no cleanup."
       },
       {
         "step": "02",
-        "title": "We build the costs, documents & logistics options",
-        "desc": "AI structures the data first, then our team verifies. Where needed, we confirm details with partner forwarders, brokers, or specialists."
+        "title": "Everything drafts itself",
+        "desc": "A quotation draft, a cross-document check report, bilingual reply drafts for the customer and the overseas agent, and structured data ready to import into your system."
       },
       {
         "step": "03",
-        "title": "You get a plan you can send to the customer",
-        "desc": "Freight quote comparison, landed cost, document checklist, risk flags, and recommended next steps."
+        "title": "People only check exceptions",
+        "desc": "AI flags what it isn't sure about; the OP confirms and sends. Everything else is already done."
       }
     ],
-    "cta": "Submit an inquiry"
+    "cta": "Book a 20-minute demo"
   },
-  "useCases": {
-    "eyebrow": "Use cases",
-    "title": "Send us the inquiry when…",
+  "values": {
+    "eyebrow": "Three things you get",
+    "title": "Fast. Accurate. No extra headcount.",
     "items": [
       {
-        "title": "A new overseas buyer asks for pricing",
-        "desc": "They want CIF / DAP / DDP, and you need freight, duties, and destination costs — fast."
+        "num": "01",
+        "title": "Fast",
+        "desc": "An inquiry email comes in; the quotation draft is ready in minutes — not half a day.",
+        "points": [
+          "Rate sheets applied automatically",
+          "O/F, THC, DOC filled in one pass",
+          "Customer reply drafted alongside"
+        ],
+        "note": "Inquiry to quote: from half a day to minutes."
       },
       {
-        "title": "You're entering a new market",
-        "desc": "You want to sell into the US, Europe, Japan, or Southeast Asia, but local documents, duties, and logistics costs are unclear."
+        "num": "02",
+        "title": "Accurate",
+        "desc": "CI, PL, B/L, and the customs declaration are cross-checked against each other — errors get caught before you send, not at customs.",
+        "points": [
+          "Counts, weights, marks compared field by field",
+          "Doubts flagged for the OP to judge",
+          "Every number can answer \"why\""
+        ],
+        "note": "Amendment fees, delays, complaints — stopped before they happen."
       },
       {
-        "title": "Forwarder quotes don't line up",
-        "desc": "Every forwarder itemizes differently. You can't tell who's actually cheaper or who left charges out."
-      },
-      {
-        "title": "Shipment data is always incomplete",
-        "desc": "Dimensions, weight, materials, use case, MSDS, catalogs, HS codes — rebuilt from scratch every time."
-      },
-      {
-        "title": "You need to know if the order is worth taking",
-        "desc": "Not just the freight — whether the margin holds after logistics, duties, and destination costs."
+        "num": "03",
+        "title": "No extra headcount",
+        "desc": "Peak season doubles your volume; it doesn't have to double your team. Non-exception shipments run themselves.",
+        "points": [
+          "Day-one hires produce like veterans",
+          "Veteran judgment written into the check rules",
+          "Volume grows without linear hiring"
+        ],
+        "note": "It removes the retyping, not the job."
       }
+    ],
+    "trackerStops": [
+      "Inquiry received",
+      "Quotation drafted",
+      "S/O filled",
+      "Docs cross-checked",
+      "Reply sent"
     ]
   },
-  "customers": {
-    "eyebrow": "Who it's for",
-    "title": "Who is Meriq for?",
-    "lead": "Meriq fits Taiwanese companies with overseas inquiries, export needs, or international expansion underway:",
-    "chips": [
-      "Manufacturers",
-      "Exporters",
-      "Trading companies",
-      "Industrial component suppliers",
-      "Bicycle / outdoor brands",
-      "Auto parts suppliers",
-      "Hardware / tooling / machined parts",
-      "Electronics & hardware brands",
-      "Kickstarter / Amazon / Shopify teams"
-    ],
-    "closing": "If overseas inquiries keep landing on your desk and each one costs hours of logistics, document, and cost checking — that's exactly what we take off your plate."
-  },
-  "pilotOffer": {
-    "eyebrow": "Export Desk Pilot",
-    "title": "Start with one real inquiry.",
-    "lead": "No system to adopt, no need to switch forwarders. Send us one real overseas inquiry and we'll return a preliminary export plan within 48 hours:",
-    "items": [
-      "Export terms & missing data",
-      "The right logistics options",
-      "Forwarder quote comparison",
-      "Preliminary duties & landed cost",
-      "Document checklist",
-      "Clearance & destination-country risk questions",
-      "A summary you can send to the buyer"
-    ],
-    "cta": "Apply for the Export Desk Pilot",
-    "note": "Early pilot — first inquiry review available for qualified exporters. Spots are limited."
-  },
   "whyUs": {
-    "eyebrow": "Why us",
-    "title": "Not another system. An export operations partner.",
-    "body": "We don't ask you to change how you work, and we don't replace your forwarder or customs broker. We clean up the messiest, most time-consuming front end of every overseas inquiry — so you, your forwarders, your broker, and your buyer align faster.",
-    "quoteLabel": "Think of us as:",
-    "quote": "Your AI trade assistant + freight-quote wrangler + export cost analyst.",
-    "line1": "AI organizes first. People verify.",
-    "line2": "Your team decides. We prepare the information.",
-    "trustLead": "Every export plan is more than AI.",
-    "trustBody": "Meriq uses AI to first organize the inquiry, documents, and costs, then hands off to our partner forwarders and customs brokers to confirm — so exporters get a more complete, executable shipping plan."
+    "eyebrow": "Why Meriq",
+    "title": "AI reads. Deterministic code does the math.",
+    "para1Title": "Semantics go to AI; every calculation is deterministic.",
+    "para1": "Reading a messy inquiry email or judging which documents a shipment needs — that's for large language models. But every calculation and field mapping runs through verifiable program logic: every number can answer \"why is it this number.\"",
+    "para2Title": "Built for how Taiwan actually works.",
+    "para2": "Taiwan's document formats, the customs ecosystem, inboxes that mix Chinese and English — the things overseas tools can't read, we do. Meriq is built with a customs brokerage team with 43 years of experience; their judgment is written into every check rule."
   },
-  "finalCta": {
-    "title": "Is a buyer asking for pricing right now?",
-    "body": "Send us the inquiry, the product data, and the destination. We'll turn it into an export plan you can use to reply to the customer, compare logistics options, check the margin, and arrange the shipment.",
-    "cta": "Start with one real inquiry",
-    "secondaryCta": "Book a 15-min chat"
+  "proof": {
+    "eyebrow": "Design Partners",
+    "title": "Numbers from real desks",
+    "scarcityTitle": "First Design Partners onboarding now — spots are limited.",
+    "scarcityBody": "We're validating every check rule on real shipment volume with our first Taiwanese forwarders. Their measured numbers — minutes saved per quotation, errors caught before sending — will be published right here. Want to be one of them?",
+    "cta": "Book a 20-minute demo",
+    "note": "Design Partner pricing is locked in permanently — future price increases won't touch you.",
+    "testimonialsEnabled": false,
+    "testimonials": [
+      {
+        "name": "",
+        "role": "",
+        "company": "",
+        "quote": "",
+        "metric": "",
+        "metricLabel": ""
+      }
+    ]
   },
   "faq": {
     "eyebrow": "FAQ",
-    "title": "Questions exporters ask us",
+    "title": "What owners and OPs ask us",
     "items": [
       {
-        "q": "Are you a freight forwarder?",
-        "a": "We're not a traditional forwarder, and we don't replace yours. We're the export operations layer: we organize your overseas inquiries, freight quotes, document requirements, and landed cost. The actual carriage, transport, and customs filing are executed by partner forwarders, brokers, or the partners you already work with."
+        "q": "How long does onboarding take?",
+        "a": "You can start within a week. Nothing in your current setup moves — forward inquiry emails and documents as-is and it runs. No data migration, no workflow changes."
       },
       {
-        "q": "I already have a forwarder. Do I still need you?",
-        "a": "Yes — keep your forwarder. We clean up the inquiry data, compare quotes across forwarders, and check for document gaps, so you know exactly what each quote includes, what it leaves out, and which option fits this shipment."
+        "q": "What if the AI gets customs data wrong?",
+        "a": "Every calculation and field mapping runs through deterministic code, so every number is traceable. Anything the AI isn't sure about is flagged, and the OP confirms before anything is sent. It's also worth asking the other way: what's the error rate of retyping the same data four or five times by hand today? Meriq's check report exists to catch exactly those errors before they go out."
       },
       {
-        "q": "Can you guarantee HS codes or duty rates are correct?",
-        "a": "No. We provide preliminary analysis, risk mapping, and a list of questions that need confirming. Final classification, duty rates, and the formal customs filing should always be confirmed by a customs broker, licensed broker, or the relevant professional."
+        "q": "Is our data safe?",
+        "a": "Encrypted in transit and at rest, tenant-isolated per company, and we never train models on your customer data."
       },
       {
-        "q": "Can I submit an incomplete inquiry?",
-        "a": "Yes. Most overseas inquiries start incomplete. We'll map out what's missing — dimensions and weight, materials, use case, MSDS, catalogs, delivery address, or Incoterms."
+        "q": "Will this replace my staff?",
+        "a": "No. Meriq removes the retyping and copy-pasting they hate most — not the job. OPs become the people who judge exceptions and make calls. That's the skill worth paying for; retyping isn't."
       },
       {
-        "q": "Does this work for small shipments?",
-        "a": "Yes. For small sample runs, air freight, courier, LCL, or a first-ever export, we'll help you find the right logistics mode and document requirements."
-      },
-      {
-        "q": "How do you charge?",
-        "a": "Start with a one-off Export Desk Pilot. If you have a steady flow of overseas inquiries or shipments, a monthly plan is available — we keep handling your export inquiries, quote comparisons, landed costs, and shipment coordination."
+        "q": "How is this different from the systems out there?",
+        "a": "Systems solve where data is stored. Meriq solves how data gets in — the manual stretch between an inquiry email or a document and structured data is where the day actually goes. That's why Meriq replaces nothing: its output imports straight into whatever system you already use."
       }
     ]
+  },
+  "finalCta": {
+    "title": "Watch Meriq run one of your own shipments.",
+    "body": "Book a 20-minute demo — no canned demo data. We run it live on your own inquiry emails and documents.",
+    "cta": "Book a 20-minute demo",
+    "secondaryCta": "Pick a time directly"
   },
   "blog": {
     "title": "Vision & writing",
@@ -272,9 +175,9 @@
     "backToBlog": "All posts"
   },
   "footer": {
-    "tagline": "Turn overseas inquiries into shippable export plans.",
+    "tagline": "The AI operations engine for Taiwanese freight forwarders — no more retyping documents.",
     "contact": "Contact",
-    "partnerLead": "Are you a forwarder or carrier?",
+    "partnerLead": "Are you a customs broker or carrier? We're looking for local partners.",
     "partnerCta": "Partner with us",
     "rights": "All rights reserved."
   },

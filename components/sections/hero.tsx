@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, Check } from "lucide-react"
+import { ArrowRight, Stamp } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { BlurFade } from "@/components/ui/blur-fade"
@@ -9,17 +9,15 @@ import type { Dictionary } from "@/app/[lang]/dictionaries"
 
 /**
  * Split hero: the pitch on the left, the product visibly working on the
- * right — a buyer email becoming an export plan on loop, over a blue wash
- * rising from the bottom.
+ * right — an inquiry email becoming a worked shipment file on loop, over a
+ * blue wash rising from the bottom.
  */
 export function Hero({
   hero,
   lang,
-  cta,
 }: {
   hero: Dictionary["hero"]
   lang: Locale
-  cta: string
 }) {
   return (
     <section className="relative overflow-hidden">
@@ -45,8 +43,6 @@ export function Hero({
             <BlurFade delay={0.12}>
               <h1 className="mt-7 font-display text-[2.7rem] leading-[1.06] font-semibold tracking-tight text-balance sm:text-6xl">
                 {hero.titleLead}
-                {/* zh: always break after 「變成」 so the accent phrase stays whole */}
-                {lang === "zh-TW" && <br aria-hidden />}
                 <span className="text-primary">{hero.titleEmph}</span>
                 {hero.titleEnd}
               </h1>
@@ -71,7 +67,7 @@ export function Hero({
                   asChild
                 >
                   <Link href={`/${lang}/demo`}>
-                    {cta}
+                    {hero.primaryCta}
                     <ArrowRight className="size-4" />
                   </Link>
                 </Button>
@@ -87,17 +83,10 @@ export function Hero({
             </BlurFade>
 
             <BlurFade delay={0.36}>
-              <ul className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2">
-                {hero.chips.map((chip) => (
-                  <li
-                    key={chip}
-                    className="inline-flex items-center gap-1.5 text-[13px] font-medium text-muted-foreground"
-                  >
-                    <Check className="size-3.5 text-primary" aria-hidden />
-                    {chip}
-                  </li>
-                ))}
-              </ul>
+              <p className="mt-8 inline-flex items-center gap-2 text-[13px] font-medium text-muted-foreground">
+                <Stamp className="size-3.5 text-primary" aria-hidden />
+                {hero.trustLine}
+              </p>
             </BlurFade>
           </div>
 

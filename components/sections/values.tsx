@@ -5,57 +5,48 @@ import {
   ArtifactDocs,
   ArtifactHandoff,
   ArtifactQuotes,
-  ArtifactReceipt,
-  ArtifactRfq,
 } from "@/components/visuals/paper-artifacts"
 import type { Locale } from "@/lib/i18n/config"
 import type { Dictionary } from "@/app/[lang]/dictionaries"
 
-const ARTIFACTS = [
-  ArtifactRfq,
-  ArtifactQuotes,
-  ArtifactReceipt,
-  ArtifactDocs,
-  ArtifactHandoff,
-]
+// 快 → quotation draft, 準 → cross-check report, 不加人 → triage stubs.
+const ARTIFACTS = [ArtifactQuotes, ArtifactDocs, ArtifactHandoff]
 
 /**
- * One case, worked start to finish: a live tracking card on the left, and on
- * the right the actual paperwork of each stage — forms, stamps, receipts,
- * tickets. Trade paperwork as the visual language (not app-UI cards).
+ * One shipment file, worked start to finish: a live tracking card on the
+ * left, and on the right the actual paperwork of each value — quotation
+ * drafts, check reports, triage stubs. Trade paperwork as the visual
+ * language (not app-UI cards).
  */
-export function Capabilities({
-  capabilities,
+export function Values({
+  values,
   lang,
 }: {
-  capabilities: Dictionary["capabilities"]
+  values: Dictionary["values"]
   lang: Locale
 }) {
   return (
-    <Section id="capabilities">
+    <Section id="values">
       {/* minmax(0,…) everywhere: never let an artifact's min-content widen the track */}
       <div className="grid grid-cols-[minmax(0,1fr)] gap-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
-        {/* Sticky rail: heading + live case tracker */}
+        {/* Sticky rail: heading + live shipment-file tracker */}
         <div className="lg:sticky lg:top-24 lg:self-start">
           <BlurFade delay={0.05}>
-            <Eyebrow>{capabilities.eyebrow}</Eyebrow>
+            <Eyebrow>{values.eyebrow}</Eyebrow>
           </BlurFade>
           <BlurFade delay={0.1}>
             <SectionHeading className="mt-4 sm:text-[2.35rem] sm:leading-[1.15]">
-              {capabilities.title}
+              {values.title}
             </SectionHeading>
           </BlurFade>
           <BlurFade delay={0.18} className="mt-8 hidden lg:block">
-            <CaseTracker
-              lang={lang}
-              stops={capabilities.items.map((item) => item.title)}
-            />
+            <CaseTracker lang={lang} stops={values.trackerStops} />
           </BlurFade>
         </div>
 
         {/* The desk's paper trail */}
         <ol className="relative space-y-14 border-l border-border pl-8 sm:pl-12">
-          {capabilities.items.map((item, i) => {
+          {values.items.map((item, i) => {
             const Artifact = ARTIFACTS[i % ARTIFACTS.length]
             return (
               <li key={item.num} className="relative">

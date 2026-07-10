@@ -81,14 +81,14 @@ export function SiteFooter({
             </div>
           </div>
 
-          {/* Supply side: quiet, deliberately secondary to the exporter CTA. */}
+          {/* Supply side: quiet, deliberately secondary to the forwarder CTA. */}
           <div className="rounded-2xl border border-border bg-card/60 p-5 sm:max-w-xs">
             <p className="text-sm text-muted-foreground">
               {footer.partnerLead}
             </p>
             <a
               href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-                "Logistics partner — Meriq"
+                "Broker partner — Meriq"
               )}`}
               className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-primary"
             >
