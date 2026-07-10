@@ -8,9 +8,9 @@ import { cn } from "@/lib/utils"
 import type { Locale } from "@/lib/i18n/config"
 
 /**
- * A live shipment-tracking card for the export case: the five desk stages as
- * tracking stops, cycling on a loop while in view. Stop titles come from the
- * dictionary so they always match the timeline next to it.
+ * A live tracking card for one shipment file (一票): the five desk stages
+ * as tracking stops, cycling on a loop while in view. Stop titles come from
+ * the dictionary (values.trackerStops).
  */
 export function CaseTracker({
   lang,
@@ -38,14 +38,14 @@ export function CaseTracker({
 
   const t = {
     "zh-TW": {
-      case: "出口案件",
-      route: "台中 → Dallas, TX",
-      working: "整理中",
-      ready: "可回覆客戶",
+      case: "一票",
+      route: "KHH → OSA · 海運",
+      working: "處理中",
+      ready: "可寄出",
     },
     en: {
-      case: "Export case",
-      route: "Taichung → Dallas, TX",
+      case: "Shipment file",
+      route: "KHH → OSA · ocean",
       working: "in progress",
       ready: "ready to send",
     },
@@ -60,7 +60,7 @@ export function CaseTracker({
       <div className="flex items-center justify-between gap-3">
         <div>
           <p className="font-mono text-[10px] font-semibold tracking-[0.2em] text-muted-foreground uppercase">
-            {t.case} #EXP-0341
+            {t.case} #SHP-2107
           </p>
           <p className="mt-1 text-[13.5px] font-semibold">{t.route}</p>
         </div>

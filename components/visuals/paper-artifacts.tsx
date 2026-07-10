@@ -6,10 +6,12 @@ import { Check } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 /**
- * Meriq's own visual language for the capabilities timeline: the paperwork of
- * trade itself. Each stage renders as a physical artifact — an RFQ form, a
- * stamped quote sheet, a landed-cost till receipt, a checklist form, a
- * perforated handoff ticket — animated in on scroll with rubber-stamp pops.
+ * Meriq's own visual language for the values timeline: the paperwork of a
+ * forwarder's desk itself. Each value renders as a physical artifact — a
+ * drafted quotation sheet, a cross-document check report, a stack of triage
+ * stubs — animated in on scroll with rubber-stamp pops. Copy inside the
+ * artifacts stays hardcoded trade English by convention (O/F, THC, CI/PL,
+ * pre-alert).
  */
 
 const stagger: Variants = {
@@ -95,110 +97,33 @@ function SheetHeading({ children }: { children: React.ReactNode }) {
   )
 }
 
-/* 01 — export RFQ form, fields filled in, gaps flagged */
-export function ArtifactRfq() {
-  const fields = [
-    ["Origin", "Taichung, TW"],
-    ["Destination", "Dallas, TX · USA"],
-    ["Incoterm", "DDP"],
-    ["Cargo", "2 plt · 640 kg · non-DG"],
-    ["Ready date", "Aug 15"],
+/* 01 快 — quotation sheet, drafted from the inquiry in minutes */
+export function ArtifactQuote() {
+  const rows = [
+    ["O/F · KHH → OSA", "$1,150"],
+    ["THC", "$180"],
+    ["DOC", "$45"],
   ]
   return (
     <Sheet rotate="-rotate-1">
-      <Stamp className="-top-2.5 right-3">Drafted</Stamp>
-      <SheetHeading>Export RFQ · #EXP-0341</SheetHeading>
-      <div className="mt-3 space-y-1.5">
-        {fields.map(([k, v]) => (
+      <Stamp className="-top-2.5 right-3">Draft · 4 min</Stamp>
+      <SheetHeading>Quotation · #SHP-2107</SheetHeading>
+      <div className="mt-3 space-y-1">
+        {rows.map(([k, v]) => (
           <motion.div
             key={k}
             variants={rise}
-            className="flex items-baseline justify-between gap-4 font-mono text-[11.5px]"
+            className="flex items-baseline justify-between gap-3 font-mono text-[11.5px]"
           >
-            <span className="text-muted-foreground">{k}</span>
-            <span className="font-semibold text-foreground">{v}</span>
-          </motion.div>
-        ))}
-        <motion.div
-          variants={rise}
-          className="mt-2.5 rounded-sm border border-dashed border-warning/60 bg-warning/[0.07] px-2.5 py-1.5 font-mono text-[11px] font-medium text-warning"
-        >
-          MISSING → carton dims · MSDS
-        </motion.div>
-      </div>
-    </Sheet>
-  )
-}
-
-/* 02 — quote comparison sheet with a BEST FIT stamp */
-export function ArtifactQuotes() {
-  const rows = [
-    { name: "Forwarder A", total: "$1,840", days: "32d", best: false },
-    { name: "Forwarder B", total: "$1,760", days: "35d", best: true },
-    { name: "Forwarder C", total: "$1,690*", days: "41d", best: false },
-  ]
-  return (
-    <Sheet rotate="rotate-1">
-      {/* overhang only where the sheet doesn't span the viewport */}
-      <Stamp className="top-9 right-2 sm:-right-2">Best fit</Stamp>
-      <SheetHeading>Quote comparison · normalized</SheetHeading>
-      <div className="mt-3 space-y-1">
-        {rows.map((row) => (
-          <motion.div
-            key={row.name}
-            variants={rise}
-            className={cn(
-              "flex items-baseline justify-between gap-3 rounded-sm px-2 py-1.5 font-mono text-[11.5px]",
-              row.best ? "bg-primary/[0.07] font-semibold" : ""
-            )}
-          >
-            <span className="whitespace-nowrap">{row.name}</span>
+            <span className="whitespace-nowrap text-muted-foreground">
+              {k}
+            </span>
             {/* dotted leader as a border (a repeated-char string blows up the
                 column's min-content on mobile) */}
             <span
               className="mx-1 mb-0.5 flex-1 self-end border-b border-dotted border-muted-foreground/40"
               aria-hidden
             />
-            <span className="tabular-nums">{row.total}</span>
-            <span className="w-8 text-right text-muted-foreground tabular-nums">
-              {row.days}
-            </span>
-          </motion.div>
-        ))}
-        <motion.p
-          variants={rise}
-          className="pt-1.5 font-mono text-[10.5px] text-muted-foreground"
-        >
-          * excludes customs clearance — asked, awaiting reply
-        </motion.p>
-      </div>
-    </Sheet>
-  )
-}
-
-/* 03 — landed cost till receipt with zigzag tear */
-export function ArtifactReceipt() {
-  const rows = [
-    ["Product", "$9.40"],
-    ["Freight", "$2.10"],
-    ["Insurance", "$0.20"],
-    ["Duty 6.5%", "$1.30"],
-    ["Dest. fees", "$0.90"],
-  ]
-  return (
-    <Sheet
-      rotate="-rotate-1"
-      className="max-w-[15rem] pb-7 [clip-path:polygon(0_0,100%_0,100%_calc(100%-6px),97%_100%,93%_calc(100%-6px),89%_100%,85%_calc(100%-6px),81%_100%,77%_calc(100%-6px),73%_100%,69%_calc(100%-6px),65%_100%,61%_calc(100%-6px),57%_100%,53%_calc(100%-6px),49%_100%,45%_calc(100%-6px),41%_100%,37%_calc(100%-6px),33%_100%,29%_calc(100%-6px),25%_100%,21%_calc(100%-6px),17%_100%,13%_calc(100%-6px),9%_100%,5%_calc(100%-6px),0_100%)]"
-    >
-      <SheetHeading>Landed cost / unit</SheetHeading>
-      <div className="mt-3 space-y-1">
-        {rows.map(([k, v]) => (
-          <motion.div
-            key={k}
-            variants={rise}
-            className="flex items-baseline justify-between font-mono text-[11.5px]"
-          >
-            <span className="text-muted-foreground">{k}</span>
             <span className="tabular-nums">{v}</span>
           </motion.div>
         ))}
@@ -206,67 +131,61 @@ export function ArtifactReceipt() {
           variants={rise}
           className="mt-2 flex items-baseline justify-between border-t border-dashed border-border pt-2 font-mono text-[12.5px] font-bold"
         >
-          <span>TOTAL</span>
-          <span className="tabular-nums">$13.90</span>
+          <span>ALL-IN</span>
+          <span className="tabular-nums">$1,375</span>
         </motion.div>
-        <motion.div
+        <motion.p
           variants={rise}
-          className="flex items-center justify-between pt-1 font-mono text-[11.5px] font-semibold text-success"
+          className="pt-1.5 font-mono text-[10.5px] text-muted-foreground"
         >
-          <span className="inline-flex items-center gap-1">
-            <Check className="size-3" /> MARGIN
-          </span>
-          <span>18%</span>
-        </motion.div>
+          rate sheet OCT applied · reply draft EN attached
+        </motion.p>
       </div>
     </Sheet>
   )
 }
 
-/* 04 — document checklist form, one line stamped pending */
-export function ArtifactDocs() {
-  const docs = [
-    { label: "Commercial Invoice", ok: true },
-    { label: "Packing List", ok: true },
-    { label: "B/L draft", ok: true },
-    { label: "Certificate of Origin", ok: true },
-    { label: "MSDS", ok: false },
+/* 02 準 — cross-document check report, one mismatch caught */
+export function ArtifactCrosscheck() {
+  const checks = [
+    { label: "Consignee · CI = PL = HB/L", ok: true },
+    { label: "Marks & numbers", ok: true },
+    { label: "G.W. 850 kg", ok: true },
   ]
   return (
     <Sheet rotate="rotate-1">
-      <Stamp className="right-2 bottom-8">Ask supplier</Stamp>
-      <SheetHeading>Document check · US lane</SheetHeading>
+      <Stamp className="right-2 bottom-8">1 exception</Stamp>
+      <SheetHeading>Doc check · CI / PL / HB/L</SheetHeading>
       <div className="mt-3 space-y-1.5">
-        {docs.map((doc) => (
+        {checks.map((check) => (
           <motion.div
-            key={doc.label}
+            key={check.label}
             variants={rise}
             className="flex items-center gap-2.5 font-mono text-[11.5px]"
           >
-            <span
-              className={cn(
-                "flex size-3.5 items-center justify-center rounded-[3px] border",
-                doc.ok
-                  ? "border-foreground/60 text-foreground"
-                  : "border-warning/70"
-              )}
-            >
-              {doc.ok && <Check className="size-2.5" strokeWidth={3.5} />}
+            <span className="flex size-3.5 items-center justify-center rounded-[3px] border border-foreground/60 text-foreground">
+              <Check className="size-2.5" strokeWidth={3.5} />
             </span>
-            <span className={cn(!doc.ok && "text-warning")}>{doc.label}</span>
+            <span>{check.label}</span>
           </motion.div>
         ))}
+        <motion.div
+          variants={rise}
+          className="mt-2.5 rounded-sm border border-dashed border-warning/60 bg-warning/[0.07] px-2.5 py-1.5 font-mono text-[11px] font-medium text-warning"
+        >
+          CI qty 1,200 ≠ PL 1,180 → flagged for OP
+        </motion.div>
       </div>
     </Sheet>
   )
 }
 
-/* 05 — handoff ticket with perforated stubs for each party */
-export function ArtifactHandoff() {
+/* 03 不加人 — triage stubs: the machine ran the batch, one goes to the OP */
+export function ArtifactTriage() {
   const stubs = [
-    { to: "BUYER", body: "Reply summary · EN", accent: true },
-    { to: "FORWARDERS", body: "RFQ package ×3" },
-    { to: "BROKER", body: "HS code questions ×2" },
+    { to: "AUTO ×11", body: "Drafted & sent", accent: false },
+    { to: "OP ×1", body: "Exception · CI/PL qty", accent: true },
+    { to: "PRE-ALERT", body: "Queued → agent", accent: false },
   ]
   return (
     <motion.div
@@ -304,7 +223,7 @@ export function ArtifactHandoff() {
                 : "text-muted-foreground"
             )}
           >
-            To: {stub.to}
+            {stub.to}
           </p>
           <p className="mt-1.5 font-mono text-[11.5px] font-semibold">
             {stub.body}

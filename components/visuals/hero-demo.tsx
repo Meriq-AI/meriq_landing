@@ -5,10 +5,10 @@ import { motion, MotionConfig, useInView } from "motion/react"
 import {
   ArrowRight,
   Check,
+  FileText,
   FileWarning,
   Mail,
   Paperclip,
-  Scale,
   Ship,
 } from "lucide-react"
 
@@ -16,8 +16,9 @@ import { cn } from "@/lib/utils"
 import type { Locale } from "@/lib/i18n/config"
 
 /**
- * The hero's living demo: a real buyer email turns into a finished export
- * plan, on a synced 10s loop. Every element shares one duration and uses
+ * The hero's living demo: an inquiry email (with CI/PL attached) turns into
+ * a worked shipment file — quotation drafted, docs cross-checked, reply
+ * ready — on a synced 10s loop. Every element shares one duration and uses
  * keyframe `times`, so the whole scene stays in lockstep. The whole loop
  * only runs while the demo is actually in view (it is display:none on
  * mobile, and there's no point animating once scrolled past).
@@ -79,42 +80,61 @@ function Seq({
   )
 }
 
+// The email itself stays authentic per locale: a zh/en mixed inquiry for
+// zh-TW (that's what a Taiwanese forwarder's inbox looks like), plain
+// English for en. Doc names stay trade English in both.
 const COPY = {
   "zh-TW": {
-    processing: "Meriq 正在整理這筆詢價…",
-    verified: "AI 已整理 · 人員已確認",
-    planTitle: "出口方案",
-    planStatus: "可回覆客戶",
+    sender: "王小姐 · 大昌貿易",
+    subject: "RE: 高雄到 Osaka 2 板 — 請報價",
+    body: (
+      <>
+        「2 plt / 850 kg，下週五結關，能報 <b>all-in</b> 嗎？CI/PL
+        附上，麻煩順便確認資料。」
+      </>
+    ),
+    processing: "Meriq 正在讀這封詢價和附件…",
+    verified: "AI 擬好 · 人只看例外",
+    planTitle: "一票",
+    planStatus: "待 OP 確認 1 件",
     rows: [
-      { icon: Ship, text: "貨代報價整理成同一張表" },
-      { icon: Scale, text: "關稅 + landed cost：毛利 18%，可以接" },
+      { icon: FileText, text: "報價單草稿：O/F + THC + DOC 已帶入" },
+      { icon: Ship, text: "S/O 欄位已從 CI/PL 帶入" },
       {
         icon: FileWarning,
-        text: "文件缺口：MSDS — 補件清單已列好",
+        text: "核對：CI 數量 1,200 ≠ PL 1,180 — 已標記",
         warn: true,
       },
-      { icon: Check, text: "回覆客戶的英文草稿已備好" },
+      { icon: Check, text: "給王小姐的回覆草稿已擬好" },
     ],
-    footerPrimary: "回覆客戶",
-    footerSecondary: "RFQ → 貨代",
+    footerPrimary: "寄出報價",
+    footerSecondary: "例外 1 件",
   },
   en: {
-    processing: "Meriq is working this inquiry…",
-    verified: "AI organized · human verified",
-    planTitle: "Export plan",
-    planStatus: "ready to send",
+    sender: "Ms. Wang · Dachang Trading",
+    subject: "RE: KHH → Osaka, 2 pallets — quote?",
+    body: (
+      <>
+        “2 plt / 850 kg, CY cutoff next Friday — can you quote <b>all-in</b>?
+        CI/PL attached, please double-check the data.”
+      </>
+    ),
+    processing: "Meriq is reading this inquiry & attachments…",
+    verified: "AI drafts · people check exceptions",
+    planTitle: "Shipment file",
+    planStatus: "1 item for OP",
     rows: [
-      { icon: Ship, text: "Forwarder quotes normalized into one table" },
-      { icon: Scale, text: "Duties + landed cost: 18% margin — take it" },
+      { icon: FileText, text: "Quotation draft: O/F + THC + DOC filled" },
+      { icon: Ship, text: "S/O fields pulled from CI/PL" },
       {
         icon: FileWarning,
-        text: "Doc gap: MSDS — ask-list drafted",
+        text: "Check: CI qty 1,200 ≠ PL 1,180 — flagged",
         warn: true,
       },
-      { icon: Check, text: "Reply draft for the buyer, ready" },
+      { icon: Check, text: "Reply draft for Ms. Wang, ready" },
     ],
-    footerPrimary: "Reply to buyer",
-    footerSecondary: "RFQ → forwarders",
+    footerPrimary: "Send quote",
+    footerSecondary: "1 exception",
   },
 } as const
 
@@ -132,7 +152,7 @@ export function HeroDemo({ lang }: { lang: Locale }) {
           aria-hidden
           className="relative mx-auto w-full max-w-md select-none"
         >
-          {/* Buyer email */}
+          {/* Inquiry email, CI/PL attached */}
           <Seq appear={0.03}>
             <div className="rounded-2xl border border-border bg-card p-4 shadow-lg shadow-foreground/[0.05]">
               <div className="flex items-center gap-2.5">
@@ -141,10 +161,10 @@ export function HeroDemo({ lang }: { lang: Locale }) {
                 </span>
                 <div className="min-w-0 flex-1">
                   <p className="truncate text-[13px] font-semibold">
-                    Sarah Miller · Dallas, TX
+                    {copy.sender}
                   </p>
                   <p className="truncate text-[11.5px] text-muted-foreground">
-                    RE: Quotation — 500 units to Dallas?
+                    {copy.subject}
                   </p>
                 </div>
                 <span className="text-[10.5px] text-muted-foreground">
@@ -152,24 +172,22 @@ export function HeroDemo({ lang }: { lang: Locale }) {
                 </span>
               </div>
               <p className="mt-3 text-[12.5px] leading-relaxed text-foreground/80">
-                “Could you quote <b>DDP Dallas</b> for 500 units? We&apos;d need
-                them landed by end of October. Also — what documents do you need
-                from us?”
+                {copy.body}
               </p>
               <div className="mt-3 flex gap-1.5">
                 <span className="inline-flex items-center gap-1 rounded-md bg-accent px-2 py-1 text-[10.5px] font-medium text-muted-foreground">
                   <Paperclip className="size-3" />
-                  spec_sheet_v2.pdf
+                  CI_0715.pdf
                 </span>
                 <span className="inline-flex items-center gap-1 rounded-md bg-accent px-2 py-1 text-[10.5px] font-medium text-muted-foreground">
                   <Paperclip className="size-3" />
-                  PO_draft.xlsx
+                  PL_0715.xlsx
                 </span>
               </div>
             </div>
           </Seq>
 
-          {/* Status pill: working → verified */}
+          {/* Status pill: working → drafted */}
           <div className="relative z-10 -my-2.5 flex justify-center">
             <Seq appear={0.14} vanish={0.4} y={4} className="absolute">
               <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-[11.5px] font-medium text-muted-foreground shadow-md">
@@ -191,17 +209,17 @@ export function HeroDemo({ lang }: { lang: Locale }) {
             </Seq>
           </div>
 
-          {/* Export plan card */}
+          {/* Shipment file card */}
           <Seq appear={0.22} className="mt-2">
             <div className="animate-[hero-float_7s_ease-in-out_infinite] rounded-2xl border border-border bg-card p-4 shadow-xl shadow-primary/10 motion-reduce:animate-none">
               <div className="flex items-center justify-between gap-3">
                 <p className="text-[13px] font-semibold">
                   {copy.planTitle}{" "}
                   <span className="font-mono text-[11px] font-medium text-muted-foreground">
-                    #EXP-0341
+                    #SHP-2107
                   </span>
                 </p>
-                <span className="rounded-full bg-success/10 px-2 py-0.5 text-[10.5px] font-semibold text-success">
+                <span className="rounded-full bg-warning/10 px-2 py-0.5 text-[10.5px] font-semibold text-warning">
                   {copy.planStatus}
                 </span>
               </div>

@@ -2,15 +2,15 @@ import { BlurFade } from "@/components/ui/blur-fade"
 import { Eyebrow, Section, SectionHeading } from "@/components/section"
 import { CaseTracker } from "@/components/visuals/case-tracker"
 import {
-  ArtifactDocs,
-  ArtifactHandoff,
-  ArtifactQuotes,
+  ArtifactCrosscheck,
+  ArtifactQuote,
+  ArtifactTriage,
 } from "@/components/visuals/paper-artifacts"
 import type { Locale } from "@/lib/i18n/config"
 import type { Dictionary } from "@/app/[lang]/dictionaries"
 
 // 快 → quotation draft, 準 → cross-check report, 不加人 → triage stubs.
-const ARTIFACTS = [ArtifactQuotes, ArtifactDocs, ArtifactHandoff]
+const ARTIFACTS = [ArtifactQuote, ArtifactCrosscheck, ArtifactTriage]
 
 /**
  * One shipment file, worked start to finish: a live tracking card on the
