@@ -10,7 +10,7 @@ export const SITE_URL = (
 export const SITE_NAME = "Meriq"
 
 // Single source of truth for contact/booking surfaces (footer, final CTA,
-// export-plan form) — these drifted when duplicated per-file.
+// demo form) — these drifted when duplicated per-file.
 export const CONTACT_EMAIL = "justinli@meriqai.com"
 export const BOOKING_URL = "https://calendar.app.google/YwUWhSyPuiBRTf4N6"
 export const LINKEDIN_URL = "https://www.linkedin.com/company/meriq-ai"
