@@ -83,13 +83,20 @@ export async function generateMetadata({
       url: `${SITE_URL}/${locale}`,
       title: dict.meta.title,
       description: dict.meta.description,
-      images: [{ url: "/og.png", width: 1200, height: 630, alt: SITE_NAME }],
+      images: [
+        {
+          url: `/og-${locale}.png`,
+          width: 1200,
+          height: 630,
+          alt: dict.meta.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: dict.meta.title,
       description: dict.meta.description,
-      images: ["/og.png"],
+      images: [`/og-${locale}.png`],
     },
     // Favicon + Apple touch icon come from app/icon.png and app/apple-icon.png.
   }

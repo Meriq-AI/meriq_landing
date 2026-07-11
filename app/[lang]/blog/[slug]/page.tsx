@@ -42,7 +42,9 @@ export async function generateMetadata({
       publishedTime: entry.date,
       // Re-attach the OG image; an explicit openGraph here would otherwise drop
       // the inherited one (Next replaces, doesn't deep-merge).
-      images: [{ url: "/og.png", width: 1200, height: 630, alt: SITE_NAME }],
+      images: [
+        { url: `/og-${locale}.png`, width: 1200, height: 630, alt: SITE_NAME },
+      ],
     },
   }
 }
