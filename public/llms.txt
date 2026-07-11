@@ -1,30 +1,32 @@
 # Meriq
 
-> Meriq is the AI operations workflow for small and mid-sized Taiwanese freight forwarders (5–50 staff). It reads inquiry emails and shipping documents, drafts the quotation, fills the S/O, cross-checks CI / PL / HB/L / customs declarations against each other, and prepares bilingual (Chinese/English) reply drafts for customers and overseas agents. AI handles the semantic reading; every calculation and field mapping runs through deterministic, verifiable program logic — every number can answer "why is it this number." People only handle flagged exceptions. Nothing in the forwarder's existing systems has to be replaced: Meriq's output imports into whatever they already use. Built together with a Taiwanese customs brokerage team with 43 years of experience.
+> Meriq is the AI agent for small and mid-sized freight forwarders (roughly 5–50 people). Its first product, Meriq Quote Agent, turns inquiry emails into quote drafts a team can confirm on the spot: it reads the inquiry and attachments, structures the shipment into a standard RFQ, flags missing information, applies the forwarder's own rates and quoting rules, and drafts the quotation plus Chinese/English replies. Every extracted field and every charge is traceable to its source document and version. Meriq does not write into the TMS and does not auto-send — rates, pricing strategy, and exceptions are always confirmed by people. The belief behind the product: a forwarder's value was never in retyping data; it is experience, coordination, and judgment. AI should do the preparation; people focus on customers, exceptions, and decisions.
 
-## What Meriq does
-- Reads inquiry emails as-is (Chinese/English mixed, no formatting needed) and drafts the quotation: O/F, THC, DOC and other charges filled from the forwarder's own rate sheets, in minutes instead of half a day.
-- Pulls S/O and shipping-instruction fields directly from the attached CI/PL.
-- Cross-checks Commercial Invoice, Packing List, HB/L, and customs declaration data field by field (counts, weights, marks, consignee) and flags mismatches before anything is sent — not at customs.
-- Drafts replies to customers and overseas agents in English and Chinese for the OP to review and send.
-- Produces structured data ready to import into the forwarder's existing TMS or in-house system; queues pre-alerts.
-- Flags what it isn't sure about; the OP confirms exceptions and sends. Everything else runs itself.
+## Meriq Quote Agent — what it does
+- Quote Intake: forward an inquiry to a dedicated Meriq inbox; it reads email bodies, PDF, Excel, Word, and images, structures a standard RFQ in seconds, flags what's missing, and drafts the ZH/EN follow-up questions. Every field shows which document and section it came from.
+- Rate Converter: Excel rate sheets, carrier and agent quote emails, and local-charge tables become searchable, ready-to-use quoting data — organized by lane, container type, charges, and validity, with sources and versions unified.
+- Quote Builder: applies the forwarder's own margin, charge, FX, and pricing rules to assemble costs, calculate margin and validity, and produce consistent, reviewable quote drafts.
+
+## Honest boundaries (by design)
+- No TMS write-back; no auto-send to customers.
+- Expired, duplicated, or conflicting rate data is flagged for confirmation, never silently applied.
+- DG, out-of-gauge, temperature-controlled, and strategy-heavy cases are routed to Sales, Pricing, or OP — not dressed up as automation.
+- Each company's data is isolated; one company's inquiries, rates, or quoting rules are never used for another customer without consent.
 
 ## Who it is for
-Small and mid-sized Taiwanese freight forwarders (海空運承攬業, roughly 5–50 people). Users are OPs, documentation clerks, and sales assistants; buyers are owners and general managers. Customs brokers and carriers are partners, not competitors — Meriq does not file customs entries and is not a licensed forwarder.
+Small and mid-sized freight forwarders (海空運承攬業) whose quoting runs on email and Excel — Sales, Pricing, CS, and OP roles that answer spot-quote inquiries daily. Buyers are owners, general managers, and operations leads. Customs brokers and carriers are partners; Meriq is not a licensed forwarder and does not file customs entries.
 
-## How it works
-1. Drop it in: forward inquiry emails, CI/PL, SI, or rate sheets as-is.
-2. Everything drafts itself: quotation draft, cross-document check report, bilingual reply drafts, structured data.
-3. People only check exceptions: AI flags doubts, the OP confirms and sends.
+## Early Partner Program (current stage)
+Meriq is inviting a small first cohort (3–5 teams) of small and mid-sized forwarders as early partners — teams that help define the product, not beta testers. The collaboration starts with one real quoting flow (about 10–20 historical and live inquiries, validated together over 2–4 weeks, measuring time from inquiry to first draft, manual edits, and missed charges). Early partners shape the product direction, get founder-led onboarding, first access to new capabilities, and locked-in early terms.
 
-## Status & pricing
-First Design Partners are onboarding now (limited spots). Design Partner pricing is locked in permanently. Book a 20-minute demo run live on the forwarder's own documents.
+## Roadmap
+Shipment Agent (shipment creation), Docs Agent (document cross-check), and Consolidation Agent are planned; Quote Agent is the only product available now.
 
 ## Key pages
 - Home (zh-TW, default): https://meriqai.com/zh-TW
 - Home (English): https://meriqai.com/en
-- Book a demo: https://meriqai.com/zh-TW/demo
+- Quote Agent: https://meriqai.com/zh-TW#quote
+- Book an intro call / apply as an early partner: https://meriqai.com/zh-TW/demo
 
 ## Contact
 - Email: justinli@meriqai.com

@@ -1,16 +1,15 @@
 import Link from "next/link"
-import { ArrowRight, Stamp } from "lucide-react"
+import { ArrowUpRight, ShieldCheck } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { BlurFade } from "@/components/ui/blur-fade"
-import { HeroDemo } from "@/components/visuals/hero-demo"
+import { NoiseTexture } from "@/components/ui/noise-texture"
 import type { Locale } from "@/lib/i18n/config"
 import type { Dictionary } from "@/app/[lang]/dictionaries"
 
 /**
- * Split hero: the pitch on the left, the product visibly working on the
- * right — an inquiry email becoming a worked shipment file on loop, over a
- * blue wash rising from the bottom.
+ * Clean centered hero: nothing but the pitch, over a noise-textured
+ * white-cyan canvas. The product itself demos in the how-it-works section.
  */
 export function Hero({
   hero,
@@ -20,75 +19,83 @@ export function Hero({
   lang: Locale
 }) {
   return (
-    <section className="relative overflow-hidden">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-[30rem] bg-[radial-gradient(120%_130%_at_75%_115%,oklch(0.546_0.215_263/0.34)_0%,oklch(0.65_0.16_255/0.16)_38%,oklch(0.8_0.09_250/0.08)_60%,transparent_80%)]"
-      />
+    // Raft-style stage: the hero is one full-viewport rounded card floating
+    // inside a thin frame of page background; the pill nav hovers above it.
+    <section className="px-3 pt-3 pb-2 sm:px-4 sm:pt-4">
+      <div className="relative flex min-h-[calc(100svh-1.5rem)] items-center overflow-hidden rounded-[1.75rem] border border-border/70 bg-surface sm:rounded-[2.5rem]">
+        {/* Soft cyan tint + noise texture as the card's atmosphere */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_120%_at_50%_115%,oklch(0.865_0.127_207/0.5)_0%,oklch(0.88_0.09_215/0.22)_45%,transparent_78%),radial-gradient(60%_50%_at_0%_0%,oklch(0.88_0.09_215/0.18)_0%,transparent_60%)]"
+        />
+        <NoiseTexture
+          frequency={0.55}
+          slope={0.12}
+          className="[mask-image:radial-gradient(85%_95%_at_50%_60%,white_20%,transparent_100%)] opacity-35"
+        />
 
-      <div className="mx-auto w-full max-w-6xl px-6 pt-32 pb-14 sm:pt-40">
-        <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,11fr)_minmax(0,9fr)] lg:gap-10">
-          {/* Copy */}
-          <div className="max-w-xl">
-            <BlurFade delay={0.05}>
-              <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium tracking-wide text-muted-foreground shadow-sm">
-                <span className="relative flex size-2" aria-hidden>
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/60 motion-reduce:animate-none" />
-                  <span className="relative inline-flex size-2 rounded-full bg-primary" />
-                </span>
-                {hero.eyebrow}
-              </p>
-            </BlurFade>
+        <div className="relative mx-auto w-full max-w-3xl px-6 pt-32 pb-20 text-center sm:pt-36">
+          <BlurFade delay={0.05}>
+            {/* plain small caps — no pill, it read as a filter chip */}
+            <p className="font-mono text-[11px] font-bold tracking-[0.3em] text-primary-strong uppercase">
+              {hero.eyebrow}
+            </p>
+          </BlurFade>
 
-            <BlurFade delay={0.12}>
-              <h1 className="mt-7 font-display text-[2.7rem] leading-[1.06] font-semibold tracking-tight text-balance sm:text-6xl">
-                {hero.titleLead}
-                <br aria-hidden />
-                <span className="text-primary">{hero.titleEmph}</span>
-                {hero.titleEnd}
-              </h1>
-            </BlurFade>
+          <BlurFade delay={0.12}>
+            {/* ink headline; only one small segment carries color */}
+            <h1
+              className={
+                lang === "zh-TW"
+                  ? "mt-8 font-display text-4xl leading-[1.18] font-semibold tracking-tight text-balance sm:text-[3.6rem]"
+                  : "mt-8 font-display text-[2.7rem] leading-[1.08] font-semibold tracking-tight text-balance sm:text-6xl"
+              }
+            >
+              {hero.titleLead}
+              <br aria-hidden />
+              {hero.titleL2Pre}
+              <span className="text-primary-strong">{hero.titleEmph}</span>
+              {hero.titleEnd}
+            </h1>
+          </BlurFade>
 
-            <BlurFade delay={0.2}>
-              <p className="mt-6 text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">
-                {hero.pitch}
-              </p>
-            </BlurFade>
+          <BlurFade delay={0.2}>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">
+              {hero.pitch}
+            </p>
+          </BlurFade>
 
-            <BlurFade delay={0.28}>
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Button
-                  size="lg"
-                  className="h-12 rounded-full px-7 text-[15px] shadow-lg shadow-primary/25 transition-transform hover:-translate-y-0.5"
-                  asChild
-                >
-                  <Link href={`/${lang}/demo`}>
-                    {hero.primaryCta}
-                    <ArrowRight className="size-4" />
-                  </Link>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="h-12 rounded-full bg-card px-7 text-[15px] shadow-sm transition-transform hover:-translate-y-0.5"
-                  asChild
-                >
-                  <a href="#how">{hero.secondaryCta}</a>
-                </Button>
-              </div>
-            </BlurFade>
+          <BlurFade delay={0.28}>
+            <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+              <Button
+                size="lg"
+                className="h-12 rounded-full px-7 text-[15px] shadow-lg shadow-primary/25 transition-transform hover:-translate-y-0.5"
+                asChild
+              >
+                <Link href={`/${lang}/demo`}>
+                  {hero.primaryCta}
+                  <ArrowUpRight className="size-4" />
+                </Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-12 rounded-full bg-card px-7 text-[15px] shadow-sm transition-transform hover:-translate-y-0.5"
+                asChild
+              >
+                <a href="#quote">{hero.secondaryCta}</a>
+              </Button>
+            </div>
+          </BlurFade>
 
-            <BlurFade delay={0.36}>
-              <p className="mt-8 inline-flex items-center gap-2 text-[13px] font-medium text-muted-foreground">
-                <Stamp className="size-3.5 text-primary" aria-hidden />
-                {hero.trustLine}
-              </p>
-            </BlurFade>
-          </div>
-
-          {/* The product, working */}
-          <BlurFade delay={0.25} className="hidden lg:block">
-            <HeroDemo lang={lang} />
+          <BlurFade delay={0.36}>
+            <p className="mt-9 inline-flex items-center gap-2 text-[13px] font-medium text-muted-foreground">
+              <ShieldCheck
+                className="size-3.5 text-primary-strong"
+                aria-hidden
+              />
+              {hero.trustLine}
+            </p>
           </BlurFade>
         </div>
       </div>

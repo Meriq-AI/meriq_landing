@@ -8,7 +8,7 @@
     agent-browser open "file://$PWD/scripts/og-template.html?v=en"
     agent-browser screenshot public/og-en.png
   Design language mirrors the site: warm white, working blue
-  oklch(0.546 0.215 263), blueprint hatch gutters, rubber stamp,
+  cyan-300/600, blueprint hatch gutters, rubber stamp,
   Bricolage Grotesque / Noto Sans TC / Geist Mono.
 -->
 <html>
@@ -24,8 +24,9 @@
     --border: #e7e4de;
     --fg: #17171c;
     --muted: #6b6a72;
-    --primary: oklch(0.546 0.215 263);
-    --primary-soft: oklch(0.546 0.215 263 / 0.09);
+    /* cyan-600 for text accents (cyan-300 is too light to read on white) */
+    --primary: oklch(0.609 0.126 222);
+    --primary-soft: oklch(0.865 0.127 207 / 0.2);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -41,8 +42,8 @@
     width: 1200px;
     height: 630px;
     background:
-      radial-gradient(90% 90% at 88% 112%, oklch(0.546 0.215 263 / 0.22) 0%, oklch(0.65 0.16 255 / 0.10) 45%, transparent 72%),
-      radial-gradient(70% 70% at 0% 0%, oklch(0.546 0.215 263 / 0.07) 0%, transparent 60%),
+      radial-gradient(90% 90% at 88% 112%, oklch(0.865 0.127 207 / 0.45) 0%, oklch(0.88 0.09 215 / 0.18) 45%, transparent 72%),
+      radial-gradient(70% 70% at 0% 0%, oklch(0.88 0.09 215 / 0.12) 0%, transparent 60%),
       var(--bg);
     overflow: hidden;
   }
@@ -76,6 +77,8 @@
     align-items: flex-start;
     justify-content: space-between;
   }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .mark { height: 40px; }
   .wordmark { height: 30px; filter: invert(1); }
   .stamp {
     font-family: "Geist Mono", monospace;
@@ -83,8 +86,8 @@
     font-size: 19px;
     letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: oklch(0.546 0.215 263 / 0.75);
-    border: 3px solid oklch(0.546 0.215 263 / 0.6);
+    color: oklch(0.609 0.126 222 / 0.8);
+    border: 3px solid oklch(0.609 0.126 222 / 0.6);
     border-radius: 8px;
     padding: 8px 16px 8px 20px;
     transform: rotate(4deg) translateY(6px);
@@ -142,8 +145,8 @@
   #og-zh h1 {
     font-family: "Noto Sans TC", sans-serif;
     font-weight: 900;
-    font-size: 68px;
-    line-height: 1.16;
+    font-size: 84px;
+    line-height: 1.22;
     letter-spacing: 0.005em;
   }
   #og-zh .eyebrow, #og-zh .sub, #og-zh .bottom { font-family: "Noto Sans TC", "Inter", sans-serif; }
@@ -163,13 +166,13 @@
     <div class="hatch left"></div>
     <div class="hatch right"></div>
     <div class="top">
-      <img class="wordmark" src="../public/meriq-wordmark.png" alt="MERIQ AI" />
+      <span class="brand"><img class="mark" src="../public/meriq-mark.png" alt="" /><img class="wordmark" src="../public/meriq-wordmark.png" alt="MERIQ AI" /></span>
       <span class="stamp">Ops Workflow</span>
     </div>
     <div class="mid">
-      <p class="eyebrow"><span class="dot"></span>AI 作業工作流</p>
-      <h1>工作流自動化。<br /><span class="accent">專為台灣中小型<br />freight forwarder 打造。</span></h1>
-      <p class="sub">報價單、文件核對、中英文回覆自動擬好——人只看例外。</p>
+      <p class="eyebrow"><span class="dot"></span>AI Agent for Freight Forwarders</p>
+      <h1>工作流自動化。<br />專為<span class="accent">中小型貨代</span>打造。</h1>
+      <p class="sub">從詢價到報價草稿，重複作業 Meriq 先完成——人專注例外與決策。</p>
     </div>
     <div class="bottom">
       <span>與 freight forwarder 團隊共同打造</span>
@@ -183,13 +186,13 @@
     <div class="hatch left"></div>
     <div class="hatch right"></div>
     <div class="top">
-      <img class="wordmark" src="../public/meriq-wordmark.png" alt="MERIQ AI" />
+      <span class="brand"><img class="mark" src="../public/meriq-mark.png" alt="" /><img class="wordmark" src="../public/meriq-wordmark.png" alt="MERIQ AI" /></span>
       <span class="stamp">Ops Workflow</span>
     </div>
     <div class="mid">
-      <p class="eyebrow"><span class="dot"></span>AI operations workflow</p>
-      <h1>Workflow automation.<br /><span class="accent">Built for Taiwan&rsquo;s small &amp;<br />mid-sized freight forwarders.</span></h1>
-      <p class="sub">Quotes, doc checks, replies — drafted by AI. People only handle exceptions.</p>
+      <p class="eyebrow"><span class="dot"></span>AI Agent for Freight Forwarders</p>
+      <h1>Workflow automation.<br />Built for <span class="accent">small &amp; mid-sized</span><br />freight forwarders.</h1>
+      <p class="sub">From inquiry to quote draft — Meriq does the repetitive work first.</p>
     </div>
     <div class="bottom">
       <span>Built together with freight forwarder teams</span>

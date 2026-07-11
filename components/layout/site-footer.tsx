@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowUpRight, Mail } from "lucide-react"
+import { Mail } from "lucide-react"
 
 import { LanguageSwitcher } from "@/components/layout/language-switcher"
 import { CONTACT_EMAIL, LINKEDIN_URL } from "@/lib/seo"
@@ -67,7 +67,7 @@ export function SiteFooter({
                 className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 <Mail className="size-4" />
-                {footer.contact}: {CONTACT_EMAIL}
+                {CONTACT_EMAIL}
               </a>
               <a
                 href={LINKEDIN_URL}
@@ -79,22 +79,6 @@ export function SiteFooter({
                 LinkedIn
               </a>
             </div>
-          </div>
-
-          {/* Supply side: quiet, deliberately secondary to the forwarder CTA. */}
-          <div className="rounded-2xl border border-border bg-card/60 p-5 sm:max-w-xs">
-            <p className="text-sm text-muted-foreground">
-              {footer.partnerLead}
-            </p>
-            <a
-              href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-                "Broker partner — Meriq"
-              )}`}
-              className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-primary"
-            >
-              {footer.partnerCta}
-              <ArrowUpRight className="size-4" />
-            </a>
           </div>
         </div>
 

@@ -35,12 +35,17 @@ export default async function DemoPage({
 
   return (
     <>
-      <SiteHeader lang={lang} nav={dict.nav} cta={dict.demo.cta} />
+      <SiteHeader
+        lang={lang}
+        nav={dict.nav}
+        solutions={dict.solutions}
+        cta={dict.demo.cta}
+      />
       <main className="relative overflow-hidden">
         {/* Same blue wash language as the landing hero, quieter */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-[radial-gradient(90%_100%_at_50%_-20%,oklch(0.546_0.215_263/0.12)_0%,transparent_70%)]"
+          className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-[radial-gradient(90%_100%_at_50%_-20%,oklch(0.865_0.127_207/0.30)_0%,transparent_70%)]"
         />
         <div className="mx-auto w-full max-w-6xl px-6 pt-32 sm:pt-36">
           {/* DemoForm renders the page heading itself so the success screen

@@ -5,12 +5,9 @@ import { ScrollProgress } from "@/components/ui/scroll-progress"
 import { SiteHeader } from "@/components/layout/site-header"
 import { SiteFooter } from "@/components/layout/site-footer"
 import { Hero } from "@/components/sections/hero"
-import { Problem } from "@/components/sections/problem"
-import { HowItWorks } from "@/components/sections/how-it-works"
-import { Values } from "@/components/sections/values"
-import { WhyUs } from "@/components/sections/why-us"
+import { Belief } from "@/components/sections/belief"
+import { QuotePrep } from "@/components/sections/quote-prep"
 import { Proof } from "@/components/sections/proof"
-import { FinalCta } from "@/components/sections/final-cta"
 import { Faq } from "@/components/sections/faq"
 import {
   defaultLocale,
@@ -62,17 +59,17 @@ export default async function Page({
       },
       {
         "@type": "Service",
-        name: "Meriq Operations Workflow",
+        name: "Meriq Quote Agent",
         serviceType:
-          "Freight forwarding operations automation: quotation drafting, S/O preparation, cross-document checking, bilingual reply drafting",
+          "AI quote preparation for freight forwarders: inquiry-email intake, rate structuring, quote drafting with human confirmation",
         provider: { "@id": `${SITE_URL}/#organization` },
         areaServed: "TW",
-        url: `${SITE_URL}/${lang}`,
-        description: dict.meta.description,
+        url: `${SITE_URL}/${lang}#quote`,
+        description: dict.quotePrep.sub,
         audience: {
           "@type": "Audience",
           audienceType:
-            "Small and mid-sized Taiwanese freight forwarders (5–50 staff)",
+            "Small and mid-sized freight forwarders (5–50 staff)",
         },
       },
       {
@@ -94,34 +91,18 @@ export default async function Page({
         {JSON.stringify(jsonLd).replace(/</g, "\\u003c")}
       </script>
       <ScrollProgress className="z-[60] h-0.5 bg-primary" />
-      <SiteHeader lang={lang} nav={dict.nav} cta={dict.demo.cta} />
+      <SiteHeader
+        lang={lang}
+        nav={dict.nav}
+        solutions={dict.solutions}
+        cta={dict.demo.cta}
+      />
       <main>
         <Hero hero={dict.hero} lang={lang} />
-
-        {/* Blueprint frame (Derya-style): one bordered column with hatched
-            rails; divide-y draws the rule between each section. */}
-        <div className="px-3 sm:px-6">
-          <div className="relative mx-auto w-full max-w-6xl">
-            <div
-              aria-hidden
-              className="hatch pointer-events-none absolute inset-y-0 -left-7 hidden w-6 xl:block"
-            />
-            <div
-              aria-hidden
-              className="hatch pointer-events-none absolute inset-y-0 -right-7 hidden w-6 xl:block"
-            />
-            <div className="divide-y divide-border border-x border-t border-border">
-              <Problem problem={dict.problem} />
-              <HowItWorks howItWorks={dict.howItWorks} lang={lang} />
-              <Values values={dict.values} lang={lang} />
-              <WhyUs whyUs={dict.whyUs} />
-              <Proof proof={dict.proof} lang={lang} />
-              <Faq faq={dict.faq} />
-            </div>
-          </div>
-        </div>
-
-        <FinalCta finalCta={dict.finalCta} lang={lang} />
+        <QuotePrep quotePrep={dict.quotePrep} lang={lang} />
+        <Belief belief={dict.belief} />
+        <Proof proof={dict.proof} lang={lang} />
+        <Faq faq={dict.faq} />
       </main>
       <SiteFooter lang={lang} footer={dict.footer} />
     </>

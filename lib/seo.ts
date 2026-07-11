@@ -1,6 +1,11 @@
 import type { Metadata } from "next"
 
-import { defaultLocale, htmlLang, locales, type Locale } from "@/lib/i18n/config"
+import {
+  defaultLocale,
+  htmlLang,
+  locales,
+  type Locale,
+} from "@/lib/i18n/config"
 
 /** Production origin. Override with NEXT_PUBLIC_SITE_URL on the deploy host. */
 export const SITE_URL = (
@@ -22,21 +27,19 @@ export const ogLocale: Record<Locale, string> = {
 
 // Search terms relevant people would use to find this kind of product.
 export const KEYWORDS = [
-  "freight forwarder automation",
-  "forwarding operations AI",
-  "freight forwarder AI Taiwan",
-  "quotation automation freight",
-  "shipping document cross-check",
-  "S/O automation",
-  "pre-alert automation",
-  "海空運承攬 AI",
-  "貨代 自動化",
-  "報價單 自動化",
-  "詢價信 自動報價",
-  "文件核對 CI PL 提單",
-  "OP 文件繕打",
-  "承攬業 系統",
-  "台灣 中小型 forwarder",
+  "freight forwarder AI agent",
+  "AI quote automation freight",
+  "freight quotation software",
+  "quote preparation forwarder",
+  "freight rate sheet management",
+  "freight forwarding workflow automation",
+  "貨代 AI",
+  "報價 自動化 貨代",
+  "詢價 報價 AI",
+  "運價表 整理",
+  "海空運承攬 報價",
+  "貨代 報價 軟體",
+  "中小型 貨代 系統",
 ]
 
 /**

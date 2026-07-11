@@ -39,7 +39,8 @@ export function SectionHeading({
   return (
     <h2
       className={cn(
-        "font-display text-3xl font-semibold tracking-tight text-balance sm:text-4xl",
+        // ink→fade gradient type: the tech-forward headline treatment
+        "bg-gradient-to-b from-foreground to-foreground/60 bg-clip-text font-display text-3xl font-semibold tracking-tight text-balance text-transparent sm:text-4xl",
         className
       )}
     >

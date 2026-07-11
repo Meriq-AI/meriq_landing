@@ -48,13 +48,13 @@ export default async function BlogIndex({
                 <p className="font-mono text-xs text-muted-foreground">
                   {formatPostDate(post.date, lang)} · {meta.readingTime}
                 </p>
-                <h2 className="mt-2 text-xl font-semibold tracking-tight transition-colors group-hover:text-primary">
+                <h2 className="mt-2 text-xl font-semibold tracking-tight transition-colors group-hover:text-primary-strong">
                   {meta.title}
                 </h2>
                 <p className="mt-2 text-sm leading-relaxed text-pretty text-muted-foreground">
                   {meta.excerpt}
                 </p>
-                <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary">
+                <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary-strong">
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
                 </span>
               </BlogPostLink>

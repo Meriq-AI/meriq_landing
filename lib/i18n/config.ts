@@ -6,7 +6,7 @@ export const defaultLocale: Locale = "zh-TW"
 
 export const localeLabels: Record<Locale, string> = {
   en: "EN",
-  "zh-TW": "繁中",
+  "zh-TW": "zh-TW",
 }
 
 export function isLocale(value: string): value is Locale {

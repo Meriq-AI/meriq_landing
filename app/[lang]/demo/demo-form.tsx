@@ -40,8 +40,8 @@ function Chips({
             className={cn(
               "rounded-full border px-3.5 py-1.5 text-[13px] font-medium transition-colors",
               active
-                ? "border-primary bg-primary/10 text-primary"
-                : "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground"
+                ? "border-primary-strong/60 bg-primary/25 text-primary-strong"
+                : "border-border bg-card text-muted-foreground hover:border-primary hover:text-foreground"
             )}
           >
             {opt.label}
@@ -55,7 +55,7 @@ function Chips({
 function SectionHeader({ num, title }: { num: string; title: string }) {
   return (
     <div className="flex items-center gap-3">
-      <span className="flex size-6 items-center justify-center rounded-full bg-primary/10 font-mono text-[11px] font-semibold text-primary">
+      <span className="flex size-6 items-center justify-center rounded-full bg-primary/25 font-mono text-[11px] font-semibold text-primary-strong">
         {num}
       </span>
       <h2 className="text-[15px] font-semibold tracking-tight">{title}</h2>
@@ -73,7 +73,6 @@ export function DemoForm({ demo, lang }: { demo: Demo; lang: Locale }) {
   const [role, setRole] = useState("")
   const [volume, setVolume] = useState("")
   const [currentSystem, setCurrentSystem] = useState("")
-  const [inquiry, setInquiry] = useState("")
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
 
@@ -96,8 +95,8 @@ export function DemoForm({ demo, lang }: { demo: Demo; lang: Locale }) {
       role,
       monthly_shipments: volume,
       current_system: currentSystem.trim(),
-      inquiry_text: inquiry.trim(),
-      // The whole page exists to book a call — no opt-in checkbox needed.
+      // The whole page exists to start a pilot conversation — no opt-in
+      // checkbox needed.
       wants_call: true,
       lang,
       source: "demo_page",
@@ -112,20 +111,16 @@ export function DemoForm({ demo, lang }: { demo: Demo; lang: Locale }) {
         body: JSON.stringify(payload),
       })
       if (!res.ok) throw new Error("request failed")
-      // Analytics only after the lead is actually stored; keep the pasted
-      // inquiry email (PII, potentially huge) out of the event.
+      // Analytics only after the lead is actually stored.
       try {
         posthog.identify(payload.email, {
           email: payload.email,
           name: payload.name,
           company: payload.company,
         })
-        const { inquiry_text, website: _, ...rest } = payload
+        const { website: _, ...rest } = payload
         void _
-        posthog.capture("demo_requested", {
-          ...rest,
-          inquiry_length: inquiry_text.length,
-        })
+        posthog.capture("demo_requested", rest)
       } catch {
         // analytics is best-effort; don't block on it
       }
@@ -235,17 +230,6 @@ export function DemoForm({ demo, lang }: { demo: Demo; lang: Locale }) {
               value={currentSystem}
               onChange={(e) => setCurrentSystem(e.target.value)}
               placeholder={demo.currentSystemPlaceholder}
-            />
-          </div>
-          <div className="space-y-1.5">
-            <Label htmlFor="demo-inquiry">{demo.inquiry}</Label>
-            <textarea
-              id="demo-inquiry"
-              value={inquiry}
-              onChange={(e) => setInquiry(e.target.value)}
-              placeholder={demo.inquiryPlaceholder}
-              rows={5}
-              className="w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs transition-colors outline-none placeholder:text-muted-foreground focus:border-ring"
             />
           </div>
         </section>
