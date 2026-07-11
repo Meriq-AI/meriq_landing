@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "讓 OP 不再繕打文件 — Meriq｜台灣中小型 forwarder 的 AI 作業引擎",
+    "title": "工作流自動化，專為貨代打造 — Meriq｜台灣中小型 freight forwarder 的 AI 作業工作流",
     "description": "Meriq 讀懂詢價信和 shipping docs，自動產出報價單、核對 CI／PL／提單／報單、擬好給客戶與國外代理的中英文回覆。人只處理例外，不用換掉任何現有系統。與 43 年資歷的報關團隊共同打造。"
   },
   "nav": {
@@ -11,7 +11,7 @@
     "closeMenu": "關閉選單"
   },
   "hero": {
-    "eyebrow": "台灣中小型 forwarder 的 AI 作業引擎",
+    "eyebrow": "台灣中小型 freight forwarder 的 AI 作業工作流",
     "titleLead": "工作流自動化。",
     "titleEmph": "專為貨代打造。",
     "titleEnd": "",
@@ -121,7 +121,7 @@
     "eyebrow": "Design Partner",
     "title": "Design Partner 實測",
     "scarcityTitle": "首批 Design Partner 導入中——名額有限。",
-    "scarcityBody": "我們正在和第一批台灣 forwarder，用他們的真實票量驗證每一條核對規則。實測數字（每份報價省幾分鐘、送出前抓到幾個錯）會直接放在這裡。想成為其中一家？",
+    "scarcityBody": "我們正在和第一批台灣中小型 freight forwarder，用他們的真實票量驗證每一條核對規則。實測數字（每份報價省幾分鐘、送出前抓到幾個錯）會直接放在這裡。想成為其中一家？",
     "cta": "預約 20 分鐘示範",
     "note": "Design Partner 價格永久鎖定——之後漲價，不影響你。",
     "testimonialsEnabled": false,
@@ -174,7 +174,7 @@
     "backToBlog": "所有文章"
   },
   "footer": {
-    "tagline": "台灣中小型 forwarder 的 AI 作業引擎：讓 OP 不再繕打文件。",
+    "tagline": "台灣中小型 freight forwarder 的 AI 作業工作流：讓 OP 不再繕打文件。",
     "contact": "聯絡",
     "partnerLead": "你是報關行或船公司嗎？我們正在找在地夥伴。",
     "partnerCta": "成為夥伴",

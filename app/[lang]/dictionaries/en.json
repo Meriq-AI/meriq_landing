@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Stop retyping shipping documents — Meriq | The AI operations engine for Taiwanese freight forwarders",
+    "title": "Workflow automation, built for freight forwarders — Meriq | The AI operations workflow for Taiwan's small and mid-sized freight forwarders",
     "description": "Meriq reads inquiry emails and shipping docs, drafts quotations, cross-checks CI / PL / B/L / customs declarations, and prepares bilingual replies to customers and overseas agents. People only handle exceptions — nothing to replace. Built with a customs brokerage team with 43 years of experience."
   },
   "nav": {
@@ -11,7 +11,7 @@
     "closeMenu": "Close menu"
   },
   "hero": {
-    "eyebrow": "The AI operations engine for Taiwanese freight forwarders",
+    "eyebrow": "The AI operations workflow for Taiwan's small and mid-sized freight forwarders",
     "titleLead": "Workflow automation.",
     "titleEmph": "Built for freight forwarders.",
     "titleEnd": "",
@@ -121,7 +121,7 @@
     "eyebrow": "Design Partners",
     "title": "Numbers from real desks",
     "scarcityTitle": "First Design Partners onboarding now — spots are limited.",
-    "scarcityBody": "We're validating every check rule on real shipment volume with our first Taiwanese forwarders. Their measured numbers — minutes saved per quotation, errors caught before sending — will be published right here. Want to be one of them?",
+    "scarcityBody": "We're validating every check rule on real shipment volume with our first small and mid-sized Taiwanese freight forwarders. Their measured numbers — minutes saved per quotation, errors caught before sending — will be published right here. Want to be one of them?",
     "cta": "Book a 20-minute demo",
     "note": "Design Partner pricing is locked in permanently — future price increases won't touch you.",
     "testimonialsEnabled": false,
@@ -174,7 +174,7 @@
     "backToBlog": "All posts"
   },
   "footer": {
-    "tagline": "The AI operations engine for Taiwanese freight forwarders — no more retyping documents.",
+    "tagline": "The AI operations workflow for Taiwan's small and mid-sized freight forwarders — no more retyping documents.",
     "contact": "Contact",
     "partnerLead": "Are you a customs broker or carrier? We're looking for local partners.",
     "partnerCta": "Partner with us",

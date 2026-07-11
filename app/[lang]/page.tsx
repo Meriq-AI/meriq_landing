@@ -62,7 +62,7 @@ export default async function Page({
       },
       {
         "@type": "Service",
-        name: "Meriq Operations Engine",
+        name: "Meriq Operations Workflow",
         serviceType:
           "Freight forwarding operations automation: quotation drafting, S/O preparation, cross-document checking, bilingual reply drafting",
         provider: { "@id": `${SITE_URL}/#organization` },
