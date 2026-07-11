@@ -43,20 +43,16 @@ export function Hero({
             <BlurFade delay={0.12}>
               <h1 className="mt-7 font-display text-[2.7rem] leading-[1.06] font-semibold tracking-tight text-balance sm:text-6xl">
                 {hero.titleLead}
+                <br aria-hidden />
                 <span className="text-primary">{hero.titleEmph}</span>
                 {hero.titleEnd}
               </h1>
             </BlurFade>
 
             <BlurFade delay={0.2}>
-              <div className="mt-6 space-y-2">
-                <p className="text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">
-                  {hero.pitch}
-                </p>
-                <p className="text-base leading-relaxed font-medium text-pretty text-foreground sm:text-lg">
-                  {hero.outcome}
-                </p>
-              </div>
+              <p className="mt-6 text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">
+                {hero.pitch}
+              </p>
             </BlurFade>
 
             <BlurFade delay={0.28}>

@@ -12,14 +12,13 @@
   },
   "hero": {
     "eyebrow": "台灣中小型 forwarder 的 AI 作業引擎",
-    "titleLead": "讓 OP ",
-    "titleEmph": "不再繕打文件",
-    "titleEnd": "。",
-    "pitch": "Meriq 讀懂詢價信和 shipping docs，自動產出報價單、核對文件、擬好中英文回覆。",
-    "outcome": "不用換掉任何現有系統，人只處理例外。",
-    "primaryCta": "預約 20 分鐘示範",
-    "secondaryCta": "看運作方式",
-    "trustLine": "與 43 年資歷的報關團隊共同打造"
+    "titleLead": "工作流自動化。",
+    "titleEmph": "專為貨代打造。",
+    "titleEnd": "",
+    "pitch": "Meriq 自動讀取詢價 Email 與貨運文件，整理資料、準備報價、核對差異並擬好客戶回覆，讓團隊只需處理真正需要判斷的例外。",
+    "primaryCta": "預約產品示範",
+    "secondaryCta": "探索運作方式",
+    "trustLine": "與 freight forwarder 團隊共同打造"
   },
   "problem": {
     "eyebrow": "每天的現場",

@@ -12,14 +12,13 @@
   },
   "hero": {
     "eyebrow": "The AI operations engine for Taiwanese freight forwarders",
-    "titleLead": "Your OPs shouldn't be ",
-    "titleEmph": "retyping documents",
-    "titleEnd": ".",
-    "pitch": "Meriq reads inquiry emails and shipping docs, drafts the quotation, cross-checks the documents, and prepares replies in English and Chinese.",
-    "outcome": "Nothing to replace — keep your systems. People only handle the exceptions.",
-    "primaryCta": "Book a 20-minute demo",
-    "secondaryCta": "See how it works",
-    "trustLine": "Built with a customs brokerage team with 43 years of experience"
+    "titleLead": "Workflow automation.",
+    "titleEmph": "Built for freight forwarders.",
+    "titleEnd": "",
+    "pitch": "Meriq reads inquiry emails and shipping documents automatically — organizing the data, preparing the quote, cross-checking discrepancies, and drafting the customer reply, so your team only handles the exceptions that need real judgment.",
+    "primaryCta": "Book a product demo",
+    "secondaryCta": "Explore how it works",
+    "trustLine": "Built together with freight forwarder teams"
   },
   "problem": {
     "eyebrow": "A day on the desk",
